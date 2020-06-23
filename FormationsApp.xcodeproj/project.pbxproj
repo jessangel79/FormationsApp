@@ -3,17 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3A79970D24A239BF007FD4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79970C24A239BF007FD4A2 /* AppDelegate.swift */; };
 		3A79970F24A239BF007FD4A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */; };
-		3A79971124A239BF007FD4A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79971024A239BF007FD4A2 /* ViewController.swift */; };
+		3A79971124A239BF007FD4A2 /* ListLangagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79971024A239BF007FD4A2 /* ListLangagesViewController.swift */; };
 		3A79971424A239BF007FD4A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A79971224A239BF007FD4A2 /* Main.storyboard */; };
 		3A79971624A239C1007FD4A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A79971524A239C1007FD4A2 /* Assets.xcassets */; };
 		3A79971924A239C1007FD4A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A79971724A239C1007FD4A2 /* LaunchScreen.storyboard */; };
 		3A79972424A239C2007FD4A2 /* FormationsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79972324A239C2007FD4A2 /* FormationsAppTests.swift */; };
+		3A79973A24A246CD007FD4A2 /* formations.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A79973924A246CD007FD4A2 /* formations.xlsx */; };
+		3A79973B24A246CD007FD4A2 /* formations.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A79973924A246CD007FD4A2 /* formations.xlsx */; };
+		3A79973F24A247E3007FD4A2 /* ListLangagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79973D24A247E3007FD4A2 /* ListLangagesTableViewCell.swift */; };
+		3A79974024A247E3007FD4A2 /* ListLangagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79973D24A247E3007FD4A2 /* ListLangagesTableViewCell.swift */; };
+		3A79974124A247E3007FD4A2 /* ListLangagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A79973E24A247E3007FD4A2 /* ListLangagesTableViewCell.xib */; };
+		3A79974224A247E3007FD4A2 /* ListLangagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A79973E24A247E3007FD4A2 /* ListLangagesTableViewCell.xib */; };
+		3A79974424A24EB1007FD4A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79974324A24EB1007FD4A2 /* Constants.swift */; };
+		3A79974524A24EB1007FD4A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79974324A24EB1007FD4A2 /* Constants.swift */; };
+		3A79974724A257F5007FD4A2 /* Columns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79974624A257F5007FD4A2 /* Columns.swift */; };
+		3A79974824A257F5007FD4A2 /* Columns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79974624A257F5007FD4A2 /* Columns.swift */; };
+		3A79974A24A25DEE007FD4A2 /* ListLangages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79974924A25DEE007FD4A2 /* ListLangages.swift */; };
+		3A79974B24A25DEE007FD4A2 /* ListLangages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79974924A25DEE007FD4A2 /* ListLangages.swift */; };
+		3A79974D24A27131007FD4A2 /* fichier.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A79974C24A27131007FD4A2 /* fichier.xlsx */; };
+		3A79974E24A27131007FD4A2 /* fichier.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A79974C24A27131007FD4A2 /* fichier.xlsx */; };
 		B44F7685F5FBBD7C6B573325 /* Pods_FormationsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB0DD64C06FA6277A47B91A /* Pods_FormationsAppTests.framework */; };
 		E2F3BA21F8A5F052DDD9C8E9 /* Pods_FormationsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */; };
 /* End PBXBuildFile section */
@@ -34,7 +48,7 @@
 		3A79970924A239BF007FD4A2 /* FormationsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormationsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A79970C24A239BF007FD4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A79971024A239BF007FD4A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A79971024A239BF007FD4A2 /* ListLangagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLangagesViewController.swift; sourceTree = "<group>"; };
 		3A79971324A239BF007FD4A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A79971524A239C1007FD4A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A79971824A239C1007FD4A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +56,13 @@
 		3A79971F24A239C2007FD4A2 /* FormationsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormationsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A79972324A239C2007FD4A2 /* FormationsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormationsAppTests.swift; sourceTree = "<group>"; };
 		3A79972524A239C2007FD4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A79973924A246CD007FD4A2 /* formations.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = formations.xlsx; sourceTree = SOURCE_ROOT; };
+		3A79973D24A247E3007FD4A2 /* ListLangagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLangagesTableViewCell.swift; sourceTree = "<group>"; };
+		3A79973E24A247E3007FD4A2 /* ListLangagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListLangagesTableViewCell.xib; sourceTree = "<group>"; };
+		3A79974324A24EB1007FD4A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3A79974624A257F5007FD4A2 /* Columns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Columns.swift; sourceTree = "<group>"; };
+		3A79974924A25DEE007FD4A2 /* ListLangages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLangages.swift; sourceTree = "<group>"; };
+		3A79974C24A27131007FD4A2 /* fichier.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = fichier.xlsx; sourceTree = SOURCE_ROOT; };
 		3AFB879E5DE34144BAF8C58C /* Pods-FormationsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54866DAF42163BBCB561E923 /* Pods-FormationsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.release.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FormationsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,13 +112,8 @@
 		3A79970B24A239BF007FD4A2 /* FormationsApp */ = {
 			isa = PBXGroup;
 			children = (
-				3A79970C24A239BF007FD4A2 /* AppDelegate.swift */,
-				3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */,
-				3A79971024A239BF007FD4A2 /* ViewController.swift */,
-				3A79971224A239BF007FD4A2 /* Main.storyboard */,
-				3A79971524A239C1007FD4A2 /* Assets.xcassets */,
-				3A79971724A239C1007FD4A2 /* LaunchScreen.storyboard */,
-				3A79971A24A239C1007FD4A2 /* Info.plist */,
+				3A79973824A245CC007FD4A2 /* Formations */,
+				3A79973224A23DA9007FD4A2 /* Supporting Files */,
 			);
 			path = FormationsApp;
 			sourceTree = "<group>";
@@ -111,6 +127,66 @@
 			path = FormationsAppTests;
 			sourceTree = "<group>";
 		};
+		3A79972F24A23D98007FD4A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A79974324A24EB1007FD4A2 /* Constants.swift */,
+				3A79974624A257F5007FD4A2 /* Columns.swift */,
+				3A79974924A25DEE007FD4A2 /* ListLangages.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A79973124A23DA1007FD4A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A79971024A239BF007FD4A2 /* ListLangagesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A79973224A23DA9007FD4A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A79971724A239C1007FD4A2 /* LaunchScreen.storyboard */,
+				3A79971A24A239C1007FD4A2 /* Info.plist */,
+				3A79971524A239C1007FD4A2 /* Assets.xcassets */,
+				3A79970C24A239BF007FD4A2 /* AppDelegate.swift */,
+				3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A79973324A23DC2007FD4A2 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				3A79973924A246CD007FD4A2 /* formations.xlsx */,
+				3A79974C24A27131007FD4A2 /* fichier.xlsx */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		3A79973824A245CC007FD4A2 /* Formations */ = {
+			isa = PBXGroup;
+			children = (
+				3A79971224A239BF007FD4A2 /* Main.storyboard */,
+				3A79972F24A23D98007FD4A2 /* Model */,
+				3A79973124A23DA1007FD4A2 /* Controller */,
+				3A79973C24A2476D007FD4A2 /* View */,
+				3A79973324A23DC2007FD4A2 /* Ressources */,
+			);
+			path = Formations;
+			sourceTree = "<group>";
+		};
+		3A79973C24A2476D007FD4A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A79973D24A247E3007FD4A2 /* ListLangagesTableViewCell.swift */,
+				3A79973E24A247E3007FD4A2 /* ListLangagesTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9CDD739D9B7A17DA047BBDA8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +195,6 @@
 				3AFB879E5DE34144BAF8C58C /* Pods-FormationsAppTests.debug.xcconfig */,
 				54866DAF42163BBCB561E923 /* Pods-FormationsAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,6 +219,7 @@
 				3A79970624A239BF007FD4A2 /* Frameworks */,
 				3A79970724A239BF007FD4A2 /* Resources */,
 				8BDFFEBBB6027B58E47E96A4 /* [CP] Embed Pods Frameworks */,
+				3A79972E24A23D8C007FD4A2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -219,7 +295,10 @@
 			files = (
 				3A79971924A239C1007FD4A2 /* LaunchScreen.storyboard in Resources */,
 				3A79971624A239C1007FD4A2 /* Assets.xcassets in Resources */,
+				3A79973A24A246CD007FD4A2 /* formations.xlsx in Resources */,
+				3A79974D24A27131007FD4A2 /* fichier.xlsx in Resources */,
 				3A79971424A239BF007FD4A2 /* Main.storyboard in Resources */,
+				3A79974124A247E3007FD4A2 /* ListLangagesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,12 +306,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A79974E24A27131007FD4A2 /* fichier.xlsx in Resources */,
+				3A79973B24A246CD007FD4A2 /* formations.xlsx in Resources */,
+				3A79974224A247E3007FD4A2 /* ListLangagesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3A79972E24A23D8C007FD4A2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		5514D820BBBB2A2D2A0B747B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,7 +417,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A79971124A239BF007FD4A2 /* ViewController.swift in Sources */,
+				3A79974424A24EB1007FD4A2 /* Constants.swift in Sources */,
+				3A79974A24A25DEE007FD4A2 /* ListLangages.swift in Sources */,
+				3A79974724A257F5007FD4A2 /* Columns.swift in Sources */,
+				3A79971124A239BF007FD4A2 /* ListLangagesViewController.swift in Sources */,
+				3A79973F24A247E3007FD4A2 /* ListLangagesTableViewCell.swift in Sources */,
 				3A79970D24A239BF007FD4A2 /* AppDelegate.swift in Sources */,
 				3A79970F24A239BF007FD4A2 /* SceneDelegate.swift in Sources */,
 			);
@@ -329,6 +432,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A79972424A239C2007FD4A2 /* FormationsAppTests.swift in Sources */,
+				3A79974824A257F5007FD4A2 /* Columns.swift in Sources */,
+				3A79974024A247E3007FD4A2 /* ListLangagesTableViewCell.swift in Sources */,
+				3A79974B24A25DEE007FD4A2 /* ListLangages.swift in Sources */,
+				3A79974524A24EB1007FD4A2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
-				INFOPLIST_FILE = FormationsApp/Info.plist;
+				INFOPLIST_FILE = "FormationsApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,7 +609,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
-				INFOPLIST_FILE = FormationsApp/Info.plist;
+				INFOPLIST_FILE = "FormationsApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
