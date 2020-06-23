@@ -1,0 +1,28 @@
+PODS:
+  - CoreXLSX (0.11.0):
+    - XMLCoder (~> 0.11.1)
+    - ZIPFoundation (~> 0.9.11)
+  - SwiftLint (0.39.2)
+  - XMLCoder (0.11.1)
+  - ZIPFoundation (0.9.11)
+
+DEPENDENCIES:
+  - CoreXLSX (= 0.11)
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CoreXLSX
+    - SwiftLint
+    - XMLCoder
+    - ZIPFoundation
+
+SPEC CHECKSUMS:
+  CoreXLSX: d81176da72edfd69a9df6f107a78bd0335b8f292
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
+  XMLCoder: c4638336674de7ba279cd23f2005817d69f538e0
+  ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
+
+PODFILE CHECKSUM: 82f62af5e35456e0928dcf39a8f99edaa21c17f3
+
+COCOAPODS: 1.8.4
