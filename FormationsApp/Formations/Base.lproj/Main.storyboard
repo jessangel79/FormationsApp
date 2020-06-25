@@ -15,10 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" id="OGG-bF-EVm">
-                                <rect key="frame" x="142" y="266" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mlA-3U-nxq">
                                 <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -27,6 +23,11 @@
                                     <outlet property="delegate" destination="u6y-Lv-feM" id="q9f-gI-MM2"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" id="OGG-bF-EVm">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -41,12 +42,57 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="47w-Kl-MHu"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="OGG-bF-EVm" id="pYk-Hs-8S9"/>
                         <outlet property="listLangagesTableView" destination="mlA-3U-nxq" id="ELx-u9-anq"/>
+                        <segue destination="tSg-wK-oGr" kind="show" identifier="segueToListOrganizations" id="1Ep-XP-PU4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwv-zU-enF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981.875" y="29.577464788732396"/>
+            <point key="canvasLocation" x="1493" y="30"/>
+        </scene>
+        <!--List Organizations View Controller-->
+        <scene sceneID="rTZ-za-Q0H">
+            <objects>
+                <viewController id="tSg-wK-oGr" userLabel="List Organizations View Controller" customClass="ListOrganizationsViewController" customModule="FormationsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gcW-u6-XDe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8JF-44-Bc9">
+                                <rect key="frame" x="0.0" y="44" width="320" height="475"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tSg-wK-oGr" id="Djn-bD-x62"/>
+                                    <outlet property="delegate" destination="tSg-wK-oGr" id="C6Z-ry-cEG"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GVF-IP-qm0">
+                                <rect key="frame" x="142" y="266" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8JF-44-Bc9" secondAttribute="bottom" constant="49" id="J0D-Bi-IXU"/>
+                            <constraint firstItem="8JF-44-Bc9" firstAttribute="leading" secondItem="OL9-ZV-Ri9" secondAttribute="leading" id="KIo-94-1zu"/>
+                            <constraint firstItem="8JF-44-Bc9" firstAttribute="top" secondItem="OL9-ZV-Ri9" secondAttribute="top" id="RKz-VZ-upA"/>
+                            <constraint firstItem="8JF-44-Bc9" firstAttribute="trailing" secondItem="OL9-ZV-Ri9" secondAttribute="trailing" id="ZgZ-e2-N1D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OL9-ZV-Ri9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Organismes" id="Cbc-WF-VGp">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GG1-eI-aBF"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="GVF-IP-qm0" id="aD3-hA-4Ks"/>
+                        <outlet property="listOrganizationsTableView" destination="8JF-44-Bc9" id="uKt-ry-DLf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJv-Qk-o34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2253.75" y="29.577464788732396"/>
         </scene>
         <!--Formations-->
         <scene sceneID="FwB-xQ-AMK">
@@ -65,7 +111,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxe-jd-Dhj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984.375" y="29.577464788732396"/>
+            <point key="canvasLocation" x="752" y="30"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="weH-ov-k7W">

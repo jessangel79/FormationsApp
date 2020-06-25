@@ -14,12 +14,32 @@ final class ListLangagesViewController: UIViewController {
     // MARK: - Outlets
 
     @IBOutlet private weak var listLangagesTableView: UITableView!
-//    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
-//    var langagesList = [String]()
     private var columns = Columns()
+    private var cellSelected: String?
+    private let segueToListOrganizations = Constants.SegueToListOrganizations
+    
+    var allLangagesList = [[String]]()
+//    var allLangagesDict = [String: String]()
+    var allLangagesDict = [
+        "swift": [String](), "swiftUi": [String](), "kotlin": [String](), "htmlCss": [String](), "git": [String](), "entrepreneuriat": [String](), "crossPlateform": [String](), "others": [String]()
+    ]
+    
+    var langagesList = [String]()
+    var swiftList = [String]()
+    var swiftUiList = [String]()
+    var kotlinList = [String]()
+    var htmlCssList = [String]()
+    var crossPlateformList = [String]()
+    var othersList = [String]()
+    var entrepreneuriatList = [String]()
+    var gitList = [String]()
+    
+    // test
+    var organizationsList = [String]()
 
     // MARK: - View Life Cycle
 
@@ -32,10 +52,17 @@ final class ListLangagesViewController: UIViewController {
 
         do {
             try parseFile(file)
+            title = columns.columnDStrings.first
+            print("Title => columns.columnDStrings.first : \(String(describing: columns.columnDStrings.first))")
         } catch {
             title = error.localizedDescription
         }
         
+        listLangagesTableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         listLangagesTableView.reloadData()
     }
     
@@ -46,38 +73,43 @@ final class ListLangagesViewController: UIViewController {
             for (name, path) in try file.parseWorksheetPathsAndNames(workbook: wbk) {
                 if let worksheetName = name {
                     print("This worksheet has a name: \(worksheetName)")
-                    title = worksheetName
+//                    print("Title => columns.columnDStrings.first : \(String(describing: columns.columnDStrings.first))")
+//                    title = worksheetName
 //                    titleLabel.text = worksheetName
                 }
                 let worksheet = try file.parseWorksheet(at: path)
-                for row in worksheet.data?.rows ?? [] {
-                    for cell in row.cells {
-                        print(cell)
-                        setColumnsFile(file: file, worksheet: worksheet)
+                setColumnsFile(file: file, worksheet: worksheet)
 
-//                        setLabels(Columns(columnAStrings: columns.columnAStrings,
-//                                          columnBStrings: columns.columnBStrings,
-//                                          columnCStrings: columns.columnCStrings,
-//                                          columnDStrings: columns.columnDStrings))
-                        setDatasFile(Columns(columnAStrings: columns.columnAStrings,
-                                             columnBStrings: columns.columnBStrings,
-                                             columnCStrings: columns.columnCStrings,
-                                             columnDStrings: columns.columnDStrings,
-                                             columnEStrings: columns.columnEStrings,
-                                             columnFStrings: columns.columnFStrings,
-                                             columnGStrings: columns.columnGStrings,
-                                             columnHStrings: columns.columnHStrings,
-                                             columnIStrings: columns.columnIStrings,
-                                             columnJStrings: columns.columnJStrings))
+                for row in worksheet.data?.rows ?? [] {
+                    for _ in row.cells { // let cell
+//                        print(cell)
+//                        print(cell.reference)
+
+//                        setColumnsFile(file: file, worksheet: worksheet)
+                        
+//                        setDatasFile(Columns(columnAStrings: columns.columnAStrings,
+//                                             columnBStrings: columns.columnBStrings,
+//                                             columnCStrings: columns.columnCStrings,
+//                                             columnDStrings: columns.columnDStrings,
+//                                             columnEStrings: columns.columnEStrings,
+//                                             columnFStrings: columns.columnFStrings,
+//                                             columnGStrings: columns.columnGStrings,
+//                                             columnHStrings: columns.columnHStrings,
+//                                             columnIStrings: columns.columnIStrings,
+//                                             columnJStrings: columns.columnJStrings))
                     }
                 }
             }
         }
     }
-        
+    
     private func setColumnsFile(file: XLSXFile, worksheet: Worksheet) {
         do {
             let sharedStrings = try file.parseSharedStrings()
+//            print("sharedStrings : \(sharedStrings)")
+//            for item in sharedStrings.items {
+//                print("items in sharedStrings \(item)")
+//            }
             guard let columnA = Constants.columnA else { return }
             guard let columnB = Constants.columnB else { return }
             guard let columnC = Constants.columnC else { return }
@@ -109,24 +141,84 @@ final class ListLangagesViewController: UIViewController {
                 .compactMap { $0.stringValue(sharedStrings) }
             columns.columnJStrings = worksheet.cells(atColumns: [columnJ])
                 .compactMap { $0.stringValue(sharedStrings) }
+            
+            createListsLangages()
         } catch {
             title = error.localizedDescription
         }
     }
+
+    private func createListsLangages() {
+        for index in 1...8 {
+            langagesList.append(columns.columnDStrings[index])
+        }
+        for index in 1...9 {
+            swiftList.append(columns.columnEStrings[index])
+        }
+        for index in 10...11 {
+            swiftUiList.append(columns.columnEStrings[index])
+        }
+        for index in 12...13 {
+            kotlinList.append(columns.columnEStrings[index])
+        }
+        htmlCssList.append(columns.columnEStrings[14])
+        gitList.append(columns.columnEStrings[15])
+        for index in 16...17 {
+            entrepreneuriatList.append(columns.columnEStrings[index])
+        }
+        crossPlateformList.append(columns.columnEStrings[18])
+        othersList.append(columns.columnEStrings[19])
         
-    private func setDatasFile(_ columns: Columns) {
+        allLangagesList += [
+            swiftList, swiftUiList, kotlinList, htmlCssList, gitList, entrepreneuriatList, crossPlateformList, othersList
+        ]
+        
+//        let personne = ["Nom": "Durand", "Prénom": "Maxime", "Adresse": "94 rue machin", "Ville": "Lille"]
+//
+//        for (cle, valeur) in personne {
+//            print(cle + " - " + valeur)
+//        }
+        allLangagesDict["swift"] = swiftList //.joined(separator: ", ")
+        allLangagesDict["swiftUi"] = swiftUiList
+        allLangagesDict["kotlin"] = kotlinList
+        allLangagesDict["htmlCss"] = htmlCssList
+        allLangagesDict["git"] = gitList
+        allLangagesDict["entrepreneuriat"] = entrepreneuriatList
+        allLangagesDict["crossPlateform"] = crossPlateformList
+        allLangagesDict["others"] = othersList
+        
+        print("allLangagesDict : \(allLangagesDict)")
+        
+        print("allLangagesList : \(allLangagesList)")
+
+        print("langagesList : \(langagesList)")
+        print("swiftList : \(swiftList)")
+        print("swiftUiList : \(swiftUiList)")
+        print("kotlinList : \(kotlinList)")
+        print("htmlCssList : \(htmlCssList)")
+        print("gitList : \(gitList)")
+        print("entrepreneuriatList : \(entrepreneuriatList)")
+        print("crossPlateformList : \(crossPlateformList)")
+        print("othersList : \(othersList)")
+        
+        // test
+        organizationsList.append(contentsOf: columns.columnEStrings)
+        print("organizationsList : \(organizationsList)")
+    }
+        
+//    private func setDatasFile(_ columns: Columns) {
 //        title = columns.columnDStrings[1]
 //        langageLabel.text = columns.columnDStrings[1]
-        for row in columns.columnDStrings {
-            listLangages.append(row)
-        }
+//        for row in columns.columnDStrings {
+//            listLangages.append(row)
+//        }
         
 //        langageImageView.image = UIImage(named: "")
 //        listSkillsTextView.text = columns.columnAStrings[1]
 //        skillsTextView.text = columns.columnBStrings[1]
 //        degreeLabel.text = columns.columnCStrings[1]
 //        evidenceSkillsTextView.text = columns.columnDStrings[1]
-    }
+//    }
 
 }
 
@@ -138,8 +230,8 @@ extension ListLangagesViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return listLangages.count
-        return columns.columnDStrings.count
+        return langagesList.count
+//        return columns.columnDStrings.count
 //        return columns.columnAStrings.count
 
     }
@@ -149,35 +241,51 @@ extension ListLangagesViewController: UITableViewDataSource, UITableViewDelegate
                                                                  for: indexPath) as? ListLangagesTableViewCell else {
             return UITableViewCell()
         }
-//        let langage = listLangages[indexPath.row]
-        let langage = columns.columnDStrings[indexPath.row]
-//        let langage = columns.columnAStrings[indexPath.row]
+        let langage = langagesList[indexPath.row]
         listLangagesCell.langage = langage
         return listLangagesCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.cellSelected = langagesList[indexPath.row]
+//        self.cellSelected = swiftList[indexPath.row]
+
+        self.cellSelected = langagesList[indexPath.row]
+
 //        self.cellSelected = placesList[indexPath.row]
 //        self.imageOfCellSelected = placesTypeList[indexPath.row]
 //        celluleIndex = indexPath.row
 //        self.photoOfCellSelected = photosList[indexPath.row]
 //        self.placeIdCellSelected = placeIDsList[indexPath.row]
-//        performSegue(withIdentifier: self.segueToPlaceDetails, sender: self)
+        performSegue(withIdentifier: self.segueToListOrganizations, sender: self)
     }
 }
 
 // MARK: - Navigation
 
-//extension ListLangagesViewController {
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == segueToPlaceDetails {
-//            guard let detailsPlaceVC = segue.destination as? DetailsPlaceViewController else { return }
-//            detailsPlaceVC.cellule = self.cellSelected
+extension ListLangagesViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueToListOrganizations {
+            guard let listOrganizationsVC = segue.destination as? ListOrganizationsViewController else { return }
+            listOrganizationsVC.cellule = self.cellSelected
+            listOrganizationsVC.langagesList = self.langagesList
+            listOrganizationsVC.swiftList = self.swiftList
+            listOrganizationsVC.swiftUiList = self.swiftUiList
+            listOrganizationsVC.kotlinList = self.kotlinList
+            listOrganizationsVC.htmlCssList = self.htmlCssList
+            listOrganizationsVC.crossPlateformList = self.crossPlateformList
+            listOrganizationsVC.othersList = self.othersList
+            listOrganizationsVC.entrepreneuriatList = self.entrepreneuriatList
+            listOrganizationsVC.gitList = self.gitList
+            listOrganizationsVC.organizationsList = self.organizationsList
+            listOrganizationsVC.allLangagesList = self.allLangagesList
+            listOrganizationsVC.allLangagesDict = self.allLangagesDict
+            
 //            detailsPlaceVC.imageOfCellule = self.imageOfCellSelected
 //            detailsPlaceVC.celluleIndex = celluleIndex
 //            detailsPlaceVC.photoOfCellule = self.photoOfCellSelected
 //            detailsPlaceVC.placeIdCellule = self.placeIdCellSelected
 //            detailsPlaceVC.placeDetailsResultsList = self.placeDetailsResultsList
-//        }
-//    }
-//}
+        }
+    }
+}

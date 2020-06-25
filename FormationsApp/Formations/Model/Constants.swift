@@ -22,8 +22,9 @@ struct Constants {
     static let columnH = ColumnReference("H")
     static let columnI = ColumnReference("I")
     static let columnJ = ColumnReference("J")
+    
     static let ListLangagesCell = "ListLangagesCell"
     static let ListLangagesTableViewCell = "ListLangagesTableViewCell"
-    static let SegueToLangagesList = "segueToLangagesList"
-    static let SegueToDetails = "segueToDetails"
+//    static let SegueToLangagesList = "segueToLangagesList"
+    static let SegueToListOrganizations = "segueToListOrganizations"
 }
