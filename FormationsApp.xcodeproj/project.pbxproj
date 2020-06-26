@@ -10,10 +10,6 @@
 		3A2E2DF224A37746008B3F9B /* ListOrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2DF124A37746008B3F9B /* ListOrganizationsViewController.swift */; };
 		3A2E2DF524A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2DF424A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift */; };
 		3A2E2DF724A3845A008B3F9B /* Organizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2DF624A3845A008B3F9B /* Organizations.swift */; };
-		3A2E2DF924A3A963008B3F9B /* ArraysCommun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2DF824A3A963008B3F9B /* ArraysCommun.swift */; };
-		3A2E2DFA24A3C331008B3F9B /* ArraysCommun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2DF824A3A963008B3F9B /* ArraysCommun.swift */; };
-		3A2E2DFC24A3C4D9008B3F9B /* langages.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E2DFB24A3C4D9008B3F9B /* langages.xlsx */; };
-		3A2E2DFD24A3C4D9008B3F9B /* langages.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E2DFB24A3C4D9008B3F9B /* langages.xlsx */; };
 		3A79970D24A239BF007FD4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79970C24A239BF007FD4A2 /* AppDelegate.swift */; };
 		3A79970F24A239BF007FD4A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */; };
 		3A79971124A239BF007FD4A2 /* ListLangagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79971024A239BF007FD4A2 /* ListLangagesViewController.swift */; };
@@ -36,6 +32,7 @@
 		3A79974D24A27131007FD4A2 /* fichier.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A79974C24A27131007FD4A2 /* fichier.xlsx */; };
 		3A79974E24A27131007FD4A2 /* fichier.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A79974C24A27131007FD4A2 /* fichier.xlsx */; };
 		3A7C929B24A4B2310095A7E3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C929A24A4B2310095A7E3 /* Array.swift */; };
+		3A7C929D24A4FBFE0095A7E3 /* UIViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */; };
 		B44F7685F5FBBD7C6B573325 /* Pods_FormationsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB0DD64C06FA6277A47B91A /* Pods_FormationsAppTests.framework */; };
 		E2F3BA21F8A5F052DDD9C8E9 /* Pods_FormationsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */; };
 /* End PBXBuildFile section */
@@ -56,8 +53,6 @@
 		3A2E2DF124A37746008B3F9B /* ListOrganizationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrganizationsViewController.swift; sourceTree = "<group>"; };
 		3A2E2DF424A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		3A2E2DF624A3845A008B3F9B /* Organizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organizations.swift; sourceTree = "<group>"; };
-		3A2E2DF824A3A963008B3F9B /* ArraysCommun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraysCommun.swift; sourceTree = "<group>"; };
-		3A2E2DFB24A3C4D9008B3F9B /* langages.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = langages.xlsx; sourceTree = SOURCE_ROOT; };
 		3A79970924A239BF007FD4A2 /* FormationsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormationsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A79970C24A239BF007FD4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +72,7 @@
 		3A79974924A25DEE007FD4A2 /* Langages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Langages.swift; sourceTree = "<group>"; };
 		3A79974C24A27131007FD4A2 /* fichier.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = fichier.xlsx; sourceTree = SOURCE_ROOT; };
 		3A7C929A24A4B2310095A7E3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Debug.swift"; sourceTree = "<group>"; };
 		3AFB879E5DE34144BAF8C58C /* Pods-FormationsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54866DAF42163BBCB561E923 /* Pods-FormationsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.release.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FormationsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +104,7 @@
 			children = (
 				3A2E2DF424A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift */,
 				3A7C929A24A4B2310095A7E3 /* Array.swift */,
+				3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,9 +182,7 @@
 		3A79973324A23DC2007FD4A2 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				3A2E2DF824A3A963008B3F9B /* ArraysCommun.swift */,
 				3A79973924A246CD007FD4A2 /* formations.xlsx */,
-				3A2E2DFB24A3C4D9008B3F9B /* langages.xlsx */,
 				3A79974C24A27131007FD4A2 /* fichier.xlsx */,
 			);
 			path = Ressources;
@@ -324,7 +319,6 @@
 				3A79971924A239C1007FD4A2 /* LaunchScreen.storyboard in Resources */,
 				3A79971624A239C1007FD4A2 /* Assets.xcassets in Resources */,
 				3A79973A24A246CD007FD4A2 /* formations.xlsx in Resources */,
-				3A2E2DFC24A3C4D9008B3F9B /* langages.xlsx in Resources */,
 				3A79974D24A27131007FD4A2 /* fichier.xlsx in Resources */,
 				3A79971424A239BF007FD4A2 /* Main.storyboard in Resources */,
 				3A79974124A247E3007FD4A2 /* ListLangagesTableViewCell.xib in Resources */,
@@ -335,7 +329,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2E2DFD24A3C4D9008B3F9B /* langages.xlsx in Resources */,
 				3A79974E24A27131007FD4A2 /* fichier.xlsx in Resources */,
 				3A79973B24A246CD007FD4A2 /* formations.xlsx in Resources */,
 				3A79974224A247E3007FD4A2 /* ListLangagesTableViewCell.xib in Resources */,
@@ -452,12 +445,12 @@
 				3A79974A24A25DEE007FD4A2 /* Langages.swift in Sources */,
 				3A2E2DF524A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift in Sources */,
 				3A2E2DF724A3845A008B3F9B /* Organizations.swift in Sources */,
-				3A2E2DF924A3A963008B3F9B /* ArraysCommun.swift in Sources */,
 				3A79974724A257F5007FD4A2 /* Columns.swift in Sources */,
 				3A79971124A239BF007FD4A2 /* ListLangagesViewController.swift in Sources */,
 				3A79973F24A247E3007FD4A2 /* ListLangagesTableViewCell.swift in Sources */,
 				3A7C929B24A4B2310095A7E3 /* Array.swift in Sources */,
 				3A79970D24A239BF007FD4A2 /* AppDelegate.swift in Sources */,
+				3A7C929D24A4FBFE0095A7E3 /* UIViewController+Debug.swift in Sources */,
 				3A79970F24A239BF007FD4A2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +461,6 @@
 			files = (
 				3A79972424A239C2007FD4A2 /* FormationsAppTests.swift in Sources */,
 				3A79974824A257F5007FD4A2 /* Columns.swift in Sources */,
-				3A2E2DFA24A3C331008B3F9B /* ArraysCommun.swift in Sources */,
 				3A79974024A247E3007FD4A2 /* ListLangagesTableViewCell.swift in Sources */,
 				3A79974B24A25DEE007FD4A2 /* Langages.swift in Sources */,
 				3A79974524A24EB1007FD4A2 /* Constants.swift in Sources */,

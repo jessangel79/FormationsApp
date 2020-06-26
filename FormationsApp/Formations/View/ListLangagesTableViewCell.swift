@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import CoreXLSX
 
 final class ListLangagesTableViewCell: UITableViewCell {
     
@@ -22,82 +21,15 @@ final class ListLangagesTableViewCell: UITableViewCell {
         didSet {
             langageLabel.text = langage
             loadImageLangages(Langages(rawValue: langage ?? "") ?? Langages.others)
-            print(langage ?? "error langage")
+            print("langage in cell : \(langage ?? "error langage")")
         }
     }
-    
-//    var organization: [String]? {
-//        didSet {
-//            langageLabel.text = organization?[0]
-//
-//            for org in organization ?? [""] {
-//                langageLabel.text = org
-//            }
-
-//            langageLabel.text = organization
-//            loadImageOrganizations(Organizations(rawValue: organization ?? "") ?? Organizations.divers)
-//            print("organization in cell \(String(describing: organization))")
-//            print(organization ?? "error organization")
-//        }
-//    }
     
     var organization: String? {
         didSet {
             langageLabel.text = organization
-
-//            for org in organization ?? [""] {
-//                langageLabel.text = org
-//            }
-            
-//            langageLabel.text = organization
-//            loadImageOrganizations(Organizations(rawValue: organization ?? "") ?? Organizations.divers)
-//            print("organization in cell \(String(describing: organization))")
+            loadImageOrganizations(Organizations(rawValue: organization ?? "") ?? Organizations.divers)
             print("organization in cell : \(organization ?? "error organization")")
-        }
-    }
-    
-    var swift: String? {
-        didSet {
-            langageLabel.text = swift
-            print(swift ?? "error swift")
-
-        }
-    }
-    var swiftUi: String? {
-        didSet {
-            langageLabel.text = swiftUi
-            print(swiftUi ?? "error swiftUi")
-
-        }
-    }
-    var kotlin: String? {
-        didSet {
-            langageLabel.text = kotlin
-        }
-    }
-    var htmlCss: String? {
-        didSet {
-            langageLabel.text = htmlCss
-        }
-    }
-    var git: String? {
-        didSet {
-            langageLabel.text = git
-        }
-    }
-    var entrepreneuriat: String? {
-        didSet {
-            langageLabel.text = entrepreneuriat
-        }
-    }
-    var crossPlateform: String? {
-        didSet {
-            langageLabel.text = crossPlateform
-        }
-    }
-    var others: String? {
-        didSet {
-            langageLabel.text = others
         }
     }
         
@@ -112,21 +44,21 @@ final class ListLangagesTableViewCell: UITableViewCell {
     func loadImageLangages(_ langagesFile: Langages) {
         switch langagesFile {
         case .swift:
-            langageImageView.image = UIImage(named: Langages.swift.rawValue.lowercased() + ".png")
-        case .swiftUI:
-            langageImageView.image = UIImage(named: Langages.swiftUI.rawValue.lowercased() + ".png")
+            langageImageView.image = UIImage(named: Constants.Swift.lowercased() + ".png")
+        case .swiftUi:
+            langageImageView.image = UIImage(named: Constants.SwiftUi.lowercased() + ".png")
         case .kotlin:
-            langageImageView.image = UIImage(named: Langages.kotlin.rawValue.lowercased() + ".png")
+            langageImageView.image = UIImage(named: Constants.Kotlin.lowercased() + ".png")
         case .htmlCss:
-            langageImageView.image = UIImage(named: Langages.htmlCss.rawValue.lowercased() + ".png")
+            langageImageView.image = UIImage(named: Constants.HtmlCss.lowercased() + ".png")
         case .git:
-            langageImageView.image = UIImage(named: Langages.git.rawValue.lowercased() + ".png")
+            langageImageView.image = UIImage(named: Constants.Git.lowercased() + ".png")
         case .others:
-            langageImageView.image = UIImage(named: Langages.others.rawValue.lowercased() + ".png")
+            langageImageView.image = UIImage(named: Constants.Others.lowercased() + ".png")
         case .entrepreneuriat:
-            langageImageView.image = UIImage(named: Langages.entrepreneuriat.rawValue.lowercased() + ".png")
+            langageImageView.image = UIImage(named: Constants.Entrepreneuriat.lowercased() + ".png")
         case .crossPlateform:
-            langageImageView.image = UIImage(named: Langages.crossPlateform.rawValue.lowercased() + ".png")
+            langageImageView.image = UIImage(named: Constants.CrossPlateform.lowercased() + ".png")
         }
     }
     
@@ -142,8 +74,8 @@ final class ListLangagesTableViewCell: UITableViewCell {
             langageImageView.image = UIImage(named: Organizations.divers.rawValue.lowercased() + ".png")
         case .hws:
             langageImageView.image = UIImage(named: Organizations.hws.rawValue.lowercased() + ".png")
-        case .learngitbranchingJsOrg:
-            langageImageView.image = UIImage(named: Organizations.learngitbranchingJsOrg.rawValue.lowercased() + ".png")
+        case .learnGitBranching:
+            langageImageView.image = UIImage(named: Organizations.learnGitBranching.rawValue.lowercased() + ".png")
         case .microsoft:
             langageImageView.image = UIImage(named: Organizations.microsoft.rawValue.lowercased() + ".png")
         case .openClassrooms:

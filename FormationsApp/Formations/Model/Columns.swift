@@ -12,17 +12,6 @@ import CoreXLSX
 // MARK: - Columns of xlsx file
 
 struct Columns {
-//    var columnAStrings: [String]
-//    var columnBStrings: [String]
-//    var columnCStrings: [String]
-//    var columnDStrings: [String]
-//    var columnEStrings: [String]
-//    var columnFStrings: [String]
-//    var columnGStrings: [String]
-//    var columnHStrings: [String]
-//    var columnIStrings: [String]
-//    var columnJStrings: [String]
-//
     var columnAStrings = [String]()
     var columnBStrings = [String]()
     var columnCStrings = [String]()
@@ -30,7 +19,4 @@ struct Columns {
     var columnEStrings = [String]()
     var columnFStrings = [String]()
     var columnGStrings = [String]()
-    var columnHStrings = [String]()
-    var columnIStrings = [String]()
-    var columnJStrings = [String]()
 }

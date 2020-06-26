@@ -7,17 +7,12 @@
 //
 
 import Foundation
-//import CoreXLSX
-
-//var listLangages = [String]()
-
-//var listLangages = ["Swift", "Kotlin", "Swift UI", "HTML-CSS", "Cross-plateform", "Others", "Entrepreneuriat", "Git"]
 
 enum Langages: String {
     case swift = "Swift"
     case kotlin = "Kotlin"
-    case swiftUI = "Swift UI"
-    case htmlCss = "HTML - CSS"
+    case swiftUi = "Swift UI"
+    case htmlCss = "HTML-CSS"
     case crossPlateform = "Cross-Plateform"
     case others = "Others"
     case entrepreneuriat = "Entrepreneuriat"

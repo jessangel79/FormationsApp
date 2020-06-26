@@ -19,12 +19,18 @@ struct Constants {
     static let columnE = ColumnReference("E")
     static let columnF = ColumnReference("F")
     static let columnG = ColumnReference("G")
-    static let columnH = ColumnReference("H")
-    static let columnI = ColumnReference("I")
-    static let columnJ = ColumnReference("J")
+    
+    static let Swift = Langages.swift.rawValue
+    static let SwiftUi = Langages.swiftUi.rawValue
+    static let Kotlin = Langages.kotlin.rawValue
+    static let HtmlCss = Langages.htmlCss.rawValue
+    static let Git = Langages.git.rawValue
+    static let Entrepreneuriat = Langages.entrepreneuriat.rawValue
+    static let CrossPlateform = Langages.crossPlateform.rawValue
+    static let Others = Langages.others.rawValue
     
     static let ListLangagesCell = "ListLangagesCell"
     static let ListLangagesTableViewCell = "ListLangagesTableViewCell"
-//    static let SegueToLangagesList = "segueToLangagesList"
     static let SegueToListOrganizations = "segueToListOrganizations"
+    //    static let SegueToLangagesList = "segueToLangagesList"
 }
