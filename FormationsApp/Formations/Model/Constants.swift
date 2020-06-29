@@ -20,17 +20,31 @@ struct Constants {
     static let columnF = ColumnReference("F")
     static let columnG = ColumnReference("G")
     
-    static let Swift = Langages.swift.rawValue
-    static let SwiftUi = Langages.swiftUi.rawValue
-    static let Kotlin = Langages.kotlin.rawValue
-    static let HtmlCss = Langages.htmlCss.rawValue
-    static let Git = Langages.git.rawValue
-    static let Entrepreneuriat = Langages.entrepreneuriat.rawValue
-    static let CrossPlateform = Langages.crossPlateform.rawValue
-    static let Others = Langages.others.rawValue
+    static let Swift = LangagesString.swift.rawValue
+    static let SwiftUi = LangagesString.swiftUi.rawValue
+    static let Kotlin = LangagesString.kotlin.rawValue
+    static let HtmlCss = LangagesString.htmlCss.rawValue
+    static let Git = LangagesString.git.rawValue
+    static let Entrepreneuriat = LangagesString.entrepreneuriat.rawValue
+    static let CrossPlateform = LangagesString.crossPlateform.rawValue
+    static let Others = LangagesString.others.rawValue
+    
+    static let Udemy = Organizations.udemy.rawValue
+    static let Hws = Organizations.hws.rawValue
+    static let Coursera = Organizations.coursera.rawValue
+    static let SwiftOrg = Organizations.swiftOrg.rawValue
+    static let PurpleGiraffe = Organizations.purpleGiraffe.rawValue
+    static let Cwc = Organizations.cwc.rawValue
+    static let CodinGame = Organizations.codinGame.rawValue
+    static let Microsoft = Organizations.microsoft.rawValue
+    static let Raywenderlich = Organizations.raywenderlich.rawValue
+    static let LearnGitBranching = Organizations.learnGitBranching.rawValue
+    static let OpenClassrooms = Organizations.openClassrooms.rawValue
+    static let Divers = Organizations.divers.rawValue
     
     static let ListLangagesCell = "ListLangagesCell"
     static let ListLangagesTableViewCell = "ListLangagesTableViewCell"
     static let SegueToListOrganizations = "segueToListOrganizations"
+    static let SegueToListFormations = "segueToListFormations"
     //    static let SegueToLangagesList = "segueToLangagesList"
 }

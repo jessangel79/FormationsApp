@@ -8,6 +8,17 @@
 
 import Foundation
 
+extension Array where Element: Equatable {
+    
+    func removingDuplicates() -> Array {
+        return reduce(into: []) { result, element in
+            if !result.contains(element) {
+                result.append(element)
+            }
+        }
+    }
+}
+
 // MARK: - création du tableau de tableaux
 //extension Array where Element == Organizations {
 //    var convertedToArrayOfArray: [[Organizations]] {

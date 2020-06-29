@@ -14,7 +14,7 @@ enum Organizations: String {
     case coursera = "Coursera"
     case swiftOrg = "Swift.org"
     case purpleGiraffe = "Purple Giraffe"
-    case codeWithChris = "CodeWithChris"
+    case cwc = "CodeWithChris"
     case codinGame = "CodinGame"
     case microsoft = "Microsoft"
     case raywenderlich = "Raywenderlich"

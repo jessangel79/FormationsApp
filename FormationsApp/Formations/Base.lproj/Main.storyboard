@@ -40,7 +40,7 @@
                         <viewLayoutGuide key="safeArea" id="ccQ-24-g3E"/>
                     </view>
                     <navigationItem key="navigationItem" title="Langages" id="vfc-tw-hQ6">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="47w-Kl-MHu"/>
+                        <barButtonItem key="backBarButtonItem" title="Langages" id="47w-Kl-MHu"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="OGG-bF-EVm" id="pYk-Hs-8S9"/>
@@ -85,16 +85,55 @@
                         <viewLayoutGuide key="safeArea" id="OL9-ZV-Ri9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Organismes" id="Cbc-WF-VGp">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="GG1-eI-aBF"/>
+                        <barButtonItem key="backBarButtonItem" title="Organismes" id="GG1-eI-aBF"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="GVF-IP-qm0" id="aD3-hA-4Ks"/>
                         <outlet property="listOrganizationsTableView" destination="8JF-44-Bc9" id="uKt-ry-DLf"/>
+                        <segue destination="c12-RD-J4a" kind="show" identifier="segueToListFormations" id="FGS-Qr-cZG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJv-Qk-o34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2253.75" y="29.577464788732396"/>
+        </scene>
+        <!--List Formations View Controller-->
+        <scene sceneID="C93-AE-7zH">
+            <objects>
+                <viewController id="c12-RD-J4a" userLabel="List Formations View Controller" customClass="ListFormationsViewController" customModule="FormationsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9rg-sM-PU5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VCL-65-D8z">
+                                <rect key="frame" x="0.0" y="44" width="320" height="475"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="c12-RD-J4a" id="Yf5-sO-EZI"/>
+                                    <outlet property="delegate" destination="c12-RD-J4a" id="tzH-Fa-OHJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VCL-65-D8z" firstAttribute="trailing" secondItem="Y41-vq-Kp8" secondAttribute="trailing" id="EKy-jd-WYd"/>
+                            <constraint firstAttribute="bottom" secondItem="VCL-65-D8z" secondAttribute="bottom" constant="49" id="U7D-5e-Z2m"/>
+                            <constraint firstItem="VCL-65-D8z" firstAttribute="top" secondItem="Y41-vq-Kp8" secondAttribute="top" id="hrm-Ha-7NN"/>
+                            <constraint firstItem="VCL-65-D8z" firstAttribute="leading" secondItem="Y41-vq-Kp8" secondAttribute="leading" id="kkA-NS-7PA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y41-vq-Kp8"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Formations" id="dzx-fG-xSl">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="eAc-cd-QPz"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="listFormationsTableView" destination="VCL-65-D8z" id="Jce-rH-hdT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f55-nY-VrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3007.5" y="29.577464788732396"/>
         </scene>
         <!--Formations-->
         <scene sceneID="FwB-xQ-AMK">

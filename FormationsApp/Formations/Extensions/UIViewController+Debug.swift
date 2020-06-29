@@ -13,7 +13,7 @@ extension UIViewController {
 //    /// function to debug the list
 //    func debugCreateList() {
 //        print("allLangagesDict : \(allLangagesDict)")
-//        print("langagesList : \(langagesList)")
+//        print("allList : \(langagesList)")
 //        print("swiftList : \(swiftList)")
 //        print("swiftUiList : \(swiftUiList)")
 //        print("kotlinList : \(kotlinList)")

@@ -57,13 +57,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="langageImageView" destination="GxY-g1-xpQ" id="RNd-zz-Jse"/>
-                <outlet property="langageLabel" destination="ce9-a6-6sz" id="2Vi-lk-mzL"/>
+                <outlet property="logoImageView" destination="GxY-g1-xpQ" id="RNd-zz-Jse"/>
+                <outlet property="nameLabel" destination="ce9-a6-6sz" id="2Vi-lk-mzL"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="businesswoman" width="75" height="75"/>
+        <image name="businesswoman" width="25" height="25"/>
     </resources>
 </document>
