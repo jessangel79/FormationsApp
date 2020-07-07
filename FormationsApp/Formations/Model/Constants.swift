@@ -19,6 +19,16 @@ struct Constants {
     static let columnE = ColumnReference("E")
     static let columnF = ColumnReference("F")
     static let columnG = ColumnReference("G")
+    static let columnHDates = ColumnReference("H")
+    static let columnIDates = ColumnReference("I")
+
+    static let Formations = "FORMATIONS"
+    static let Websites = "LIEN DU SITE"
+    static let States = "STATUT"
+    static let Langages = "LANGAGES"
+    static let Org = "ORGANISMES"
+    static let Notes = "NOTES"
+    static let Details = "DETAILS"
     
     static let Swift = LangagesString.swift.rawValue
     static let SwiftUi = LangagesString.swiftUi.rawValue
@@ -44,7 +54,9 @@ struct Constants {
     
     static let ListLangagesCell = "ListLangagesCell"
     static let ListLangagesTableViewCell = "ListLangagesTableViewCell"
-    static let SegueToListOrganizations = "segueToListOrganizations"
+//    static let SegueToListOrganizations = "segueToListOrganizations"
     static let SegueToListFormations = "segueToListFormations"
+    static let SegueToDetailsFormation = "segueToDetailsFormation"
     //    static let SegueToLangagesList = "segueToLangagesList"
+    static let SegueToWebsite = "segueToWebsite"
 }

@@ -2,7 +2,7 @@
 //  ListFormationsViewController.swift
 //  FormationsApp
 //
-//  Created by Angelique Babin on 26/06/2020.
+//  Created by Angelique Babin on 24/06/2020.
 //  Copyright © 2020 Angelique Babin. All rights reserved.
 //
 
@@ -11,33 +11,19 @@ import UIKit
 final class ListFormationsViewController: UIViewController {
     
     // MARK: - Outlets
-    
+
     @IBOutlet private weak var listFormationsTableView: UITableView! {
         didSet { listFormationsTableView.tableFooterView = UIView() }
     }
-
-    // MARK: - Actions
-
+    
     // MARK: - Properties
-    
-    var cellule: String?
-    var organizationsDict = [String: [String]]()
-    var organizationsList = [String]()
-    var fileService = FileService()
-    private var cellSelected: String?
-    
-    var udemyList = [String]()
-    var hwsList = [String]()
-    var courseraList = [String]()
-    var swiftOrgList = [String]()
-    var purpleGiraffeList = [String]()
-    var cwcList = [String]()
-    var codinGameList = [String]()
-    var microsoftList = [String]()
-    var raywenderlichList = [String]()
-    var learnGitBranchingList = [String]()
-    var openClassroomsList = [String]()
-    var diversList = [String]()
+      
+    private var cellSelected: Langages?
+    private let segueToDetailsFormation = Constants.SegueToDetailsFormation
+//    var allFileList = [Langages]() // en attendant de faire détails formations
+    var allFileDict = [String: [Langages]]()
+    var langagesList = [String]()
+    var cellule: String?  
     
     // MARK: - View Life Cycle
 
@@ -46,22 +32,17 @@ final class ListFormationsViewController: UIViewController {
         
         let nib = UINib(nibName: Constants.ListLangagesTableViewCell, bundle: nil)
         listFormationsTableView.register(nib, forCellReuseIdentifier: Constants.ListLangagesCell)
-//        cellule = String()
-
-        print("cellule viewDidLoad in listFormationsVC : \(cellule ?? "error cellule")")
-        print("cellSelected viewDidLoad in listFormationsVC : \(cellSelected ?? "error cellule")")
-        
+        print("cellSelected viewDidLoad in listFormationsVC : \(String(describing: cellSelected))")
         listFormationsTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        cellule = String()
         listFormationsTableView.reloadData()
     }
     
     // MARK: - Methods
-
+            
 }
 
 // MARK: - UITableViewDataSource - UITableViewDelegate
@@ -71,38 +52,31 @@ extension ListFormationsViewController: UITableViewDataSource, UITableViewDelega
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-        
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return organizationsDict[Constants.Swift]?.count ?? 0
-        
         var count = Int()
         switch cellule {
-        case Constants.Udemy:
-            count = organizationsDict[Constants.Udemy]?.count ?? 0
-        case Constants.Hws:
-            count = organizationsDict[Constants.Hws]?.count ?? 0
-        case Constants.Coursera:
-            count = organizationsDict[Constants.Coursera]?.count ?? 0
-        case Constants.SwiftOrg:
-            count = organizationsDict[Constants.SwiftOrg]?.count ?? 0
-        case Constants.PurpleGiraffe:
-            count = organizationsDict[Constants.PurpleGiraffe]?.count ?? 0
-        case Constants.Cwc:
-            count = organizationsDict[Constants.Cwc]?.count ?? 0
-        case Constants.CodinGame:
-            count = organizationsDict[Constants.CodinGame]?.count ?? 0
-        case Constants.Microsoft:
-            count = organizationsDict[Constants.Microsoft]?.count ?? 0
-        case Constants.Raywenderlich:
-            count = organizationsDict[Constants.Raywenderlich]?.count ?? 0
-        case Constants.LearnGitBranching:
-            count = organizationsDict[Constants.LearnGitBranching]?.count ?? 0
-        case Constants.OpenClassrooms:
-            count = organizationsDict[Constants.OpenClassrooms]?.count ?? 0
+        case Constants.Swift:
+            count = allFileDict[Constants.Swift]?.count ?? 0
+        case Constants.SwiftUi:
+            count = allFileDict[Constants.SwiftUi]?.count ?? 0
+        case Constants.Kotlin:
+            count = allFileDict[Constants.Kotlin]?.count ?? 0
+        case Constants.HtmlCss:
+            count = allFileDict[Constants.HtmlCss]?.count ?? 0
+        case Constants.Git:
+            count = allFileDict[Constants.Git]?.count ?? 0
+        case Constants.Entrepreneuriat:
+            count = allFileDict[Constants.Entrepreneuriat]?.count ?? 0
+        case Constants.CrossPlateform:
+            count = allFileDict[Constants.CrossPlateform]?.count ?? 0
         default:
-            count = organizationsDict[Constants.Divers]?.count ?? 0
+            count = allFileDict[Constants.Others]?.count ?? 0
         }
         return count
+//        return langagesDict.count
+//        organizationsList = organizationsList.removingDuplicates()
+//        return organizationsList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -110,72 +84,90 @@ extension ListFormationsViewController: UITableViewDataSource, UITableViewDelega
                                                                  for: indexPath) as? ListLangagesTableViewCell else {
             return UITableViewCell()
         }
-        
-        var formation: String?
+        var formation: Langages?
         switch cellule {
-        case Constants.Udemy:
-            formation = organizationsDict[Constants.Udemy]?[indexPath.row]
-//            formation = organizationsDict[Constants.Udemy]?[0]
-        case Constants.Hws:
-            formation = organizationsDict[Constants.Hws]?[indexPath.row]
-        case Constants.Coursera:
-            formation = organizationsDict[Constants.Coursera]?[indexPath.row]
-        case Constants.SwiftOrg:
-            formation = organizationsDict[Constants.SwiftOrg]?[indexPath.row]
-        case Constants.PurpleGiraffe:
-            formation = organizationsDict[Constants.PurpleGiraffe]?[indexPath.row]
-        case Constants.Cwc:
-            formation = organizationsDict[Constants.Cwc]?[indexPath.row]
-        case Constants.CodinGame:
-            formation = organizationsDict[Constants.CodinGame]?[indexPath.row]
-        case Constants.Microsoft:
-            formation = organizationsDict[Constants.Microsoft]?[indexPath.row]
-        case Constants.Raywenderlich:
-            formation = organizationsDict[Constants.Raywenderlich]?[indexPath.row]
-        case Constants.LearnGitBranching:
-            formation = organizationsDict[Constants.LearnGitBranching]?[indexPath.row]
-        case Constants.OpenClassrooms:
-            formation = organizationsDict[Constants.OpenClassrooms]?[indexPath.row]
+        case Constants.Swift:
+            formation = allFileDict[Constants.Swift]?[indexPath.row]
+        case Constants.SwiftUi:
+            formation = allFileDict[Constants.SwiftUi]?[indexPath.row]
+        case Constants.Kotlin:
+            formation = allFileDict[Constants.Kotlin]?[indexPath.row]
+        case Constants.HtmlCss:
+            formation = allFileDict[Constants.HtmlCss]?[indexPath.row]
+        case Constants.Git:
+            formation = allFileDict[Constants.Git]?[indexPath.row]
+        case Constants.Entrepreneuriat:
+            formation = allFileDict[Constants.Entrepreneuriat]?[indexPath.row]
+        case Constants.CrossPlateform:
+            formation = allFileDict[Constants.CrossPlateform]?[indexPath.row]
         default:
-            formation = organizationsDict[Constants.Divers]?[indexPath.row]
+            formation = allFileDict[Constants.Others]?[indexPath.row]
         }
-        print("formation in VC TableView : \(formation ?? "error formation")")
-        print("cellule in VC TableView : \(cellule ?? "error cellule")")
         listFormationsCell.formation = formation
+        print("formation in VC TableView : \(String(describing: formation))")
+        print("cellule in VC TableView : \(String(describing: cellule))")
         return listFormationsCell
-        
-//        let formation = organizationsList[indexPath.row]
-//        let formation = organizationsDict[Constants.Swift]?[indexPath.row]
-//        print("formation in VC TableView : \(formation ?? "error formation")")
-//        print("cellule in VC TableView : \(cellule ?? "error cellule")")
-//        listFormationsCell.formation = formation
-//        return listFormationsCell
-
     }
-        
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.cellSelected = columns.columnEStrings[indexPath.row]
-//        self.cellSelected = placesList[indexPath.row]
-//        self.imageOfCellSelected = placesTypeList[indexPath.row]
-//        celluleIndex = indexPath.row
-//        self.photoOfCellSelected = photosList[indexPath.row]
-//        self.placeIdCellSelected = placeIDsList[indexPath.row]
-//        performSegue(withIdentifier: self.segueToListOrganizations, sender: self)
-    }
-    }
+//        var cellSelected: String?
+        switch cellule {
+        case Constants.Swift:
+            self.cellSelected = allFileDict[Constants.Swift]?[indexPath.row]
+        case Constants.SwiftUi:
+            self.cellSelected = allFileDict[Constants.SwiftUi]?[indexPath.row]
+        case Constants.Kotlin:
+            self.cellSelected = allFileDict[Constants.Kotlin]?[indexPath.row]
+        case Constants.HtmlCss:
+            self.cellSelected = allFileDict[Constants.HtmlCss]?[indexPath.row]
+        case Constants.Git:
+            self.cellSelected = allFileDict[Constants.Git]?[indexPath.row]
+        case Constants.Entrepreneuriat:
+            self.cellSelected = allFileDict[Constants.Entrepreneuriat]?[indexPath.row]
+        case Constants.CrossPlateform:
+            self.cellSelected = allFileDict[Constants.CrossPlateform]?[indexPath.row]
+        default:
+            self.cellSelected = allFileDict[Constants.Others]?[indexPath.row]
+        }
 
-    // MARK: - Navigation
+//        switch cellSelectedListOrgVC {
+//        case Constants.Swift:
+//            self.cellSelectedListOrgVC = organizationsDict[Constants.Swift]?[indexPath.row]
+//        case Constants.SwiftUi:
+//            self.cellSelectedListOrgVC = organizationsDict[Constants.SwiftUi]?[indexPath.row]
+//        case Constants.Kotlin:
+//            self.cellSelectedListOrgVC = organizationsDict[Constants.Kotlin]?[indexPath.row]
+//        case Constants.HtmlCss:
+//            self.cellSelectedListOrgVC = organizationsDict[Constants.HtmlCss]?[indexPath.row]
+//        case Constants.Git:
+//            self.cellSelectedListOrgVC = organizationsDict[Constants.Git]?[indexPath.row]
+//        case Constants.Entrepreneuriat:
+//            self.cellSelectedListOrgVC = organizationsDict[Constants.Entrepreneuriat]?[indexPath.row]
+//        case Constants.CrossPlateform:
+//            self.cellSelectedListOrgVC = organizationsDict[Constants.CrossPlateform]?[indexPath.row]
+//        default:
+//            self.cellSelectedListOrgVC = organizationsDict[Constants.Others]?[indexPath.row]
+//        }
+        
+        // OK
+//        self.cellSelected = langagesDict[Constants.Formations]?[indexPath.row]
+           
+//        self.cellSelected = allFileList[indexPath.row].formation
+//        self.cellSelected = allFileDict[indexPath.row]
+        print("cellSelected in ListFormationsVC : \(String(describing: cellSelected))")
+        performSegue(withIdentifier: self.segueToDetailsFormation, sender: self)
+    }
+}
+
+// MARK: - Navigation
 
 extension ListFormationsViewController {
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == segueToListOrganizations {
-//            guard let listOrganizationsVC = segue.destination as? ListOrganizationsViewController else { return }
-//            listOrganizationsVC.cellule = self.cellSelected
-//            detailsPlaceVC.imageOfCellule = self.imageOfCellSelected
-//            detailsPlaceVC.celluleIndex = celluleIndex
-//            detailsPlaceVC.photoOfCellule = self.photoOfCellSelected
-//            detailsPlaceVC.placeIdCellule = self.placeIdCellSelected
-//            detailsPlaceVC.placeDetailsResultsList = self.placeDetailsResultsList
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueToDetailsFormation {
+            guard let detailsFormationVC = segue.destination as? DetailsFormationViewController else { return }
+            detailsFormationVC.cellule = self.cellSelected
+//            detailsFormationVC.allFileList = self.allFileList
+            detailsFormationVC.allFileDict = self.allFileDict
+        }
+    }
 }

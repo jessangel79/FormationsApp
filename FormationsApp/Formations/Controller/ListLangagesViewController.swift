@@ -14,21 +14,18 @@ final class ListLangagesViewController: UIViewController {
     // MARK: - Outlets
 
     @IBOutlet private weak var listLangagesTableView: UITableView!
-    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
     private let fileService = FileService()
     private var cellSelected: String?
-//    private var cellSelected: Langages?
-    private let segueToListOrganizations = Constants.SegueToListOrganizations
     
-    private var allList = [Langages]()
-    private var allDict = [String: [Langages]]()
+//    private var cellSelected: Langages?
+    private let segueToListFormations = Constants.SegueToListFormations
+    
+//    private var allFileList = [Langages]()
     private var langagesList = [String]()
-    private var langagesDict = [String: [String]]()
-    private var organizationsList = [String]()
-    private var organizationsDict = [String: [String]]()
+    private var allFileDict = [String: [Langages]]()
 
     // MARK: - View Life Cycle
 
@@ -41,34 +38,13 @@ final class ListLangagesViewController: UIViewController {
 
         do {
             try fileService.parseFile(file)
-            allDict = fileService.allDict
-            allList = fileService.allList
+//            allFileList = fileService.allFileList
             langagesList = fileService.langagesList
-            langagesDict = fileService.langagesDict
-            organizationsList = fileService.organizationsList
-            organizationsDict = fileService.organizationsDict
-            
-            print("allList :")
-            print(allList)
-            print("allDict :")
-            print(allDict)
-            print("langagesList :")
-            print(langagesList)
-            print("langagesDict :")
-            print(langagesDict)
-            print("organizationsList :")
-            print(organizationsList)
-            print("organizationsDict :")
-            print(organizationsDict)
-            
-//            fileService.createListsLangages()
-//            fileService.setLangagesDict()
-//            fileService.createListsOrganizations()
-//            fileService.setOrganizationsDict()
+            allFileDict = fileService.allFileDict
+
         } catch {
             title = error.localizedDescription
         }
-//        fileService.debugCreateList()
         listLangagesTableView.reloadData()
     }
     
@@ -109,7 +85,7 @@ extension ListLangagesViewController: UITableViewDataSource, UITableViewDelegate
         langagesList = langagesList.removingDuplicates()
         self.cellSelected = langagesList[indexPath.row]
         print("cellSelected in ListLangagesVC : \(String(describing: cellSelected))")
-        performSegue(withIdentifier: self.segueToListOrganizations, sender: self)
+        performSegue(withIdentifier: self.segueToListFormations, sender: self)
     }
 }
 
@@ -117,31 +93,12 @@ extension ListLangagesViewController: UITableViewDataSource, UITableViewDelegate
 
 extension ListLangagesViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueToListOrganizations {
-            guard let listOrganizationsVC = segue.destination as? ListOrganizationsViewController else { return }
-            listOrganizationsVC.cellule = self.cellSelected
-            listOrganizationsVC.allList = self.allList
-            listOrganizationsVC.allDict = self.allDict
-            listOrganizationsVC.langagesList = self.langagesList
-            listOrganizationsVC.langagesDict = self.langagesDict
-            listOrganizationsVC.organizationsList = self.organizationsList
-            listOrganizationsVC.organizationsDict = self.organizationsDict
-            
-//            listOrganizationsVC.allDict = fileService.langagesDict
-//            listOrganizationsVC.organizationsDict = fileService.organizationsDict
-//            listOrganizationsVC.organizationsList = fileService.organizationsList.removingDuplicates()
-//            listOrganizationsVC.udemyList = fileService.udemyList
-//            listOrganizationsVC.hwsList = fileService.hwsList
-//            listOrganizationsVC.courseraList = fileService.courseraList
-//            listOrganizationsVC.swiftOrgList = fileService.swiftOrgList
-//            listOrganizationsVC.purpleGiraffeList = fileService.purpleGiraffeList
-//            listOrganizationsVC.cwcList = fileService.cwcList
-//            listOrganizationsVC.codinGameList = fileService.codinGameList
-//            listOrganizationsVC.microsoftList = fileService.microsoftList
-//            listOrganizationsVC.raywenderlichList = fileService.raywenderlichList
-//            listOrganizationsVC.learnGitBranchingList = fileService.learnGitBranchingList
-//            listOrganizationsVC.openClassroomsList = fileService.openClassroomsList
-//            listOrganizationsVC.diversList = fileService.diversList
+        if segue.identifier == segueToListFormations {
+            guard let listFormationsVC = segue.destination as? ListFormationsViewController else { return }
+            listFormationsVC.cellule = self.cellSelected
+//            listFormationsVC.allFileList = self.allFileList
+            listFormationsVC.langagesList = self.langagesList
+            listFormationsVC.allFileDict = self.allFileDict
         }
     }
 }

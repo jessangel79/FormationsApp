@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A2E2DF224A37746008B3F9B /* ListOrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2DF124A37746008B3F9B /* ListOrganizationsViewController.swift */; };
+		3A1D0A8424AE544F0062E531 /* CountParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D0A8324AE544F0062E531 /* CountParameters.swift */; };
 		3A2E2DF524A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2DF424A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift */; };
 		3A2E2DF724A3845A008B3F9B /* Organizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E2DF624A3845A008B3F9B /* Organizations.swift */; };
 		3A32864E24A9E11A00D63AF9 /* Langages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32864D24A9E11A00D63AF9 /* Langages.swift */; };
-		3A32865024A9FE4B00D63AF9 /* CountParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32864F24A9FE4A00D63AF9 /* CountParameters.swift */; };
-		3A32865224AA5C2700D63AF9 /* KeyParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32865124AA5C2700D63AF9 /* KeyParameters.swift */; };
 		3A79970D24A239BF007FD4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79970C24A239BF007FD4A2 /* AppDelegate.swift */; };
 		3A79970F24A239BF007FD4A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */; };
 		3A79971124A239BF007FD4A2 /* ListLangagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79971024A239BF007FD4A2 /* ListLangagesViewController.swift */; };
@@ -37,8 +35,12 @@
 		3A7C929B24A4B2310095A7E3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C929A24A4B2310095A7E3 /* Array.swift */; };
 		3A7C929D24A4FBFE0095A7E3 /* UIViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */; };
 		3A812AE024A5FF45009E3B1F /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A812ADF24A5FF45009E3B1F /* FileService.swift */; };
-		3A812AE824A64F00009E3B1F /* ListFormationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A812AE724A64EFF009E3B1F /* ListFormationsViewController.swift */; };
-		3A812AE924A64F00009E3B1F /* ListFormationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A812AE724A64EFF009E3B1F /* ListFormationsViewController.swift */; };
+		3A812AE824A64F00009E3B1F /* DetailsFormationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A812AE724A64EFF009E3B1F /* DetailsFormationViewController.swift */; };
+		3A812AE924A64F00009E3B1F /* DetailsFormationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A812AE724A64EFF009E3B1F /* DetailsFormationViewController.swift */; };
+		3A9D1FB024AF63B400AFA310 /* ListFormationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D1FAF24AF63B400AFA310 /* ListFormationsViewController.swift */; };
+		3AD128B524B4BB9300990392 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD128B424B4BB9300990392 /* Date.swift */; };
+		3AD128B724B4D85700990392 /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD128B624B4D85700990392 /* WebsiteViewController.swift */; };
+		3AD128B924B4E6B400990392 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD128B824B4E6B400990392 /* String.swift */; };
 		B44F7685F5FBBD7C6B573325 /* Pods_FormationsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB0DD64C06FA6277A47B91A /* Pods_FormationsAppTests.framework */; };
 		E2F3BA21F8A5F052DDD9C8E9 /* Pods_FormationsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */; };
 /* End PBXBuildFile section */
@@ -56,12 +58,10 @@
 /* Begin PBXFileReference section */
 		03BE9464DAC97ED68344ACC0 /* Pods-FormationsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsApp.debug.xcconfig"; path = "Target Support Files/Pods-FormationsApp/Pods-FormationsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		1CB0DD64C06FA6277A47B91A /* Pods_FormationsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FormationsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A2E2DF124A37746008B3F9B /* ListOrganizationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrganizationsViewController.swift; sourceTree = "<group>"; };
+		3A1D0A8324AE544F0062E531 /* CountParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountParameters.swift; sourceTree = "<group>"; };
 		3A2E2DF424A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		3A2E2DF624A3845A008B3F9B /* Organizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organizations.swift; sourceTree = "<group>"; };
 		3A32864D24A9E11A00D63AF9 /* Langages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Langages.swift; sourceTree = "<group>"; };
-		3A32864F24A9FE4A00D63AF9 /* CountParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountParameters.swift; sourceTree = "<group>"; };
-		3A32865124AA5C2700D63AF9 /* KeyParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyParameters.swift; sourceTree = "<group>"; };
 		3A79970924A239BF007FD4A2 /* FormationsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormationsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A79970C24A239BF007FD4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +83,11 @@
 		3A7C929A24A4B2310095A7E3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Debug.swift"; sourceTree = "<group>"; };
 		3A812ADF24A5FF45009E3B1F /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
-		3A812AE724A64EFF009E3B1F /* ListFormationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormationsViewController.swift; sourceTree = "<group>"; };
+		3A812AE724A64EFF009E3B1F /* DetailsFormationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFormationViewController.swift; sourceTree = "<group>"; };
+		3A9D1FAF24AF63B400AFA310 /* ListFormationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormationsViewController.swift; sourceTree = "<group>"; };
+		3AD128B424B4BB9300990392 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		3AD128B624B4D85700990392 /* WebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
+		3AD128B824B4E6B400990392 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3AFB879E5DE34144BAF8C58C /* Pods-FormationsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54866DAF42163BBCB561E923 /* Pods-FormationsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.release.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FormationsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,8 @@
 				3A2E2DF424A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift */,
 				3A7C929A24A4B2310095A7E3 /* Array.swift */,
 				3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */,
+				3AD128B424B4BB9300990392 /* Date.swift */,
+				3AD128B824B4E6B400990392 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,8 +173,7 @@
 				3A2E2DF624A3845A008B3F9B /* Organizations.swift */,
 				3A812ADF24A5FF45009E3B1F /* FileService.swift */,
 				3A32864D24A9E11A00D63AF9 /* Langages.swift */,
-				3A32864F24A9FE4A00D63AF9 /* CountParameters.swift */,
-				3A32865124AA5C2700D63AF9 /* KeyParameters.swift */,
+				3A1D0A8324AE544F0062E531 /* CountParameters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,8 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				3A79971024A239BF007FD4A2 /* ListLangagesViewController.swift */,
-				3A2E2DF124A37746008B3F9B /* ListOrganizationsViewController.swift */,
-				3A812AE724A64EFF009E3B1F /* ListFormationsViewController.swift */,
+				3A9D1FAF24AF63B400AFA310 /* ListFormationsViewController.swift */,
+				3A812AE724A64EFF009E3B1F /* DetailsFormationViewController.swift */,
+				3AD128B624B4D85700990392 /* WebsiteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -456,21 +462,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2E2DF224A37746008B3F9B /* ListOrganizationsViewController.swift in Sources */,
+				3AD128B924B4E6B400990392 /* String.swift in Sources */,
 				3A79974424A24EB1007FD4A2 /* Constants.swift in Sources */,
 				3A79974A24A25DEE007FD4A2 /* LangagesString.swift in Sources */,
+				3A9D1FB024AF63B400AFA310 /* ListFormationsViewController.swift in Sources */,
 				3A32864E24A9E11A00D63AF9 /* Langages.swift in Sources */,
-				3A32865024A9FE4B00D63AF9 /* CountParameters.swift in Sources */,
+				3AD128B724B4D85700990392 /* WebsiteViewController.swift in Sources */,
 				3A2E2DF524A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift in Sources */,
 				3A2E2DF724A3845A008B3F9B /* Organizations.swift in Sources */,
+				3AD128B524B4BB9300990392 /* Date.swift in Sources */,
 				3A79974724A257F5007FD4A2 /* Columns.swift in Sources */,
 				3A79971124A239BF007FD4A2 /* ListLangagesViewController.swift in Sources */,
 				3A79973F24A247E3007FD4A2 /* ListLangagesTableViewCell.swift in Sources */,
 				3A7C929B24A4B2310095A7E3 /* Array.swift in Sources */,
-				3A32865224AA5C2700D63AF9 /* KeyParameters.swift in Sources */,
 				3A79970D24A239BF007FD4A2 /* AppDelegate.swift in Sources */,
-				3A812AE824A64F00009E3B1F /* ListFormationsViewController.swift in Sources */,
+				3A812AE824A64F00009E3B1F /* DetailsFormationViewController.swift in Sources */,
 				3A7C929D24A4FBFE0095A7E3 /* UIViewController+Debug.swift in Sources */,
+				3A1D0A8424AE544F0062E531 /* CountParameters.swift in Sources */,
 				3A812AE024A5FF45009E3B1F /* FileService.swift in Sources */,
 				3A79970F24A239BF007FD4A2 /* SceneDelegate.swift in Sources */,
 			);
@@ -480,7 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A812AE924A64F00009E3B1F /* ListFormationsViewController.swift in Sources */,
+				3A812AE924A64F00009E3B1F /* DetailsFormationViewController.swift in Sources */,
 				3A79972424A239C2007FD4A2 /* FormationsAppTests.swift in Sources */,
 				3A79974824A257F5007FD4A2 /* Columns.swift in Sources */,
 				3A79974024A247E3007FD4A2 /* ListLangagesTableViewCell.swift in Sources */,

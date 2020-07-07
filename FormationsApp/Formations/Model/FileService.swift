@@ -14,48 +14,29 @@ final class FileService {
     // MARK: - Vars
 
     private var columns = Columns()
-    var allList = [Langages]()
-    var allDict = [String: [Langages]]()
-    var langagesList = [String]()
-    var langagesDict = [String: [String]]() // dictionnary [Langages : [Organizations]]
-    var organizationsList = [String]() // 12 organizations
-    var organizationsDict = [String: [String]]() // dictionnary [Langages : [Organizations]]
+    var allFileList = [Langages]()
+    var allFileDict = [String: [Langages]]()
+
+    var rowsCount = Int()
+    var rowsCountSwift = Int()
+    var rowsCountSwiftUi = Int()
+    var rowsCountKotlin = Int()
+    var rowsCountHtmlCss = Int()
+    var rowsCountGit = Int()
+    var rowsCountEntrepreneuriat = Int()
+    var rowsCountCrossPlateform = Int()
+    var rowsCountOthers = Int()
 
     var formationsList = [String]()
     var websitesList = [String]()
     var statesList = [String]()
-    var langageNamesList = [String]() // 8 langages
+    var langagesList = [String]()
+    var organizationsList = [String]()
     var notesList = [String]()
     var detailsList = [String]()
-    
-    var formationsDict = [String: [String]]()
-    var websitesDict = [String: [String]]()
-    var statesDict = [String: [String]]()
-    var notesDict = [String: [String]]()
-    var detailsDict = [String: [String]]()
-    
-    var swiftList = [String]()
-    var swiftUiList = [String]()
-    var kotlinList = [String]()
-    var htmlCssList = [String]()
-    var crossPlateformList = [String]()
-    var gitList = [String]()
-    var entrepreneuriatList = [String]()
-    var othersList = [String]()
-    
-//    var udemyList = [String]()
-//    var hwsList = [String]()
-//    var courseraList = [String]()
-//    var swiftOrgList = [String]()
-//    var purpleGiraffeList = [String]()
-//    var cwcList = [String]()
-//    var codinGameList = [String]()
-//    var microsoftList = [String]()
-//    var raywenderlichList = [String]()
-//    var learnGitBranchingList = [String]()
-//    var openClassroomsList = [String]()
-//    var diversList = [String]()
-    
+    var startDatesList = [String]()
+    var endDatesList = [String]()
+
     // MARK: - Methods
     
     func parseFile(_ file: XLSXFile) throws {
@@ -65,40 +46,17 @@ final class FileService {
                     print("This worksheet has a name: \(worksheetName)")
                 }
                 let worksheet = try file.parseWorksheet(at: path)
-                setColumnsFile(file: file, worksheet: worksheet)
-                
                 let sharedStrings = try file.parseSharedStrings()
-                
-                let keyFormation = worksheet.data?.rows[0].cells[0].stringValue(sharedStrings) ?? ""
-                formationsDict = [keyFormation: []]
-                let keyWebsite = worksheet.data?.rows[0].cells[1].stringValue(sharedStrings) ?? ""
-                websitesDict = [keyWebsite: []]
-                let keyState = worksheet.data?.rows[0].cells[2].stringValue(sharedStrings) ?? ""
-                statesDict = [keyState: []]
-                let keyLangage = worksheet.data?.rows[0].cells[3].stringValue(sharedStrings) ?? ""
-                langagesDict = [keyLangage: []]
-                let keyOrganization = worksheet.data?.rows[0].cells[4].stringValue(sharedStrings) ?? ""
-                organizationsDict = [keyOrganization: []]
-                let keyNote = worksheet.data?.rows[0].cells[5].stringValue(sharedStrings) ?? ""
-                notesDict = [keyNote: []]
-                let keyDetail = worksheet.data?.rows[0].cells[6].stringValue(sharedStrings) ?? ""
-                detailsDict = [keyDetail: []]
-            
+                rowsCount = worksheet.data?.rows.count ?? 0
+                setColumnsFile(file: file, worksheet: worksheet)
+                setDateColumnsFile(file: file, worksheet: worksheet)
                 createLists(worksheet, sharedStrings)
-                setDictionnaries(KeyParameters(keyFormation: keyFormation, keyWebsite: keyWebsite,
-                                               keyState: keyState, keyLangage: keyLangage,
-                                               keyOrganization: keyOrganization, keyNote: keyNote,
-                                               keyDetail: keyDetail))
-                createAllList()
-                createArrayLangagesCount()
-                createOrganizationsDict()
-                allDict = ["allItems": allList]
-                
-                // debug
-//                try debugWorksheetRowsAndColumns(file, worksheet)
-                debugLangagesList()
-//                debugLists()
-//                debugDicts()
+//                removeTitleColums()
+                createAllFileList()
+                getCountListLangages()
+                createAllFiledict()
+                debugLists()
+                debugCountLangage()
             }
         }
     }
@@ -133,420 +91,175 @@ final class FileService {
         }
     }
     
+    private func setDateColumnsFile(file: XLSXFile, worksheet: Worksheet) {
+        guard let columnHDates = Constants.columnHDates else { return }
+        columns.columnHDates = worksheet.cells(atColumns: [columnHDates])
+            .compactMap { $0.dateValue }
+    }
+}
+
+// MARK: - Extension to create lists and dictionnaries
+
+extension FileService {
+
+    /// create lists of items
     fileprivate func createLists(_ worksheet: Worksheet, _ sharedStrings: SharedStrings) {
         for row in worksheet.data?.rows ?? [] {
             formationsList.append(row.cells[0].stringValue(sharedStrings) ?? "")
             websitesList.append(row.cells[1].stringValue(sharedStrings) ?? "")
-            statesList.append(row.cells[2].stringValue(sharedStrings) ?? "")
+            statesList.append(row.cells[2].stringValue(sharedStrings) ?? "A faire")
             langagesList.append(row.cells[3].stringValue(sharedStrings) ?? "")
             organizationsList.append(row.cells[4].stringValue(sharedStrings) ?? "")
             notesList.append(row.cells[5].stringValue(sharedStrings) ?? "")
             detailsList.append(row.cells[6].stringValue(sharedStrings) ?? "")
+            let startDate = row.cells[7].dateValue?.toString() ?? ""
+            startDatesList.append(startDate)
+            let endDate = row.cells[8].dateValue?.toString() ?? ""
+            endDatesList.append(endDate)
         }
     }
     
-    fileprivate func createAllList() {
-        allList = [Langages(formations: formationsList,
-                            webSites: websitesList,
-                            states: statesList,
-                            langageNames: langagesList,
-                            organizations: organizationsList,
-                            notes: notesList,
-                            details: detailsList)]
+    fileprivate func removeTitleColums() {
+        formationsList.removeFirst()
+        websitesList.removeFirst()
+        statesList.removeFirst()
+        langagesList.removeFirst()
+        organizationsList.removeFirst()
+        notesList.removeFirst()
+        detailsList.removeFirst()
+        startDatesList.removeFirst()
+        endDatesList.removeFirst()
     }
     
-    fileprivate func createLangagesList(countParameters: CountParameters) {
-        createSwiftList(countParameters.countSwift)
-        createSwiftUiList(countParameters.countSwift, countParameters.countSwiftUi)
-        createKotlinList(countParameters.countSwift, countParameters.countSwiftUi, countParameters.countKotlin)
-        createHtmlCssList(countParameters.countSwift, countParameters.countSwiftUi, countParameters.countKotlin, countParameters.countHtmlCss)
-        createGitList(countParameters.countSwift, countParameters.countSwiftUi, countParameters.countKotlin, countParameters.countHtmlCss, countParameters.countGit)
-        createEntrepreneuriatList(countParameters.countSwift, countParameters.countSwiftUi,
-                                  countParameters.countKotlin, countParameters.countHtmlCss,
-                                  countParameters.countGit, countParameters.countEntrepreneuriat)
-        createCrossPlateformList(countParameters.countSwift, countParameters.countSwiftUi,
-                                 countParameters.countKotlin, countParameters.countHtmlCss,
-                                 countParameters.countGit, countParameters.countEntrepreneuriat,
-                                 countParameters.countCrossPlateform)
-        createOthersList(countParameters: countParameters)
-//        createOthersList(countParameters.countSwift, countParameters.countSwiftUi,
-//                         countParameters.countKotlin, countParameters.countHtmlCss,
-//                         countParameters.countGit, countParameters.countEntrepreneuriat,
-//                         countParameters.countCrossPlateform, countParameters.countOthers)
+    /// create a list with struct langages and all lists of items
+    fileprivate func createAllFileList() {
+        removeTitleColums()
+        for index in 0...rowsCount - 2 { // - 2
+            allFileList.append(Langages(formation: formationsList[index],
+                                    webSite: websitesList[index],
+                                    state: statesList[index],
+                                    langageName: langagesList[index],
+                                    organization: organizationsList[index],
+                                    note: notesList[index],
+                                    detail: detailsList[index],
+                                    startDate: startDatesList[index],
+                                    endDate: endDatesList[index]))
+        }
     }
     
-//    fileprivate func createLangagesList(_ countSwift: [String], _ countSwiftUi: [String], _ countKotlin: [String], _ countHtmlCss: [String], _ countGit: [String], _ countEntrepreneuriat: [String], _ countCrossPlateform: [String], _ countOthers: [String]) {
-//        createSwiftList(countSwift)
-//        createSwiftUiList(countSwift, countSwiftUi)
-//        createKotlinList(countSwift, countSwiftUi, countKotlin)
-//        createHtmlCssList(countSwift, countSwiftUi, countKotlin, countHtmlCss)
-//        createGitList(countSwift, countSwiftUi, countKotlin, countHtmlCss, countGit)
-//        createEntrepreneuriatList(countSwift, countSwiftUi, countKotlin, countHtmlCss, countGit, countEntrepreneuriat)
-//        createCrossPlateformList(countSwift, countSwiftUi, countKotlin, countHtmlCss, countGit, countEntrepreneuriat, countCrossPlateform)
-//        createOthersList(countSwift, countSwiftUi, countKotlin, countHtmlCss, countGit, countEntrepreneuriat, countCrossPlateform, countOthers)
-//    }
-    
-//    fileprivate func createArrayLangagesCount(_ countParamaters: inout CountParameters) {
-//         for langage in langagesList {
-//             switch langage {
-//             case Constants.Swift:
-//                countParamaters.countSwift.append(langage)
-//             case Constants.SwiftUi:
-//                countParamaters.countSwiftUi.append(langage)
-//             case Constants.Kotlin:
-//                countParamaters.countKotlin.append(langage)
-//             case Constants.HtmlCss:
-//                countParamaters.countHtmlCss.append(langage)
-//             case Constants.Git:
-//                countParamaters.countGit.append(langage)
-//             case Constants.Entrepreneuriat:
-//                countParamaters.countEntrepreneuriat.append(langage)
-//             case Constants.CrossPlateform:
-//                countParamaters.countCrossPlateform.append(langage)
-//             default:
-//                countParamaters.countOthers.append(langage)
-//             }
-//         }
-//     }
-    
-    fileprivate func createArrayLangagesCount() {
-        var countSwift = [String]()
-        var countSwiftUi = [String]()
-        var countKotlin = [String]()
-        var countHtmlCss = [String]()
-        var countGit = [String]()
-        var countEntrepreneuriat = [String]()
-        var countCrossPlateform = [String]()
-        var countOthers = [String]()
+    fileprivate func getCountLangage(langage: String) {
+        var array = [String]()
         for langage in langagesList {
             switch langage {
             case Constants.Swift:
-                countSwift.append(langage)
+                array.append(langage)
+                rowsCountSwift = array.count
             case Constants.SwiftUi:
-                countSwiftUi.append(langage)
+                array.append(langage)
+                rowsCountSwiftUi = array.count
             case Constants.Kotlin:
-                countKotlin.append(langage)
+                array.append(langage)
+                rowsCountKotlin = array.count
             case Constants.HtmlCss:
-                countHtmlCss.append(langage)
+                array.append(langage)
+                rowsCountHtmlCss = array.count
             case Constants.Git:
-                countGit.append(langage)
+                array.append(langage)
+                rowsCountGit = array.count
             case Constants.Entrepreneuriat:
-                countEntrepreneuriat.append(langage)
+                array.append(langage)
+                rowsCountEntrepreneuriat = array.count
             case Constants.CrossPlateform:
-                countCrossPlateform.append(langage)
+                array.append(langage)
+                rowsCountCrossPlateform = array.count
             default:
-                countOthers.append(langage)
+                array.append(langage)
+                rowsCountOthers = array.count
             }
         }
-        createLangagesList(countParameters: CountParameters(countSwift: countSwift, countSwiftUi: countSwiftUi,
-                                                            countKotlin: countKotlin, countHtmlCss: countHtmlCss,
-                                                            countGit: countGit, countEntrepreneuriat: countEntrepreneuriat,
-                                                            countCrossPlateform: countCrossPlateform,
-                                                            countOthers: countOthers))
-        
-        debugListCount(countSwift, countSwiftUi, countKotlin, countHtmlCss, countGit, countEntrepreneuriat, countCrossPlateform, countOthers)
     }
     
-    // ok
-//    fileprivate func createArrayLangagesCount(_ countSwift: inout [String], _ countSwiftUi: inout [String], _ countKotlin: inout [String], _ countHtmlCss: inout [String], _ countGit: inout [String], _ countEntrepreneuriat: inout [String], _ countCrossPlateform: inout [String], _ countOthers: inout [String]) {
-//        for langage in langagesList {
-//            switch langage {
-//            case Constants.Swift:
-//                countSwift.append(langage)
-//            case Constants.SwiftUi:
-//                countSwiftUi.append(langage)
-//            case Constants.Kotlin:
-//                countKotlin.append(langage)
-//            case Constants.HtmlCss:
-//                countHtmlCss.append(langage)
-//            case Constants.Git:
-//                countGit.append(langage)
-//            case Constants.Entrepreneuriat:
-//                countEntrepreneuriat.append(langage)
-//            case Constants.CrossPlateform:
-//                countCrossPlateform.append(langage)
-//            default:
-//                countOthers.append(langage)
-//            }
-//        }
-//    }
+    fileprivate func getCountListLangages() {
+        getCountLangage(langage: Constants.Swift)
+        getCountLangage(langage: Constants.SwiftUi)
+        getCountLangage(langage: Constants.Kotlin)
+        getCountLangage(langage: Constants.HtmlCss)
+        getCountLangage(langage: Constants.Git)
+        getCountLangage(langage: Constants.Entrepreneuriat)
+        getCountLangage(langage: Constants.CrossPlateform)
+        getCountLangage(langage: Constants.Others)
+    }
     
-    fileprivate func createSwiftList(_ countSwift: [String]) {
-        for index in 1...countSwift.count {
-            swiftList.append(columns.columnEStrings[index])
+    fileprivate func returnArray(min: Int, max: Int) -> [Langages] {
+        var array = [Langages]()
+        for index in min...max {
+            array.append(allFileList[index])
         }
+        return array
     }
-    
-    fileprivate func createSwiftUiList(_ countSwift: [String], _ countSwiftUi: [String]) {
-        for index in (countSwift.count + 1)...(countSwift.count + countSwiftUi.count) {
-            swiftUiList.append(columns.columnEStrings[index])
-        }
-    }
-    
-    fileprivate func createKotlinList(_ countSwift: [String], _ countSwiftUi: [String], _ countKotlin: [String]) {
-        for index in (countSwift.count + countSwiftUi.count + 1)...(countSwift.count + countSwiftUi.count + countKotlin.count) {
-            kotlinList.append(columns.columnEStrings[index])
-        }
-    }
-    
-    fileprivate func createHtmlCssList(_ countSwift: [String], _ countSwiftUi: [String], _ countKotlin: [String], _ countHtmlCss: [String]) {
-        for index in (countSwift.count + countSwiftUi.count + countKotlin.count + 1)...(countSwift.count + countSwiftUi.count + countKotlin.count + countHtmlCss.count) {
-            htmlCssList.append(columns.columnEStrings[index])
-        }
-    }
-    
-    fileprivate func createGitList(_ countSwift: [String], _ countSwiftUi: [String], _ countKotlin: [String], _ countHtmlCss: [String], _ countGit: [String]) {
-        for index in (countSwift.count + countSwiftUi.count +
-            countKotlin.count + countHtmlCss.count + 1)...(countSwift.count + countSwiftUi.count +
-                countKotlin.count + countHtmlCss.count + countGit.count) {
-                    gitList.append(columns.columnEStrings[index])
-        }
-    }
-    
-    fileprivate func createEntrepreneuriatList(_ countSwift: [String], _ countSwiftUi: [String], _ countKotlin: [String], _ countHtmlCss: [String], _ countGit: [String], _ countEntrepreneuriat: [String]) {
-        for index in (
-            countSwift.count + countSwiftUi.count + countKotlin.count + countHtmlCss.count + countGit.count + 1
-            )...(
-                countSwift.count + countSwiftUi.count + countKotlin.count + countHtmlCss.count + countGit.count + countEntrepreneuriat.count
-            ) {
-                entrepreneuriatList.append(columns.columnEStrings[index])
-        }
-    }
-    
-    fileprivate func createCrossPlateformList(_ countSwift: [String], _ countSwiftUi: [String], _ countKotlin: [String], _ countHtmlCss: [String], _ countGit: [String], _ countEntrepreneuriat: [String], _ countCrossPlateform: [String]) {
-        for index in (
-            countSwift.count + countSwiftUi.count + countKotlin.count + countHtmlCss.count + countGit.count + countEntrepreneuriat.count + 1
-            )...(
-                countSwift.count + countSwiftUi.count + countKotlin.count + countHtmlCss.count + countGit.count + countEntrepreneuriat.count + countCrossPlateform.count
-            ) {
-                crossPlateformList.append(columns.columnEStrings[index])
-        }
-    }
-    
-    fileprivate func createOthersList(countParameters: CountParameters) {
-        for index in (
-            countParameters.countSwift.count + countParameters.countSwiftUi.count +
-                countParameters.countKotlin.count + countParameters.countHtmlCss.count +
-                countParameters.countGit.count + countParameters.countEntrepreneuriat.count +
-                countParameters.countCrossPlateform.count + 1
-            )...(
-                countParameters.countSwift.count + countParameters.countSwiftUi.count +
-                    countParameters.countKotlin.count + countParameters.countHtmlCss.count +
-                    countParameters.countGit.count + countParameters.countEntrepreneuriat.count +
-                    countParameters.countCrossPlateform.count + countParameters.countOthers.count
-            ) {
-                othersList.append(columns.columnEStrings[index])
-        }
-    }
-    
-//    fileprivate func createOthersList(_ countSwift: [String], _ countSwiftUi: [String], _ countKotlin: [String], _ countHtmlCss: [String], _ countGit: [String], _ countEntrepreneuriat: [String], _ countCrossPlateform: [String], _ countOthers: [String]) {
-//        for index in (
-//            countSwift.count + countSwiftUi.count + countKotlin.count + countHtmlCss.count + countGit.count + countEntrepreneuriat.count + countCrossPlateform.count + 1
-//            )...(
-//                countSwift.count + countSwiftUi.count + countKotlin.count + countHtmlCss.count + countGit.count + countEntrepreneuriat.count + countCrossPlateform.count + countOthers.count
-//            ) {
-//                othersList.append(columns.columnEStrings[index])
-//        }
-//    }
-    
-    fileprivate func setDictionnaries(_ keyParameters: KeyParameters) {
-        formationsList.removeFirst()
-        formationsDict = [keyParameters.keyFormation: formationsList]
-        websitesList.removeFirst()
-        websitesDict = [keyParameters.keyWebsite: websitesList]
-        statesList.removeFirst()
-        statesDict = [keyParameters.keyState: statesList]
-        langagesList.removeFirst()
-        langagesDict = [keyParameters.keyLangage: langagesList]
-        organizationsList.removeFirst()
-        organizationsDict = [keyParameters.keyOrganization: organizationsList]
-        notesList.removeFirst()
-        notesDict = [keyParameters.keyNote: notesList]
-        detailsList.removeFirst()
-        detailsDict = [keyParameters.keyDetail: detailsList]
-    }
-    
-//    fileprivate func setDictionnaries(_ keyFormation: String, _ keyWebsite: String, _ keyState: String, _ keyLangage: String, _ keyOrganization: String, _ keyNote: String, _ keyDetail: String) {
-//        formationsList.removeFirst()
-//        formationsDict = [keyFormation: formationsList]
-//        websitesList.removeFirst()
-//        websitesDict = [keyWebsite: websitesList]
-//        statesList.removeFirst()
-//        statesDict = [keyState: statesList]
-//        langagesList.removeFirst()
-//        langagesDict = [keyLangage: langagesList]
-//        organizationsList.removeFirst()
-//        organizationsDict = [keyOrganization: organizationsList]
-//        notesList.removeFirst()
-//        notesDict = [keyNote: notesList]
-//        detailsList.removeFirst()
-//        detailsDict = [keyDetail: detailsList]
-//    }
-    
-    fileprivate func createOrganizationsDict() {
-        organizationsDict = [
-            Constants.Swift: swiftList.removingDuplicates(),
-            Constants.SwiftUi: swiftUiList.removingDuplicates(),
-            Constants.Kotlin: kotlinList.removingDuplicates(),
-            Constants.HtmlCss: htmlCssList.removingDuplicates(),
-            Constants.Git: gitList.removingDuplicates(),
-            Constants.Entrepreneuriat: entrepreneuriatList.removingDuplicates(),
-            Constants.CrossPlateform: crossPlateformList.removingDuplicates(),
-            Constants.Others: othersList.removingDuplicates()
+
+    fileprivate func createAllFiledict() {
+        let arraySwift = returnArray(min: 0, max: rowsCountSwift-1)
+        let arraySwiftUi = returnArray(min: rowsCountSwift, max: rowsCountSwiftUi-1)
+        let arrayKotlin = returnArray(min: rowsCountSwiftUi, max: rowsCountKotlin-1)
+        let arrayHtmlCss = returnArray(min: rowsCountKotlin, max: rowsCountHtmlCss-1)
+        let arrayGit = returnArray(min: rowsCountHtmlCss, max: rowsCountGit-1)
+        let arrayEntrepreneuriat = returnArray(min: rowsCountGit, max: rowsCountEntrepreneuriat-1)
+        let arrayCrossPlateform = returnArray(min: rowsCountEntrepreneuriat, max: rowsCountCrossPlateform-1)
+        let arrayOthers = returnArray(min: rowsCountCrossPlateform, max: rowsCountOthers-1)
+        allFileDict = [
+            Constants.Swift: arraySwift, Constants.SwiftUi: arraySwiftUi,
+            Constants.Kotlin: arrayKotlin, Constants.HtmlCss: arrayHtmlCss,
+            Constants.Git: arrayGit, Constants.Entrepreneuriat: arrayEntrepreneuriat,
+            Constants.CrossPlateform: arrayCrossPlateform, Constants.Others: arrayOthers
         ]
     }
-    
-//    func createListsOrganizations() {
-//        for index in 1...32 {
-//            organizationsList.append(columns.columnEStrings[index])
-//        }
-//        // Swift
-//        for index in 1...5 {
-//            udemyList.append(columns.columnAStrings[index])
-//        }
-//        //SwiftUI
-//        udemyList.append(columns.columnAStrings[21])
-//        // Kotlin
-//        udemyList.append(columns.columnAStrings[24])
-//        // HTML-CSS
-//        udemyList.append(columns.columnAStrings[27])
-//
-//        // Swift
-//        for index in 6...7 {
-//            hwsList.append(columns.columnAStrings[index])
-//        }
-//        // SwiftUI
-//        for index in 22...23 {
-//            hwsList.append(columns.columnAStrings[index])
-//        }
-//
-//        // Swift
-//        for index in 8...10 {
-//            courseraList.append(columns.columnAStrings[index])
-//        }
-//        // Entrepreneuriat
-//        courseraList.append(columns.columnAStrings[30])
-//
-//        // Swift
-//        swiftOrgList.append(columns.columnAStrings[11])
-//
-//        // Swift
-//        for index in 12...16 {
-//            purpleGiraffeList.append(columns.columnAStrings[index])
-//        }
-//        // Kotlin
-//        for index in 25...26 {
-//            purpleGiraffeList.append(columns.columnAStrings[index])
-//        }
-//        // Cross-Plateform
-//        purpleGiraffeList.append(columns.columnAStrings[31])
-//
-//        // Swift
-//        cwcList.append(columns.columnAStrings[17])
-//        codinGameList.append(columns.columnAStrings[18])
-//        microsoftList.append(columns.columnAStrings[19])
-//        raywenderlichList.append(columns.columnAStrings[20])
-//
-//        // Git
-//        learnGitBranchingList.append(columns.columnAStrings[28])
-//        // Entrepreneuriat
-//        openClassroomsList.append(columns.columnAStrings[30])
-//        // Others
-//        diversList.append(columns.columnAStrings[32])
-//    }
-    
-//    func setOrganizationsDict() {
-//        organizationsDict = [
-//            Constants.Udemy: udemyList,
-//            Constants.Hws: hwsList,
-//            Constants.Coursera: courseraList,
-//            Constants.SwiftOrg: swiftOrgList,
-//            Constants.PurpleGiraffe: purpleGiraffeList,
-//            Constants.Cwc: cwcList,
-//            Constants.CodinGame: codinGameList,
-//            Constants.Microsoft: microsoftList,
-//            Constants.Raywenderlich: raywenderlichList,
-//            Constants.LearnGitBranching: learnGitBranchingList,
-//            Constants.OpenClassrooms: openClassroomsList,
-//            Constants.Divers: diversList
-//        ]
-//    }
-    
-    /// function to debug dictionnaries
-    fileprivate func debugDicts() {
-        print(formationsDict)
-        print(websitesDict)
-        print(statesDict)
-        print(langagesDict)
-        print(organizationsDict)
-        print(notesDict)
-        print(detailsDict)
-    }
+}
+
+// MARK: - Extension to debug lists and dictionnaries
+
+extension FileService {
     
     /// function to debug list
     fileprivate func debugLists() {
-        print(formationsList)
-        print(websitesList)
-        print(statesList)
-        print(langageNamesList)
-        print(organizationsList)
-        print(notesList)
-        print(detailsList)
+        print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
+        print("rowsCountSwift : \(rowsCountSwift)")
+        print("rowsCountSwiftUi : \(rowsCountSwiftUi)")
+        print("rowsCountKotlin : \(rowsCountKotlin)")
+        print("rowsCountHtmlCss : \(rowsCountHtmlCss)")
+        print("rowsCountGit : \(rowsCountGit)")
+        print("rowsCountCrossPlateform : \(rowsCountCrossPlateform)")
+        print("rowsCountEntrepreneuriat : \(rowsCountEntrepreneuriat)")
+        print("rowsCountOthers : \(rowsCountOthers)")
+
+        print("allFileList : \(allFileList)")
+        print("allFileDict : \(allFileDict)")
+        print("formationsList : \(formationsList)")
+        print("formationsList COUNT : \(formationsList.count)")
+
+        print("websitesList : \(websitesList)")
+        print("statesList : \(statesList)")
+        print("langagesList : \(langagesList)")
+        print("organizationsList : \(organizationsList)")
+        print("notesList : \(notesList)")
+        print("detailsList : \(detailsList)")
+        print("allFileList count : \(allFileList.count)")
+        print("startDatesList : \(startDatesList)")
+        print("endDatesList : \(endDatesList)")
+        print("startDatesList COUNT : \(startDatesList.count)")
+        print("endDatesList COUNT : \(endDatesList.count)")
     }
     
-    /// function to debug langagesList
-    fileprivate func debugLangagesList() {
-        print("swiftList : \(swiftList)")
-        print("swiftUiList : \(swiftUiList)")
-        print("kotlinList : \(kotlinList)")
-        print("htmlCssList : \(htmlCssList)")
-        print("gitList : \(gitList)")
-        print("entrepreneuriatList : \(entrepreneuriatList)")
-        print("crossPlateformList : \(crossPlateformList)")
-        print("othersList : \(othersList)")
+    fileprivate func debugCountLangage() {
+        print("rowsCountSwift : \(rowsCountSwift)")
+        print("rowsCountSwiftUi : \(rowsCountSwiftUi)")
+        print("rowsCountKotlin : \(rowsCountKotlin)")
+        print("rowsCountHtmlCss : \(rowsCountHtmlCss)")
+        print("rowsCountGit : \(rowsCountGit)")
+        print("rowsCountEntrepreneuriat : \(rowsCountEntrepreneuriat)")
+        print("rowsCountCrossPlateform : \(rowsCountCrossPlateform)")
+        print("rowsCountOthers : \(rowsCountOthers)")
     }
-    
-    fileprivate func debugListCount(_ countSwift: [String], _ countSwiftUi: [String], _ countKotlin: [String], _ countHtmlCss: [String], _ countGit: [String], _ countEntrepreneuriat: [String], _ countCrossPlateform: [String], _ countOthers: [String]) {
-        print(countSwift.count)
-        print(countSwiftUi.count)
-        print(countKotlin.count)
-        print(countHtmlCss.count)
-        print(countGit.count)
-        print(countEntrepreneuriat.count)
-        print(countCrossPlateform.count)
-        print(countOthers.count)
-    }
-    
-    /// function to debug the list
-//    func debugCreateList() {
-//        print("allDict : \(allDict)")
-//        print("allList : \(allList)")
-//        print("swiftList : \(swiftList)")
-//        print("swiftUiList : \(swiftUiList)")
-//        print("kotlinList : \(kotlinList)")
-//        print("htmlCssList : \(htmlCssList)")
-//        print("gitList : \(gitList)")
-//        print("entrepreneuriatList : \(entrepreneuriatList)")
-//        print("crossPlateformList : \(crossPlateformList)")
-//        print("othersList : \(othersList)")
-//
-//        print("organizationsDict : \(organizationsDict) \(organizationsDict.count)")
-//        print("organizationsList : \(organizationsList.removingDuplicates()) \(organizationsList.removingDuplicates().count)")
-//        print("udemyList : \(udemyList) \(udemyList.count)")
-//        print("hwsList : \(hwsList) \(hwsList.count)")
-//        print("courseraList : \(courseraList) \(courseraList.count)")
-//        print("swiftOrgList : \(swiftOrgList) \(swiftOrgList.count)")
-//        print("purpleGiraffeList : \(purpleGiraffeList) \(purpleGiraffeList.count)")
-//        print("cwcList : \(cwcList) \(cwcList.count)")
-//        print("codinGameList : \(codinGameList) \(codinGameList.count)")
-//        print("microsoftList : \(microsoftList) \(microsoftList.count)")
-//        print("raywenderlichList : \(raywenderlichList) \(raywenderlichList.count)")
-//        print("learnGitBranchingList : \(learnGitBranchingList) \(learnGitBranchingList.count)")
-//        print("openClassroomsList : \(openClassroomsList) \(openClassroomsList.count)")
-//        print("diversList : \(diversList) \(diversList.count)")
-////        print("columns.columnAStrings : \(columns.columnAStrings)")
-//
-//    }
     
     /// debug rows and cell of worksheet
     private func debugWorksheetRowsAndColumns(_ file: XLSXFile, _ worksheet: Worksheet) throws {
@@ -558,6 +271,8 @@ final class FileService {
         print("worksheet.data?.rows[0] : \(String(describing: worksheet.data?.rows[0]))")
         print("worksheet.data?.rows[1] : \(String(describing: worksheet.data?.rows[1]))")
         print("worksheet.data?.rows[2] : \(String(describing: worksheet.data?.rows[2]))")
+        print("allFileList[0].formations : \(allFileList[0].formation)")
+        print("allFileList[0] : \(allFileList[0])")
         for row in worksheet.data?.rows ?? [] {
             for item in row.cells { // where row.reference == 7
                     print("row.cells.description => item.stringValue(sharedStrings) : \(String(describing: item.stringValue(sharedStrings)))")
@@ -595,30 +310,7 @@ final class FileService {
                      }
                 }
                 index += 1
-//                if item.stringValue(sharedStrings) == "Udemy" {
-//                    print("Udemy : \(item.stringValue(sharedStrings))")
-//                } else if item.stringValue(sharedStrings) == "Coursera" {
-//                    print("Coursera : \(item.stringValue(sharedStrings))")
-//                }
-                
-//                let sharedStrings = try file.parseSharedStrings()
-//                for row in worksheet.data?.rows ?? [] {
-//                    for item in row.cells where row.cells.description == "A1" {
-//                            print("row.cells.description => item.stringValue(sharedStrings) : \(String(describing: item.stringValue(sharedStrings)))")
-//                            print("item : \(item)")
-//                            print("item.stringValue(sharedStrings) : \(String(describing: item.stringValue(sharedStrings)))")
-//                    }
-//                }
-//
-//                allList.append(worksheet.data?.rows[1].cells[0].stringValue(sharedStrings) ?? "nil")
-//                print("worksheet.data?.rows[0].cells[0].stringValue(sharedStrings) : \(worksheet.data?.rows[1].cells[0].stringValue(sharedStrings) ?? "error")")
-//                print("worksheet.data?.rows[0].cells[1].stringValue(sharedStrings) : \(worksheet.data?.rows[1].cells[1].stringValue(sharedStrings) ?? "error")")
-//                print("worksheet.data?.rows[0].cells[2].stringValue(sharedStrings) : \(worksheet.data?.rows[1].cells[2].stringValue(sharedStrings) ?? "error")")
-//                print("worksheet.data?.rows[0].cells[3].stringValue(sharedStrings) : \(worksheet.data?.rows[1].cells[3].stringValue(sharedStrings) ?? "error")")
-
             }
         }
-
-//        print("columns.columnAStrings : \(columns.columnAStrings)")
     }
 }

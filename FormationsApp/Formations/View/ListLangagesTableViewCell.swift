@@ -34,19 +34,11 @@ final class ListLangagesTableViewCell: UITableViewCell {
         }
     }
     
-    var organization: String? {
+    var formation: Langages? { // String
         didSet {
-            nameLabel.text = organization
-            loadImageOrganizations(Organizations(rawValue: organization ?? "") ?? Organizations.divers)
-            print("organization in cell : \(organization ?? "error organization")")
-        }
-    }
-    
-    var formation: String? {
-        didSet {
-            nameLabel.text = formation
-//            loadImageOrganizations(Organizations(rawValue: organization ?? "") ?? Organizations.divers)
-            print("formation in cell : \(formation ?? "error formation")")
+            nameLabel.text = formation?.formation
+            loadImageFormations(Organizations(rawValue: formation?.organization ?? "") ?? Organizations.divers)
+            print("formation in cell : \(String(describing: formation?.formation))")
         }
     }
     
@@ -57,29 +49,6 @@ final class ListLangagesTableViewCell: UITableViewCell {
     }
     
     // MARK: - Methods
-    
-//    func loadImageLangages(_ langagesFile: Langages) {
-//        logoImageView.image = UIImage(named: langage?.langageNames.first ?? "")
-        
-//        switch langagesFile {
-//        case .swift:
-//            logoImageView.image = UIImage(named: Constants.Swift.lowercased() + ".png")
-//        case .swiftUi:
-//            logoImageView.image = UIImage(named: Constants.SwiftUi.lowercased() + ".png")
-//        case .kotlin:
-//            logoImageView.image = UIImage(named: Constants.Kotlin.lowercased() + ".png")
-//        case .htmlCss:
-//            logoImageView.image = UIImage(named: Constants.HtmlCss.lowercased() + ".png")
-//        case .git:
-//            logoImageView.image = UIImage(named: Constants.Git.lowercased() + ".png")
-//        case .others:
-//            logoImageView.image = UIImage(named: Constants.Others.lowercased() + ".png")
-//        case .entrepreneuriat:
-//            logoImageView.image = UIImage(named: Constants.Entrepreneuriat.lowercased() + ".png")
-//        case .crossPlateform:
-//            logoImageView.image = UIImage(named: Constants.CrossPlateform.lowercased() + ".png")
-//        }
-//    }
     
     func loadImageLangages(_ langagesFile: LangagesString) {
         switch langagesFile {
@@ -102,7 +71,7 @@ final class ListLangagesTableViewCell: UITableViewCell {
         }
     }
     
-    func loadImageOrganizations(_ organizationsFile: Organizations) {
+    func loadImageFormations(_ organizationsFile: Organizations) {
         switch organizationsFile {
         case .cwc:
             logoImageView.image = UIImage(named: Organizations.cwc.rawValue.lowercased() + ".png")

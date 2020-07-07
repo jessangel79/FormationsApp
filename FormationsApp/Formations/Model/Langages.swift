@@ -8,12 +8,16 @@
 
 import Foundation
 
+// MARK: - Langages
+
 struct Langages {
-    let formations: [String]
-    let webSites: [String]
-    let states: [String]?
-    let langageNames: [String]
-    let organizations: [String]
-    let notes: [String]?
-    let details: [String]?
+    let formation: String
+    let webSite: String
+    let state: String?
+    let langageName: String
+    let organization: String
+    let note: String?
+    let detail: String?
+    let startDate: String?
+    let endDate: String?
 }

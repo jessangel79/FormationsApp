@@ -19,4 +19,7 @@ struct Columns {
     var columnEStrings = [String]()
     var columnFStrings = [String]()
     var columnGStrings = [String]()
+    var columnHDates = [Date]()
+    var columnIDates = [Date]()
+
 }
