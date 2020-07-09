@@ -12,6 +12,7 @@ import WebKit
 final class DetailsFormationViewController: UIViewController {
     
     // MARK: - Outlets
+    
     @IBOutlet weak var logoOrgImageView: UIImageView!
     @IBOutlet weak var organizationLabel: UILabel!
     @IBOutlet weak var logoLangageImageview: UIImageView!
@@ -23,12 +24,7 @@ final class DetailsFormationViewController: UIViewController {
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var detailsTextView: UITextView!
     @IBOutlet weak var websiteButton: UIButton!
-    
-    // MARK: - Actions
-    @IBAction func websiteButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: self.segueToWebsite, sender: self)
-    }
-    
+
     // MARK: - Properties
     
     var cellule: Langages?
@@ -37,6 +33,12 @@ final class DetailsFormationViewController: UIViewController {
     var formationsList = [String]()
     var allFileDict = [String: [Langages]]()
     private let segueToWebsite = Constants.SegueToWebsite
+    
+    // MARK: - Actions
+    
+    @IBAction func websiteButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: self.segueToWebsite, sender: self)
+    }
     
     // MARK: - View Life Cycle
 
@@ -58,12 +60,24 @@ final class DetailsFormationViewController: UIViewController {
         nameFormationLabel.text = cellule?.formation
         startDateLabel.text = cellule?.startDate
         endDateLabel.text = cellule?.endDate
+        setColorState(state: cellule?.state)
         stateLabel.text = cellule?.state
         notesTextView.text = cellule?.note
         detailsTextView.text = cellule?.detail
         loadImageFormations(Organizations(rawValue: cellule?.organization ?? "") ?? Organizations.divers)
         loadImageLangages(LangagesString(rawValue: cellule?.langageName ?? "") ?? LangagesString.others)
-
+    }
+    
+    private func setColorState(state: String?) {
+        let stateTemp: States = States(rawValue: state ?? "A faire") ?? .toDo
+        switch stateTemp {
+        case .toDo:
+            stateLabel.textColor = .blue
+        case .inProgress:
+            stateLabel.textColor = .red
+        default:
+            stateLabel.textColor = #colorLiteral(red: 0, green: 0.5628422499, blue: 0.3188166618, alpha: 1)
+        }
     }
     
     private func loadImageFormations(_ organizationsFile: Organizations) {

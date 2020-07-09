@@ -1,20 +1,19 @@
 //
-//  WebsiteViewController.swift
+//  WebsiteSkillViewController.swift
 //  FormationsApp
 //
-//  Created by Angelique Babin on 07/07/2020.
+//  Created by Angelique Babin on 09/07/2020.
 //  Copyright © 2020 Angelique Babin. All rights reserved.
 //
 
 import UIKit
 import WebKit
 
-final class WebsiteViewController: UIViewController, WKUIDelegate {
+class WebsiteSkillViewController: UIViewController, WKUIDelegate {
     
     // MARK: - Properties
     
-    var cellule: Langages?
-    var allFileDict = [String: [Langages]]()
+    var cellule: Skills?
 
     private lazy var webView: WKWebView = {
         let webConfiguration = WKWebViewConfiguration()
@@ -82,7 +81,7 @@ final class WebsiteViewController: UIViewController, WKUIDelegate {
     }
 
     private func loadWebsite() {
-        guard let url = URL(string: cellule?.webSite ?? "") else { return }
+        guard let url = URL(string: cellule?.link ?? "") else { return }
         print(url)
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true

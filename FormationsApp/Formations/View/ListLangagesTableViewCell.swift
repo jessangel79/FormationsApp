@@ -17,15 +17,6 @@ final class ListLangagesTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-//    var langage: Langages? {
-//        didSet {
-//            nameLabel.text = langage?.langageNames.first
-//            logoImageView.image = UIImage(named: langage?.langageNames.first ?? "") ///
-//            loadImageLangages(LangagesString(rawValue: langage ?? "") ?? LangagesString.others) ///
-//            print("langage in cell : \(langage?.langageNames.first ?? "error name langage")")
-//        }
-//    }
-//
     var langage: String? {
         didSet {
             nameLabel.text = langage
@@ -34,7 +25,7 @@ final class ListLangagesTableViewCell: UITableViewCell {
         }
     }
     
-    var formation: Langages? { // String
+    var formation: Langages? {
         didSet {
             nameLabel.text = formation?.formation
             loadImageFormations(Organizations(rawValue: formation?.organization ?? "") ?? Organizations.divers)

@@ -51,7 +51,6 @@ final class FileService {
                 setColumnsFile(file: file, worksheet: worksheet)
                 setDateColumnsFile(file: file, worksheet: worksheet)
                 createLists(worksheet, sharedStrings)
-//                removeTitleColums()
                 createAllFileList()
                 getCountListLangages()
                 createAllFiledict()

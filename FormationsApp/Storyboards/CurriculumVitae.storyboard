@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fdu-Ix-L3e">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List Curriculum Vitae View Controller-->
+        <scene sceneID="J1P-WN-AdR">
+            <objects>
+                <viewController id="WUl-Yo-VTg" userLabel="List Curriculum Vitae View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BUi-gp-w8x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwj-gp-5Jq">
+                                <rect key="frame" x="0.0" y="44" width="320" height="475"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WUl-Yo-VTg" id="Hyf-fd-2TM"/>
+                                    <outlet property="delegate" destination="WUl-Yo-VTg" id="XS9-yq-as2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hwj-gp-5Jq" firstAttribute="top" secondItem="21t-pF-atV" secondAttribute="top" id="JJu-ro-IZC"/>
+                            <constraint firstAttribute="bottom" secondItem="hwj-gp-5Jq" secondAttribute="bottom" constant="49" id="OtP-Qa-zjC"/>
+                            <constraint firstItem="hwj-gp-5Jq" firstAttribute="trailing" secondItem="21t-pF-atV" secondAttribute="trailing" id="dKc-Uw-f0L"/>
+                            <constraint firstItem="hwj-gp-5Jq" firstAttribute="leading" secondItem="21t-pF-atV" secondAttribute="leading" id="dgm-wI-4f2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="21t-pF-atV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Etudes" id="st6-lt-8KD">
+                        <barButtonItem key="backBarButtonItem" title="Langages" id="CMd-ze-vIs"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l4I-6S-htu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2261" y="30"/>
+        </scene>
+        <!--Curriculum Vitae-->
+        <scene sceneID="img-o6-wFq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fdu-Ix-L3e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Curriculum Vitae" image="businesswoman" id="faA-T6-Xby">
+                        <color key="badgeColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vpf-1v-8dp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WUl-Yo-VTg" kind="relationship" relationship="rootViewController" id="0vl-If-PpI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rps-28-VHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492.5" y="29.577464788732396"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="businesswoman" width="25" height="25"/>
+    </resources>
+</document>

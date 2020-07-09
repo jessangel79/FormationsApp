@@ -54,9 +54,16 @@ struct Constants {
     
     static let ListLangagesCell = "ListLangagesCell"
     static let ListLangagesTableViewCell = "ListLangagesTableViewCell"
-//    static let SegueToListOrganizations = "segueToListOrganizations"
     static let SegueToListFormations = "segueToListFormations"
     static let SegueToDetailsFormation = "segueToDetailsFormation"
-    //    static let SegueToLangagesList = "segueToLangagesList"
     static let SegueToWebsite = "segueToWebsite"
+    
+    static let ListSkillsCell = "ListSkillsCell"
+    static let ListSkillsTableViewCell = "ListSkillsTableViewCell"
+    static let SegueToDetailsSkill = "segueToDetailsSkill"
+    static let SegueToWebsiteSkill = "segueToWebsiteSkill"
+    
+    //    static let SegueToListOrganizations = "segueToListOrganizations"
+    //    static let SegueToLangagesList = "segueToLangagesList"
+
 }

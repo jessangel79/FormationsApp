@@ -21,5 +21,10 @@ struct Columns {
     var columnGStrings = [String]()
     var columnHDates = [Date]()
     var columnIDates = [Date]()
-
+    
+    var columnASkillsStr = [String]()
+    var columnBSkillsStr = [String]()
+    var columnCSkillsStr = [String]()
+    var columnDSkillsStr = [String]()
+    var columnESkillsStr = [String]()
 }

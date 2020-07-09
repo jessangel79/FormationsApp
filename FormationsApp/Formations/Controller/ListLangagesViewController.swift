@@ -19,11 +19,7 @@ final class ListLangagesViewController: UIViewController {
     
     private let fileService = FileService()
     private var cellSelected: String?
-    
-//    private var cellSelected: Langages?
     private let segueToListFormations = Constants.SegueToListFormations
-    
-//    private var allFileList = [Langages]()
     private var langagesList = [String]()
     private var allFileDict = [String: [Langages]]()
 
