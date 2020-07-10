@@ -65,29 +65,29 @@ final class ListLangagesTableViewCell: UITableViewCell {
     func loadImageFormations(_ organizationsFile: Organizations) {
         switch organizationsFile {
         case .cwc:
-            logoImageView.image = UIImage(named: Organizations.cwc.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.Cwc + ".png")
         case .codinGame:
-            logoImageView.image = UIImage(named: Organizations.codinGame.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.CodinGame + ".png")
         case .coursera:
-            logoImageView.image = UIImage(named: Organizations.coursera.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.Coursera + ".png")
         case .divers:
-            logoImageView.image = UIImage(named: Organizations.divers.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.Divers + ".png")
         case .hws:
-            logoImageView.image = UIImage(named: Organizations.hws.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.Hws + ".png")
         case .learnGitBranching:
-            logoImageView.image = UIImage(named: Organizations.learnGitBranching.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.LearnGitBranching + ".png")
         case .microsoft:
-            logoImageView.image = UIImage(named: Organizations.microsoft.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.Microsoft + ".png")
         case .openClassrooms:
-            logoImageView.image = UIImage(named: Organizations.openClassrooms.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.OpenClassrooms + ".png")
         case .purpleGiraffe:
-            logoImageView.image = UIImage(named: Organizations.purpleGiraffe.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.PurpleGiraffe + ".png")
         case .raywenderlich:
-            logoImageView.image = UIImage(named: Organizations.raywenderlich.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.Raywenderlich + ".png")
         case .swiftOrg:
-            logoImageView.image = UIImage(named: Organizations.swiftOrg.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.SwiftOrg + ".png")
         case .udemy:
-            logoImageView.image = UIImage(named: Organizations.udemy.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: Constants.Udemy + ".png")
         }
     }
     

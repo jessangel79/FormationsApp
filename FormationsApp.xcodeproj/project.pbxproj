@@ -20,6 +20,17 @@
 		3A32242424B63E0500949999 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32242324B63E0500949999 /* Skills.swift */; };
 		3A32242A24B6433300949999 /* FileSkillsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32242924B6433300949999 /* FileSkillsService.swift */; };
 		3A32864E24A9E11A00D63AF9 /* Langages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32864D24A9E11A00D63AF9 /* Langages.swift */; };
+		3A41ACCB24B879E8007DBE8C /* UIViewController+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACCA24B879E8007DBE8C /* UIViewController+CustomUI.swift */; };
+		3A41ACCD24B8A5DE007DBE8C /* FileFormationsService+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACCC24B8A5DE007DBE8C /* FileFormationsService+Debug.swift */; };
+		3A41ACCF24B8C7D7007DBE8C /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A41ACCE24B8C7D7007DBE8C /* Informations.storyboard */; };
+		3A41ACD224B8CADE007DBE8C /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACD124B8CADE007DBE8C /* InformationsViewController.swift */; };
+		3A41ACD724B8E134007DBE8C /* Studies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACD624B8E134007DBE8C /* Studies.swift */; };
+		3A41ACD924B8E166007DBE8C /* ListStudiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACD824B8E166007DBE8C /* ListStudiesViewController.swift */; };
+		3A41ACDC24B8E1CF007DBE8C /* ListStudiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACDA24B8E1CF007DBE8C /* ListStudiesTableViewCell.swift */; };
+		3A41ACDD24B8E1CF007DBE8C /* ListStudiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A41ACDB24B8E1CF007DBE8C /* ListStudiesTableViewCell.xib */; };
+		3A41ACDF24B8E258007DBE8C /* ConstantsSkills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACDE24B8E258007DBE8C /* ConstantsSkills.swift */; };
+		3A41ACE124B8E36E007DBE8C /* ConstantsStudies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACE024B8E36E007DBE8C /* ConstantsStudies.swift */; };
+		3A41ACE724B8E583007DBE8C /* FileStudiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACE624B8E583007DBE8C /* FileStudiesService.swift */; };
 		3A79970D24A239BF007FD4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79970C24A239BF007FD4A2 /* AppDelegate.swift */; };
 		3A79970F24A239BF007FD4A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */; };
 		3A79971124A239BF007FD4A2 /* ListLangagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79971024A239BF007FD4A2 /* ListLangagesViewController.swift */; };
@@ -41,7 +52,7 @@
 		3A79974B24A25DEE007FD4A2 /* LangagesString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79974924A25DEE007FD4A2 /* LangagesString.swift */; };
 		3A7C929B24A4B2310095A7E3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C929A24A4B2310095A7E3 /* Array.swift */; };
 		3A7C929D24A4FBFE0095A7E3 /* UIViewController+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */; };
-		3A812AE024A5FF45009E3B1F /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A812ADF24A5FF45009E3B1F /* FileService.swift */; };
+		3A812AE024A5FF45009E3B1F /* FileFormationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A812ADF24A5FF45009E3B1F /* FileFormationsService.swift */; };
 		3A812AE824A64F00009E3B1F /* DetailsFormationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A812AE724A64EFF009E3B1F /* DetailsFormationViewController.swift */; };
 		3A812AE924A64F00009E3B1F /* DetailsFormationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A812AE724A64EFF009E3B1F /* DetailsFormationViewController.swift */; };
 		3A9D1FB024AF63B400AFA310 /* ListFormationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D1FAF24AF63B400AFA310 /* ListFormationsViewController.swift */; };
@@ -81,7 +92,18 @@
 		3A32242324B63E0500949999 /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
 		3A32242924B6433300949999 /* FileSkillsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSkillsService.swift; sourceTree = "<group>"; };
 		3A32864D24A9E11A00D63AF9 /* Langages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Langages.swift; sourceTree = "<group>"; };
-		3A79970924A239BF007FD4A2 /* FormationsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormationsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A41ACCA24B879E8007DBE8C /* UIViewController+CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomUI.swift"; sourceTree = "<group>"; };
+		3A41ACCC24B8A5DE007DBE8C /* FileFormationsService+Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileFormationsService+Debug.swift"; sourceTree = "<group>"; };
+		3A41ACCE24B8C7D7007DBE8C /* Informations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Informations.storyboard; sourceTree = "<group>"; };
+		3A41ACD124B8CADE007DBE8C /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
+		3A41ACD624B8E134007DBE8C /* Studies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Studies.swift; sourceTree = "<group>"; };
+		3A41ACD824B8E166007DBE8C /* ListStudiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStudiesViewController.swift; sourceTree = "<group>"; };
+		3A41ACDA24B8E1CF007DBE8C /* ListStudiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStudiesTableViewCell.swift; sourceTree = "<group>"; };
+		3A41ACDB24B8E1CF007DBE8C /* ListStudiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStudiesTableViewCell.xib; sourceTree = "<group>"; };
+		3A41ACDE24B8E258007DBE8C /* ConstantsSkills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSkills.swift; sourceTree = "<group>"; };
+		3A41ACE024B8E36E007DBE8C /* ConstantsStudies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsStudies.swift; sourceTree = "<group>"; };
+		3A41ACE624B8E583007DBE8C /* FileStudiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStudiesService.swift; sourceTree = "<group>"; };
+		3A79970924A239BF007FD4A2 /* Formations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A79970C24A239BF007FD4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A79970E24A239BF007FD4A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3A79971024A239BF007FD4A2 /* ListLangagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLangagesViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +122,7 @@
 		3A79974924A25DEE007FD4A2 /* LangagesString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangagesString.swift; sourceTree = "<group>"; };
 		3A7C929A24A4B2310095A7E3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Debug.swift"; sourceTree = "<group>"; };
-		3A812ADF24A5FF45009E3B1F /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		3A812ADF24A5FF45009E3B1F /* FileFormationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFormationsService.swift; sourceTree = "<group>"; };
 		3A812AE724A64EFF009E3B1F /* DetailsFormationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFormationViewController.swift; sourceTree = "<group>"; };
 		3A9D1FAF24AF63B400AFA310 /* ListFormationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormationsViewController.swift; sourceTree = "<group>"; };
 		3AC28F4324B760F4000FB429 /* ListSkillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSkillsTableViewCell.swift; sourceTree = "<group>"; };
@@ -139,11 +161,13 @@
 		3A2E2DF324A37DF0008B3F9B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3A2E2DF424A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift */,
 				3A7C929A24A4B2310095A7E3 /* Array.swift */,
-				3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */,
 				3AD128B424B4BB9300990392 /* Date.swift */,
 				3AD128B824B4E6B400990392 /* String.swift */,
+				3A41ACCC24B8A5DE007DBE8C /* FileFormationsService+Debug.swift */,
+				3A41ACCA24B879E8007DBE8C /* UIViewController+CustomUI.swift */,
+				3A7C929C24A4FBFE0095A7E3 /* UIViewController+Debug.swift */,
+				3A2E2DF424A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -157,6 +181,7 @@
 				3A32241524B632CE00949999 /* Skills.storyboard */,
 				3A32241724B6337000949999 /* Studies.storyboard */,
 				3A32241924B6365700949999 /* CurriculumVitae.storyboard */,
+				3A41ACCE24B8C7D7007DBE8C /* Informations.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -174,6 +199,9 @@
 		3A32241C24B63A1000949999 /* Studies */ = {
 			isa = PBXGroup;
 			children = (
+				3A41ACD324B8E0BA007DBE8C /* Model */,
+				3A41ACD524B8E0C2007DBE8C /* Controller */,
+				3A41ACD424B8E0BE007DBE8C /* View */,
 			);
 			path = Studies;
 			sourceTree = "<group>";
@@ -190,6 +218,7 @@
 			children = (
 				3A32242324B63E0500949999 /* Skills.swift */,
 				3A32242924B6433300949999 /* FileSkillsService.swift */,
+				3A41ACDE24B8E258007DBE8C /* ConstantsSkills.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +242,41 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		3A41ACD024B8CAAC007DBE8C /* Informations */ = {
+			isa = PBXGroup;
+			children = (
+				3A41ACD124B8CADE007DBE8C /* InformationsViewController.swift */,
+			);
+			path = Informations;
+			sourceTree = "<group>";
+		};
+		3A41ACD324B8E0BA007DBE8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A41ACD624B8E134007DBE8C /* Studies.swift */,
+				3A41ACE024B8E36E007DBE8C /* ConstantsStudies.swift */,
+				3A41ACE624B8E583007DBE8C /* FileStudiesService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A41ACD424B8E0BE007DBE8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A41ACDA24B8E1CF007DBE8C /* ListStudiesTableViewCell.swift */,
+				3A41ACDB24B8E1CF007DBE8C /* ListStudiesTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A41ACD524B8E0C2007DBE8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A41ACD824B8E166007DBE8C /* ListStudiesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3A79970024A239BF007FD4A2 = {
 			isa = PBXGroup;
 			children = (
@@ -227,7 +291,7 @@
 		3A79970A24A239BF007FD4A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A79970924A239BF007FD4A2 /* FormationsApp.app */,
+				3A79970924A239BF007FD4A2 /* Formations.app */,
 				3A79971F24A239C2007FD4A2 /* FormationsAppTests.xctest */,
 			);
 			name = Products;
@@ -242,6 +306,7 @@
 				3A79973824A245CC007FD4A2 /* Formations */,
 				3A32241B24B63A0B00949999 /* Skills */,
 				3A32241C24B63A1000949999 /* Studies */,
+				3A41ACD024B8CAAC007DBE8C /* Informations */,
 				3A32241D24B63A2400949999 /* CurriculumVitae */,
 				3A79973224A23DA9007FD4A2 /* Supporting Files */,
 			);
@@ -264,7 +329,7 @@
 				3A79974624A257F5007FD4A2 /* Columns.swift */,
 				3A79974924A25DEE007FD4A2 /* LangagesString.swift */,
 				3A2E2DF624A3845A008B3F9B /* Organizations.swift */,
-				3A812ADF24A5FF45009E3B1F /* FileService.swift */,
+				3A812ADF24A5FF45009E3B1F /* FileFormationsService.swift */,
 				3A32864D24A9E11A00D63AF9 /* Langages.swift */,
 				3A1D0A8324AE544F0062E531 /* States.swift */,
 			);
@@ -361,7 +426,7 @@
 			);
 			name = FormationsApp;
 			productName = FormationsApp;
-			productReference = 3A79970924A239BF007FD4A2 /* FormationsApp.app */;
+			productReference = 3A79970924A239BF007FD4A2 /* Formations.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3A79971E24A239C2007FD4A2 /* FormationsAppTests */ = {
@@ -428,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A32241024B6298400949999 /* skills.xlsx in Resources */,
+				3A41ACDD24B8E1CF007DBE8C /* ListStudiesTableViewCell.xib in Resources */,
 				3A32241824B6337000949999 /* Studies.storyboard in Resources */,
 				3A79971924A239C1007FD4A2 /* LaunchScreen.storyboard in Resources */,
 				3A32241A24B6365700949999 /* CurriculumVitae.storyboard in Resources */,
@@ -438,6 +504,7 @@
 				3A79971424A239BF007FD4A2 /* Main.storyboard in Resources */,
 				3A79974124A247E3007FD4A2 /* ListLangagesTableViewCell.xib in Resources */,
 				3A32241424B632C200949999 /* Formations.storyboard in Resources */,
+				3A41ACCF24B8C7D7007DBE8C /* Informations.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,14 +630,20 @@
 				3A32242424B63E0500949999 /* Skills.swift in Sources */,
 				3A32864E24A9E11A00D63AF9 /* Langages.swift in Sources */,
 				3AC28F4824B76D52000FB429 /* DetailsSkillViewController.swift in Sources */,
+				3A41ACDF24B8E258007DBE8C /* ConstantsSkills.swift in Sources */,
 				3AC28F4A24B775BE000FB429 /* WebsiteSkillViewController.swift in Sources */,
 				3AD128B724B4D85700990392 /* WebsiteViewController.swift in Sources */,
 				3A32242224B63D4D00949999 /* ListSkillsViewController.swift in Sources */,
+				3A41ACE724B8E583007DBE8C /* FileStudiesService.swift in Sources */,
 				3AC28F4524B760F4000FB429 /* ListSkillsTableViewCell.swift in Sources */,
 				3A2E2DF524A37E1C008B3F9B /* UIViewController+ActivityIndicator.swift in Sources */,
+				3A41ACD924B8E166007DBE8C /* ListStudiesViewController.swift in Sources */,
 				3A2E2DF724A3845A008B3F9B /* Organizations.swift in Sources */,
 				3A32242A24B6433300949999 /* FileSkillsService.swift in Sources */,
+				3A41ACDC24B8E1CF007DBE8C /* ListStudiesTableViewCell.swift in Sources */,
+				3A41ACD224B8CADE007DBE8C /* InformationsViewController.swift in Sources */,
 				3AD128B524B4BB9300990392 /* Date.swift in Sources */,
+				3A41ACE124B8E36E007DBE8C /* ConstantsStudies.swift in Sources */,
 				3A79974724A257F5007FD4A2 /* Columns.swift in Sources */,
 				3A79971124A239BF007FD4A2 /* ListLangagesViewController.swift in Sources */,
 				3A79973F24A247E3007FD4A2 /* ListLangagesTableViewCell.swift in Sources */,
@@ -579,8 +652,11 @@
 				3A812AE824A64F00009E3B1F /* DetailsFormationViewController.swift in Sources */,
 				3A7C929D24A4FBFE0095A7E3 /* UIViewController+Debug.swift in Sources */,
 				3A1D0A8424AE544F0062E531 /* States.swift in Sources */,
-				3A812AE024A5FF45009E3B1F /* FileService.swift in Sources */,
+				3A812AE024A5FF45009E3B1F /* FileFormationsService.swift in Sources */,
+				3A41ACD724B8E134007DBE8C /* Studies.swift in Sources */,
 				3A79970F24A239BF007FD4A2 /* SceneDelegate.swift in Sources */,
+				3A41ACCB24B879E8007DBE8C /* UIViewController+CustomUI.swift in Sources */,
+				3A41ACCD24B8A5DE007DBE8C /* FileFormationsService+Debug.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,7 +830,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsApp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Formations;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -773,7 +849,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsApp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Formations;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

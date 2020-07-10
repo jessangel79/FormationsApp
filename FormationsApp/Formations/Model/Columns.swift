@@ -12,6 +12,8 @@ import CoreXLSX
 // MARK: - Columns of xlsx file
 
 struct Columns {
+    
+    // Columns to FileFormationsService
     var columnAStrings = [String]()
     var columnBStrings = [String]()
     var columnCStrings = [String]()
@@ -22,6 +24,7 @@ struct Columns {
     var columnHDates = [Date]()
     var columnIDates = [Date]()
     
+    // Columns to FileSkillsService
     var columnASkillsStr = [String]()
     var columnBSkillsStr = [String]()
     var columnCSkillsStr = [String]()

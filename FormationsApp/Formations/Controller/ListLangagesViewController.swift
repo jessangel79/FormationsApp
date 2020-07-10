@@ -17,12 +17,12 @@ final class ListLangagesViewController: UIViewController {
     
     // MARK: - Properties
     
-    private let fileService = FileService()
-    private var cellSelected: String?
-    private let segueToListFormations = Constants.SegueToListFormations
+    private let fileFormationsService = FileFormationsService()
     private var langagesList = [String]()
     private var allFileDict = [String: [Langages]]()
-
+    private var cellSelected: String?
+    private let segueToListFormations = Constants.SegueToListFormations
+    
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
@@ -33,10 +33,9 @@ final class ListLangagesViewController: UIViewController {
         guard let path = Bundle.main.path(forResource: "formations", ofType: "xlsx"), let file = XLSXFile(filepath: path) else { return }
 
         do {
-            try fileService.parseFile(file)
-//            allFileList = fileService.allFileList
-            langagesList = fileService.langagesList
-            allFileDict = fileService.allFileDict
+            try fileFormationsService.parseFile(file)
+            langagesList = fileFormationsService.langagesList
+            allFileDict = fileFormationsService.allFileDict
 
         } catch {
             title = error.localizedDescription
@@ -48,9 +47,6 @@ final class ListLangagesViewController: UIViewController {
         super.viewWillAppear(animated)
         listLangagesTableView.reloadData()
     }
-    
-    // MARK: - Methods
-    
 }
 
 // MARK: - UITableViewDataSource - UITableViewDelegate
@@ -78,9 +74,8 @@ extension ListLangagesViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        langagesList = langagesList.removingDuplicates()
+//        langagesList = langagesList.removingDuplicates()
         self.cellSelected = langagesList[indexPath.row]
-        print("cellSelected in ListLangagesVC : \(String(describing: cellSelected))")
         performSegue(withIdentifier: self.segueToListFormations, sender: self)
     }
 }
@@ -92,8 +87,6 @@ extension ListLangagesViewController {
         if segue.identifier == segueToListFormations {
             guard let listFormationsVC = segue.destination as? ListFormationsViewController else { return }
             listFormationsVC.cellule = self.cellSelected
-//            listFormationsVC.allFileList = self.allFileList
-            listFormationsVC.langagesList = self.langagesList
             listFormationsVC.allFileDict = self.allFileDict
         }
     }

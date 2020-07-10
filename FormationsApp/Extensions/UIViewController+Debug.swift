@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+//extension UIViewController {
     
 //    /// function to debug the list
 //    func debugCreateList() {
@@ -23,4 +23,4 @@ extension UIViewController {
 //        print("crossPlateformList : \(crossPlateformList)")
 //        print("othersList : \(othersList)")
 //    }
-}
+//}

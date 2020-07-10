@@ -1,15 +1,15 @@
 //
-//  FileSkillsService.swift
+//  FileStudiesService.swift
 //  FormationsApp
 //
-//  Created by Angelique Babin on 08/07/2020.
+//  Created by Angelique Babin on 10/07/2020.
 //  Copyright © 2020 Angelique Babin. All rights reserved.
 //
 
 import Foundation
 import CoreXLSX
 
-final class FileSkillsService {
+final class FileStudiesService {
     
     // MARK: - Vars
 
@@ -68,7 +68,7 @@ final class FileSkillsService {
 
 // MARK: - Extension to create lists and dictionnaries
 
-extension FileSkillsService {
+extension FileStudiesService {
 
     /// create lists of items
     fileprivate func createLists(_ worksheet: Worksheet, _ sharedStrings: SharedStrings) {
@@ -104,7 +104,7 @@ extension FileSkillsService {
 
 // MARK: - Extension to debug lists and dictionnaries
 
-extension FileSkillsService {
+extension FileStudiesService {
     
     /// function to debug list
     fileprivate func debugLists() {

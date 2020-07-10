@@ -17,11 +17,13 @@ class DetailsSkillViewController: UIViewController {
     @IBOutlet weak var degreeLabel: UILabel!
     @IBOutlet weak var knowledgeTitleTextView: UITextView!
     @IBOutlet weak var websiteButton: UIButton!
-    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet var subtitleLabels: [UILabel]!
+        
     // MARK: - Properties
 
     var cellule: Skills?
-    var fileService = FileService()
+    var fileService = FileFormationsService()
     var allSkillsList = [Skills]()
     private let segueToWebsiteSkill = Constants.SegueToWebsiteSkill
         
@@ -35,6 +37,9 @@ class DetailsSkillViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customAllLabels(allLabels: subtitleLabels, radius: 15, colorBackground: .systemGray3)
+        customLabel(label: titleLabel, radius: 15, colorBackground: #colorLiteral(red: 0.5808190107, green: 0.0884276256, blue: 0.3186392188, alpha: 1))
+        customButton(button: websiteButton, radius: 15, width: 2.0, colorBackground: .systemGray5, colorBorder: #colorLiteral(red: 0.3465234637, green: 0.05713232607, blue: 0.1905708015, alpha: 1))
         configureSkill()
         setWebsiteButton()
     }

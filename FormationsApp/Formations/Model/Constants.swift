@@ -21,14 +21,7 @@ struct Constants {
     static let columnG = ColumnReference("G")
     static let columnHDates = ColumnReference("H")
     static let columnIDates = ColumnReference("I")
-
-    static let Formations = "FORMATIONS"
-    static let Websites = "LIEN DU SITE"
-    static let States = "STATUT"
-    static let Langages = "LANGAGES"
-    static let Org = "ORGANISMES"
-    static let Notes = "NOTES"
-    static let Details = "DETAILS"
+    static let ToDo = "A faire"
     
     static let Swift = LangagesString.swift.rawValue
     static let SwiftUi = LangagesString.swiftUi.rawValue
@@ -39,18 +32,18 @@ struct Constants {
     static let CrossPlateform = LangagesString.crossPlateform.rawValue
     static let Others = LangagesString.others.rawValue
     
-    static let Udemy = Organizations.udemy.rawValue
-    static let Hws = Organizations.hws.rawValue
-    static let Coursera = Organizations.coursera.rawValue
-    static let SwiftOrg = Organizations.swiftOrg.rawValue
-    static let PurpleGiraffe = Organizations.purpleGiraffe.rawValue
-    static let Cwc = Organizations.cwc.rawValue
-    static let CodinGame = Organizations.codinGame.rawValue
-    static let Microsoft = Organizations.microsoft.rawValue
-    static let Raywenderlich = Organizations.raywenderlich.rawValue
-    static let LearnGitBranching = Organizations.learnGitBranching.rawValue
-    static let OpenClassrooms = Organizations.openClassrooms.rawValue
-    static let Divers = Organizations.divers.rawValue
+    static let Udemy = Organizations.udemy.rawValue.lowercased()
+    static let Hws = Organizations.hws.rawValue.lowercased()
+    static let Coursera = Organizations.coursera.rawValue.lowercased()
+    static let SwiftOrg = Organizations.swiftOrg.rawValue.lowercased()
+    static let PurpleGiraffe = Organizations.purpleGiraffe.rawValue.lowercased()
+    static let Cwc = Organizations.cwc.rawValue.lowercased()
+    static let CodinGame = Organizations.codinGame.rawValue.lowercased()
+    static let Microsoft = Organizations.microsoft.rawValue.lowercased()
+    static let Raywenderlich = Organizations.raywenderlich.rawValue.lowercased()
+    static let LearnGitBranching = Organizations.learnGitBranching.rawValue.lowercased()
+    static let OpenClassrooms = Organizations.openClassrooms.rawValue.lowercased()
+    static let Divers = Organizations.divers.rawValue.lowercased()
     
     static let ListLangagesCell = "ListLangagesCell"
     static let ListLangagesTableViewCell = "ListLangagesTableViewCell"
@@ -58,12 +51,11 @@ struct Constants {
     static let SegueToDetailsFormation = "segueToDetailsFormation"
     static let SegueToWebsite = "segueToWebsite"
     
-    static let ListSkillsCell = "ListSkillsCell"
-    static let ListSkillsTableViewCell = "ListSkillsTableViewCell"
-    static let SegueToDetailsSkill = "segueToDetailsSkill"
-    static let SegueToWebsiteSkill = "segueToWebsiteSkill"
-    
-    //    static let SegueToListOrganizations = "segueToListOrganizations"
-    //    static let SegueToLangagesList = "segueToLangagesList"
+//    static let ListSkillsCell = "ListSkillsCell"
+//    static let ListSkillsTableViewCell = "ListSkillsTableViewCell"
+//    static let SegueToDetailsSkill = "segueToDetailsSkill"
+//    static let SegueToWebsiteSkill = "segueToWebsiteSkill"
 
+//    static let ListStudiesCell = "ListStudiesCell"
+//    static let ListStudiesTableViewCell = "ListStudiesTableViewCell"
 }

@@ -1,5 +1,5 @@
 //
-//  FileService.swift
+//  FileFormationsService.swift
 //  FormationsApp
 //
 //  Created by Angelique Babin on 26/06/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreXLSX
 
-final class FileService {
+final class FileFormationsService {
     
     // MARK: - Vars
 
@@ -56,6 +56,7 @@ final class FileService {
                 createAllFiledict()
                 debugLists()
                 debugCountLangage()
+//                try debugWorksheetRowsAndColumns(file, worksheet)
             }
         }
     }
@@ -99,14 +100,14 @@ final class FileService {
 
 // MARK: - Extension to create lists and dictionnaries
 
-extension FileService {
+extension FileFormationsService {
 
     /// create lists of items
     fileprivate func createLists(_ worksheet: Worksheet, _ sharedStrings: SharedStrings) {
         for row in worksheet.data?.rows ?? [] {
             formationsList.append(row.cells[0].stringValue(sharedStrings) ?? "")
             websitesList.append(row.cells[1].stringValue(sharedStrings) ?? "")
-            statesList.append(row.cells[2].stringValue(sharedStrings) ?? "A faire")
+            statesList.append(row.cells[2].stringValue(sharedStrings) ?? Constants.ToDo)
             langagesList.append(row.cells[3].stringValue(sharedStrings) ?? "")
             organizationsList.append(row.cells[4].stringValue(sharedStrings) ?? "")
             notesList.append(row.cells[5].stringValue(sharedStrings) ?? "")
@@ -212,104 +213,5 @@ extension FileService {
             Constants.Git: arrayGit, Constants.Entrepreneuriat: arrayEntrepreneuriat,
             Constants.CrossPlateform: arrayCrossPlateform, Constants.Others: arrayOthers
         ]
-    }
-}
-
-// MARK: - Extension to debug lists and dictionnaries
-
-extension FileService {
-    
-    /// function to debug list
-    fileprivate func debugLists() {
-        print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
-        print("rowsCountSwift : \(rowsCountSwift)")
-        print("rowsCountSwiftUi : \(rowsCountSwiftUi)")
-        print("rowsCountKotlin : \(rowsCountKotlin)")
-        print("rowsCountHtmlCss : \(rowsCountHtmlCss)")
-        print("rowsCountGit : \(rowsCountGit)")
-        print("rowsCountCrossPlateform : \(rowsCountCrossPlateform)")
-        print("rowsCountEntrepreneuriat : \(rowsCountEntrepreneuriat)")
-        print("rowsCountOthers : \(rowsCountOthers)")
-
-        print("allFileList : \(allFileList)")
-        print("allFileDict : \(allFileDict)")
-        print("formationsList : \(formationsList)")
-        print("formationsList COUNT : \(formationsList.count)")
-
-        print("websitesList : \(websitesList)")
-        print("statesList : \(statesList)")
-        print("langagesList : \(langagesList)")
-        print("organizationsList : \(organizationsList)")
-        print("notesList : \(notesList)")
-        print("detailsList : \(detailsList)")
-        print("allFileList count : \(allFileList.count)")
-        print("startDatesList : \(startDatesList)")
-        print("endDatesList : \(endDatesList)")
-        print("startDatesList COUNT : \(startDatesList.count)")
-        print("endDatesList COUNT : \(endDatesList.count)")
-    }
-    
-    fileprivate func debugCountLangage() {
-        print("rowsCountSwift : \(rowsCountSwift)")
-        print("rowsCountSwiftUi : \(rowsCountSwiftUi)")
-        print("rowsCountKotlin : \(rowsCountKotlin)")
-        print("rowsCountHtmlCss : \(rowsCountHtmlCss)")
-        print("rowsCountGit : \(rowsCountGit)")
-        print("rowsCountEntrepreneuriat : \(rowsCountEntrepreneuriat)")
-        print("rowsCountCrossPlateform : \(rowsCountCrossPlateform)")
-        print("rowsCountOthers : \(rowsCountOthers)")
-    }
-    
-    /// debug rows and cell of worksheet
-    private func debugWorksheetRowsAndColumns(_ file: XLSXFile, _ worksheet: Worksheet) throws {
-//        print(worksheet)
-        let sharedStrings = try file.parseSharedStrings()
-        print("??? worksheet.data?.rows[0].cells[0].stringValue(sharedStrings) : \(worksheet.data?.rows[0].cells[0].stringValue(sharedStrings) ?? "error")")
-//        print("worksheet.data?.rows : \(String(describing: worksheet.data?.rows))")
-        print("worksheet.data?.rows[0].cells[1].stringValue(sharedStrings) : \(String(describing: worksheet.data?.rows[0].cells[1].stringValue(sharedStrings)))")
-        print("worksheet.data?.rows[0] : \(String(describing: worksheet.data?.rows[0]))")
-        print("worksheet.data?.rows[1] : \(String(describing: worksheet.data?.rows[1]))")
-        print("worksheet.data?.rows[2] : \(String(describing: worksheet.data?.rows[2]))")
-        print("allFileList[0].formations : \(allFileList[0].formation)")
-        print("allFileList[0] : \(allFileList[0])")
-        for row in worksheet.data?.rows ?? [] {
-            for item in row.cells { // where row.reference == 7
-                    print("row.cells.description => item.stringValue(sharedStrings) : \(String(describing: item.stringValue(sharedStrings)))")
-                    print("item : \(item)")
-                    print("item.stringValue(sharedStrings) : \(String(describing: item.stringValue(sharedStrings)))")
-                let rowReference = row.reference
-                var index = 1
-                if rowReference == index {
-                    let item = item.stringValue(sharedStrings)
-                     switch item {
-                     case "Udemy":
-                         print("Udemy : \(item ?? ""))")
-                     case "Hacking with Swift":
-                         print("Hacking with Swift : \(item ?? "")")
-                     case "Coursera":
-                         print("Coursera : \(item ?? "")")
-                     case "Swift.org":
-                         print("Swift.org : \(item ?? "")")
-                     case "Purple Giraffe":
-                         print("Purple Giraffe : \(item ?? "")")
-                     case "CodeWithChris":
-                         print("CodeWithChris : \(item ?? "")")
-                     case "CodinGame":
-                         print("CodinGame : \(item ?? "")")
-                     case "Microsoft":
-                         print("Microsoft : \(item ?? "")")
-                     case "Raywenderlich":
-                         print("Raywenderlich : \(item ?? "")")
-                     case "LearnGitBranching":
-                         print("LearnGitBranching : \(item ?? "")")
-                     case "OpenClassrooms":
-                         print("OpenClassrooms : \(item ?? "")")
-                     default:
-                         print("Divers : \(item ?? "")")
-                     }
-                }
-                index += 1
-            }
-        }
     }
 }

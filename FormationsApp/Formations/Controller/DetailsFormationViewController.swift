@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WebKit
 
 final class DetailsFormationViewController: UIViewController {
     
@@ -24,13 +23,11 @@ final class DetailsFormationViewController: UIViewController {
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var detailsTextView: UITextView!
     @IBOutlet weak var websiteButton: UIButton!
-
+    @IBOutlet var subtitleLabels: [UILabel]!
+    
     // MARK: - Properties
     
     var cellule: Langages?
-    var fileService = FileService()
-    var allFileList = [Langages]()
-    var formationsList = [String]()
     var allFileDict = [String: [Langages]]()
     private let segueToWebsite = Constants.SegueToWebsite
     
@@ -45,11 +42,13 @@ final class DetailsFormationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFormation()
+        customAllLabels(allLabels: subtitleLabels, radius: 15, colorBackground: .systemGray3)
+        customButton(button: websiteButton, radius: 15, width: 2.0, colorBackground: .systemGray5, colorBorder: #colorLiteral(red: 0.3465234637, green: 0.05713232607, blue: 0.1905708015, alpha: 1))
+        websiteButton.showsTouchWhenHighlighted = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        navigationController?.isToolbarHidden = true
     }
 
     // MARK: - Methods
@@ -60,7 +59,7 @@ final class DetailsFormationViewController: UIViewController {
         nameFormationLabel.text = cellule?.formation
         startDateLabel.text = cellule?.startDate
         endDateLabel.text = cellule?.endDate
-        setColorState(state: cellule?.state)
+        setColorState(state: cellule?.state ?? Constants.ToDo)
         stateLabel.text = cellule?.state
         notesTextView.text = cellule?.note
         detailsTextView.text = cellule?.detail
@@ -68,8 +67,8 @@ final class DetailsFormationViewController: UIViewController {
         loadImageLangages(LangagesString(rawValue: cellule?.langageName ?? "") ?? LangagesString.others)
     }
     
-    private func setColorState(state: String?) {
-        let stateTemp: States = States(rawValue: state ?? "A faire") ?? .toDo
+    private func setColorState(state: String) {
+        let stateTemp: States = States(rawValue: state) ?? .toDo
         switch stateTemp {
         case .toDo:
             stateLabel.textColor = .blue
