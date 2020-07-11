@@ -8,24 +8,24 @@
 
 import UIKit
 
-final class ListLangagesTableViewCell: UITableViewCell {
+final class ListFormationsTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var logoImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     // MARK: - Properties
     
-    var langage: String? {
+    var theme: String? {
         didSet {
-            nameLabel.text = langage
-            loadImageLangages(LangagesString(rawValue: langage ?? "") ?? LangagesString.others)
-            print("langage in cell : \(langage ?? "error langage")")
+            nameLabel.text = theme
+            loadImageThemes(ThemesString(rawValue: theme ?? "") ?? ThemesString.others)
+            print("theme in cell : \(theme ?? "error theme")")
         }
     }
     
-    var formation: Langages? {
+    var formation: Themes? {
         didSet {
             nameLabel.text = formation?.formation
             loadImageFormations(Organizations(rawValue: formation?.organization ?? "") ?? Organizations.divers)
@@ -41,8 +41,8 @@ final class ListLangagesTableViewCell: UITableViewCell {
     
     // MARK: - Methods
     
-    func loadImageLangages(_ langagesFile: LangagesString) {
-        switch langagesFile {
+    func loadImageThemes(_ themesFile: ThemesString) {
+        switch themesFile {
         case .swift:
             logoImageView.image = UIImage(named: Constants.Swift.lowercased() + ".png")
         case .swiftUi:

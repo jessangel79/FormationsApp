@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WebsiteSkillViewController: UIViewController, WKUIDelegate {
+final class WebsiteSkillViewController: UIViewController, WKUIDelegate {
     
     // MARK: - Properties
     

@@ -13,7 +13,7 @@ import UIKit
 //    /// function to debug the list
 //    func debugCreateList() {
 //        print("allLangagesDict : \(allLangagesDict)")
-//        print("allFileList : \(langagesList)")
+//        print("allFileList : \(allFileList)")
 //        print("swiftList : \(swiftList)")
 //        print("swiftUiList : \(swiftUiList)")
 //        print("kotlinList : \(kotlinList)")

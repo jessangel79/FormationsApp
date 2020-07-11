@@ -8,17 +8,27 @@
 
 import UIKit
 
-class ListStudiesTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+final class ListStudiesTableViewCell: UITableViewCell {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
+    
+    // MARK: - Properties
+    
+    var studies: Skills? {
+        didSet {
+            titleLabel.text = studies?.knowledge
+            subtitleLabel.text = studies?.formation
+            print("langage in cell : \(String(describing: studies?.knowledge))")
+        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    // MARK: - View Life Cycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
 }

@@ -14,8 +14,8 @@ final class FileFormationsService {
     // MARK: - Vars
 
     private var columns = Columns()
-    var allFileList = [Langages]()
-    var allFileDict = [String: [Langages]]()
+    var allFileList = [Themes]()
+    var allFileDict = [String: [Themes]]()
 
     var rowsCount = Int()
     var rowsCountSwift = Int()
@@ -30,7 +30,7 @@ final class FileFormationsService {
     var formationsList = [String]()
     var websitesList = [String]()
     var statesList = [String]()
-    var langagesList = [String]()
+    var themesList = [String]()
     var organizationsList = [String]()
     var notesList = [String]()
     var detailsList = [String]()
@@ -52,7 +52,7 @@ final class FileFormationsService {
                 setDateColumnsFile(file: file, worksheet: worksheet)
                 createLists(worksheet, sharedStrings)
                 createAllFileList()
-                getCountListLangages()
+                getCountListThemes()
                 createAllFiledict()
                 debugLists()
                 debugCountLangage()
@@ -108,7 +108,7 @@ extension FileFormationsService {
             formationsList.append(row.cells[0].stringValue(sharedStrings) ?? "")
             websitesList.append(row.cells[1].stringValue(sharedStrings) ?? "")
             statesList.append(row.cells[2].stringValue(sharedStrings) ?? Constants.ToDo)
-            langagesList.append(row.cells[3].stringValue(sharedStrings) ?? "")
+            themesList.append(row.cells[3].stringValue(sharedStrings) ?? "")
             organizationsList.append(row.cells[4].stringValue(sharedStrings) ?? "")
             notesList.append(row.cells[5].stringValue(sharedStrings) ?? "")
             detailsList.append(row.cells[6].stringValue(sharedStrings) ?? "")
@@ -123,7 +123,7 @@ extension FileFormationsService {
         formationsList.removeFirst()
         websitesList.removeFirst()
         statesList.removeFirst()
-        langagesList.removeFirst()
+        themesList.removeFirst()
         organizationsList.removeFirst()
         notesList.removeFirst()
         detailsList.removeFirst()
@@ -135,10 +135,10 @@ extension FileFormationsService {
     fileprivate func createAllFileList() {
         removeTitleColums()
         for index in 0...rowsCount - 2 { // - 2
-            allFileList.append(Langages(formation: formationsList[index],
+            allFileList.append(Themes(formation: formationsList[index],
                                     webSite: websitesList[index],
                                     state: statesList[index],
-                                    langageName: langagesList[index],
+                                    theme: themesList[index],
                                     organization: organizationsList[index],
                                     note: notesList[index],
                                     detail: detailsList[index],
@@ -147,51 +147,51 @@ extension FileFormationsService {
         }
     }
     
-    fileprivate func getCountLangage(langage: String) {
+    fileprivate func getCountTheme(theme: String) {
         var array = [String]()
-        for langage in langagesList {
-            switch langage {
+        for theme in themesList {
+            switch theme {
             case Constants.Swift:
-                array.append(langage)
+                array.append(theme)
                 rowsCountSwift = array.count
             case Constants.SwiftUi:
-                array.append(langage)
+                array.append(theme)
                 rowsCountSwiftUi = array.count
             case Constants.Kotlin:
-                array.append(langage)
+                array.append(theme)
                 rowsCountKotlin = array.count
             case Constants.HtmlCss:
-                array.append(langage)
+                array.append(theme)
                 rowsCountHtmlCss = array.count
             case Constants.Git:
-                array.append(langage)
+                array.append(theme)
                 rowsCountGit = array.count
             case Constants.Entrepreneuriat:
-                array.append(langage)
+                array.append(theme)
                 rowsCountEntrepreneuriat = array.count
             case Constants.CrossPlateform:
-                array.append(langage)
+                array.append(theme)
                 rowsCountCrossPlateform = array.count
             default:
-                array.append(langage)
+                array.append(theme)
                 rowsCountOthers = array.count
             }
         }
     }
     
-    fileprivate func getCountListLangages() {
-        getCountLangage(langage: Constants.Swift)
-        getCountLangage(langage: Constants.SwiftUi)
-        getCountLangage(langage: Constants.Kotlin)
-        getCountLangage(langage: Constants.HtmlCss)
-        getCountLangage(langage: Constants.Git)
-        getCountLangage(langage: Constants.Entrepreneuriat)
-        getCountLangage(langage: Constants.CrossPlateform)
-        getCountLangage(langage: Constants.Others)
+    fileprivate func getCountListThemes() {
+        getCountTheme(theme: Constants.Swift)
+        getCountTheme(theme: Constants.SwiftUi)
+        getCountTheme(theme: Constants.Kotlin)
+        getCountTheme(theme: Constants.HtmlCss)
+        getCountTheme(theme: Constants.Git)
+        getCountTheme(theme: Constants.Entrepreneuriat)
+        getCountTheme(theme: Constants.CrossPlateform)
+        getCountTheme(theme: Constants.Others)
     }
     
-    fileprivate func returnArray(min: Int, max: Int) -> [Langages] {
-        var array = [Langages]()
+    fileprivate func returnArray(min: Int, max: Int) -> [Themes] {
+        var array = [Themes]()
         for index in min...max {
             array.append(allFileList[index])
         }

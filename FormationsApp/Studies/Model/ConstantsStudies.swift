@@ -11,4 +11,6 @@ import Foundation
 extension Constants {
     static let ListStudiesCell = "ListStudiesCell"
     static let ListStudiesTableViewCell = "ListStudiesTableViewCell"
+    static let SegueToDetailsStudy = "segueToDetailsStudy"
+    static let SegueToWebsiteStudy = "SegueToWebsiteStudy"
 }

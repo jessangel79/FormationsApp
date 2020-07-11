@@ -8,17 +8,17 @@
 
 import UIKit
 
-class DetailsSkillViewController: UIViewController {
+final class DetailsSkillViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var formationLabel: UILabel!
-    @IBOutlet weak var knowledgeTextView: UITextView!
-    @IBOutlet weak var degreeLabel: UILabel!
-    @IBOutlet weak var knowledgeTitleTextView: UITextView!
-    @IBOutlet weak var websiteButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet var subtitleLabels: [UILabel]!
+    @IBOutlet private weak var formationLabel: UILabel!
+    @IBOutlet private weak var knowledgeTextView: UITextView!
+    @IBOutlet private weak var degreeLabel: UILabel!
+    @IBOutlet private weak var knowledgeTitleTextView: UITextView!
+    @IBOutlet private weak var websiteButton: UIButton!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private var subtitleLabels: [UILabel]!
         
     // MARK: - Properties
 
@@ -29,17 +29,17 @@ class DetailsSkillViewController: UIViewController {
         
     // MARK: - Actions
     
-    @IBAction func websiteButtonTapped(_ sender: UIButton) {
+    @IBAction private func websiteButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: self.segueToWebsiteSkill, sender: self)
     }
  
     // MARK: - View Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        customAllLabels(allLabels: subtitleLabels, radius: 15, colorBackground: .systemGray3)
+        customAllLabels(allLabels: subtitleLabels, radius: 15, colorBackground: #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1))
         customLabel(label: titleLabel, radius: 15, colorBackground: #colorLiteral(red: 0.5808190107, green: 0.0884276256, blue: 0.3186392188, alpha: 1))
-        customButton(button: websiteButton, radius: 15, width: 2.0, colorBackground: .systemGray5, colorBorder: #colorLiteral(red: 0.3465234637, green: 0.05713232607, blue: 0.1905708015, alpha: 1))
+        customButton(button: websiteButton, radius: 15, width: 2.0, colorBackground: #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1), colorBorder: #colorLiteral(red: 0.3465234637, green: 0.05713232607, blue: 0.1905708015, alpha: 1))
         configureSkill()
         setWebsiteButton()
     }

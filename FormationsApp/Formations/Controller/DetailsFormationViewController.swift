@@ -12,28 +12,28 @@ final class DetailsFormationViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var logoOrgImageView: UIImageView!
-    @IBOutlet weak var organizationLabel: UILabel!
-    @IBOutlet weak var logoLangageImageview: UIImageView!
-    @IBOutlet weak var langageLabel: UILabel!
-    @IBOutlet weak var nameFormationLabel: UILabel!
-    @IBOutlet weak var startDateLabel: UILabel!
-    @IBOutlet weak var endDateLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var notesTextView: UITextView!
-    @IBOutlet weak var detailsTextView: UITextView!
-    @IBOutlet weak var websiteButton: UIButton!
-    @IBOutlet var subtitleLabels: [UILabel]!
+    @IBOutlet private weak var logoOrgImageView: UIImageView!
+    @IBOutlet private weak var organizationLabel: UILabel!
+    @IBOutlet private weak var logoLangageImageview: UIImageView!
+    @IBOutlet private weak var langageLabel: UILabel!
+    @IBOutlet private weak var nameFormationLabel: UILabel!
+    @IBOutlet private weak var startDateLabel: UILabel!
+    @IBOutlet private weak var endDateLabel: UILabel!
+    @IBOutlet private weak var stateLabel: UILabel!
+    @IBOutlet private weak var notesTextView: UITextView!
+    @IBOutlet private weak var detailsTextView: UITextView!
+    @IBOutlet private weak var websiteButton: UIButton!
+    @IBOutlet private var subtitleLabels: [UILabel]!
     
     // MARK: - Properties
     
-    var cellule: Langages?
-    var allFileDict = [String: [Langages]]()
+    var cellule: Themes?
+    var allFileDict = [String: [Themes]]()
     private let segueToWebsite = Constants.SegueToWebsite
     
     // MARK: - Actions
     
-    @IBAction func websiteButtonTapped(_ sender: UIButton) {
+    @IBAction private func websiteButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: self.segueToWebsite, sender: self)
     }
     
@@ -42,8 +42,8 @@ final class DetailsFormationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFormation()
-        customAllLabels(allLabels: subtitleLabels, radius: 15, colorBackground: .systemGray3)
-        customButton(button: websiteButton, radius: 15, width: 2.0, colorBackground: .systemGray5, colorBorder: #colorLiteral(red: 0.3465234637, green: 0.05713232607, blue: 0.1905708015, alpha: 1))
+        customAllLabels(allLabels: subtitleLabels, radius: 15, colorBackground: #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1))
+        customButton(button: websiteButton, radius: 15, width: 2.0, colorBackground: #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1), colorBorder: #colorLiteral(red: 0.3465234637, green: 0.05713232607, blue: 0.1905708015, alpha: 1))
         websiteButton.showsTouchWhenHighlighted = true
     }
     
@@ -55,7 +55,7 @@ final class DetailsFormationViewController: UIViewController {
     
     private func configureFormation() {
         organizationLabel.text = cellule?.organization
-        langageLabel.text = cellule?.langageName
+        langageLabel.text = cellule?.theme
         nameFormationLabel.text = cellule?.formation
         startDateLabel.text = cellule?.startDate
         endDateLabel.text = cellule?.endDate
@@ -64,7 +64,7 @@ final class DetailsFormationViewController: UIViewController {
         notesTextView.text = cellule?.note
         detailsTextView.text = cellule?.detail
         loadImageFormations(Organizations(rawValue: cellule?.organization ?? "") ?? Organizations.divers)
-        loadImageLangages(LangagesString(rawValue: cellule?.langageName ?? "") ?? LangagesString.others)
+        loadImageLangages(ThemesString(rawValue: cellule?.theme ?? "") ?? ThemesString.others)
     }
     
     private func setColorState(state: String) {
@@ -108,7 +108,7 @@ final class DetailsFormationViewController: UIViewController {
         }
     }
     
-    func loadImageLangages(_ langagesFile: LangagesString) {
+    func loadImageLangages(_ langagesFile: ThemesString) {
         switch langagesFile {
         case .swift:
             logoLangageImageview.image = UIImage(named: Constants.Swift.lowercased() + ".png")

@@ -10,7 +10,7 @@
         <!--Crédits-->
         <scene sceneID="OVk-AQ-kPR">
             <objects>
-                <viewController id="WkO-n9-Reo" customClass="InformationsViewController" customModule="FormationsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WkO-n9-Reo" customClass="InformationsViewController" customModule="Formations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9p-04-Z8i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hND-LI-t2Z" firstAttribute="top" secondItem="GRI-8g-fKQ" secondAttribute="top" constant="10" id="Loz-4c-orE"/>
@@ -86,7 +86,6 @@
         <!--Navigation Controller-->
         <scene sceneID="VWb-dd-wHd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ug6-Tg-iJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5eq-1N-1Xf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S0L-EI-Tjd">
@@ -102,6 +101,7 @@
                         <segue destination="WkO-n9-Reo" kind="relationship" relationship="rootViewController" id="jA3-zm-CPO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ug6-Tg-iJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-624.375" y="60.2112676056338"/>
         </scene>

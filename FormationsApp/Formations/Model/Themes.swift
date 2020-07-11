@@ -1,5 +1,5 @@
 //
-//  Langages.swift
+//  Themes.swift
 //  FormationsApp
 //
 //  Created by Angelique Babin on 29/06/2020.
@@ -10,11 +10,11 @@ import Foundation
 
 // MARK: - Langages
 
-struct Langages {
+struct Themes {
     let formation: String
     let webSite: String
     let state: String?
-    let langageName: String
+    let theme: String
     let organization: String
     let note: String?
     let detail: String?

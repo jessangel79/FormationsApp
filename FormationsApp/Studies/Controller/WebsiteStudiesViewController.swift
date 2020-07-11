@@ -1,5 +1,5 @@
 //
-//  WebsiteViewController.swift
+//  WebsiteStudiesViewController.swift
 //  FormationsApp
 //
 //  Created by Angelique Babin on 07/07/2020.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-final class WebsiteViewController: UIViewController, WKUIDelegate {
+final class WebsiteStudiesViewController: UIViewController, WKUIDelegate {
     
     // MARK: - Properties
     
@@ -23,7 +23,7 @@ final class WebsiteViewController: UIViewController, WKUIDelegate {
         webView.translatesAutoresizingMaskIntoConstraints = false
         return webView
     }()
-    
+
     private let forwardBarItem = UIBarButtonItem(title: ">>", style: .plain, target: self,
                                          action: #selector(forwardAction))
     private let backBarItem = UIBarButtonItem(title: "<<", style: .plain, target: self,
@@ -34,6 +34,12 @@ final class WebsiteViewController: UIViewController, WKUIDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // test pdf start
+        guard let pdfUrl = Bundle.main.url(forResource: "bac", withExtension: "pdf") else { return }
+        webView.load(URLRequest.init(url: pdfUrl))
+        // test pdf end
+
         setupUI()
         setupNavItem()
         loadWebsite()

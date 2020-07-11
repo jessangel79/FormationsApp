@@ -9,80 +9,84 @@
 import UIKit
 import CoreXLSX
 
-final class ListLangagesViewController: UIViewController {
+final class ListThemesViewController: UIViewController {
     
     // MARK: - Outlets
 
-    @IBOutlet private weak var listLangagesTableView: UITableView!
+    @IBOutlet private weak var listThemesTableView: UITableView!
     
     // MARK: - Properties
     
     private let fileFormationsService = FileFormationsService()
-    private var langagesList = [String]()
-    private var allFileDict = [String: [Langages]]()
+    private var themesList = [String]()
+    private var allFileDict = [String: [Themes]]()
     private var cellSelected: String?
     private let segueToListFormations = Constants.SegueToListFormations
-    
+
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: Constants.ListLangagesTableViewCell, bundle: nil)
-        listLangagesTableView.register(nib, forCellReuseIdentifier: Constants.ListLangagesCell)
+        let nib = UINib(nibName: Constants.ListFormationsTableViewCell, bundle: nil)
+        listThemesTableView.register(nib, forCellReuseIdentifier: Constants.ListFormationsCell)
         
         guard let path = Bundle.main.path(forResource: "formations", ofType: "xlsx"), let file = XLSXFile(filepath: path) else { return }
 
         do {
             try fileFormationsService.parseFile(file)
-            langagesList = fileFormationsService.langagesList
+            themesList = fileFormationsService.themesList
             allFileDict = fileFormationsService.allFileDict
 
         } catch {
             title = error.localizedDescription
         }
-        listLangagesTableView.reloadData()
+        listThemesTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        listLangagesTableView.reloadData()
+        listThemesTableView.reloadData()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        navigationController?.navigationBar.barStyle = .default
+//    }
 }
 
 // MARK: - UITableViewDataSource - UITableViewDelegate
 
-extension ListLangagesViewController: UITableViewDataSource, UITableViewDelegate {
+extension ListThemesViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        langagesList = langagesList.removingDuplicates()
-        return langagesList.count
+        themesList = themesList.removingDuplicates()
+        return themesList.count
 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let listLangagesCell = tableView.dequeueReusableCell(withIdentifier: Constants.ListLangagesCell,
-                                                                 for: indexPath) as? ListLangagesTableViewCell else {
+        guard let listThemesCell = tableView.dequeueReusableCell(withIdentifier: Constants.ListFormationsCell,
+                                                                 for: indexPath) as? ListFormationsTableViewCell else {
             return UITableViewCell()
         }
-        langagesList = langagesList.removingDuplicates()
-        let langage = langagesList[indexPath.row]
-        listLangagesCell.langage = langage
-        return listLangagesCell
+        themesList = themesList.removingDuplicates()
+        let theme = themesList[indexPath.row]
+        listThemesCell.theme = theme
+        return listThemesCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        langagesList = langagesList.removingDuplicates()
-        self.cellSelected = langagesList[indexPath.row]
+//        themesList = themesList.removingDuplicates()
+        self.cellSelected = themesList[indexPath.row]
         performSegue(withIdentifier: self.segueToListFormations, sender: self)
     }
 }
 
 // MARK: - Navigation
 
-extension ListLangagesViewController {
+extension ListThemesViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueToListFormations {
             guard let listFormationsVC = segue.destination as? ListFormationsViewController else { return }

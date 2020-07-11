@@ -1,5 +1,5 @@
 //
-//  Langages.swift
+//  ThemesString.swift
 //  FormationsApp
 //
 //  Created by Angelique Babin on 23/06/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum LangagesString: String {
+enum ThemesString: String {
     case swift = "Swift"
     case kotlin = "Kotlin"
     case swiftUi = "Swift UI"

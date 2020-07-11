@@ -12,8 +12,8 @@ final class ListSkillsTableViewCell: UITableViewCell {
        
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
     
     // MARK: - Properties
     
@@ -21,7 +21,7 @@ final class ListSkillsTableViewCell: UITableViewCell {
         didSet {
             titleLabel.text = knowledge?.knowledge
             subtitleLabel.text = knowledge?.formation
-            print("langage in cell : \(String(describing: knowledge?.knowledge))")
+            print("knowledge in cell : \(String(describing: knowledge?.knowledge))")
         }
     }
 

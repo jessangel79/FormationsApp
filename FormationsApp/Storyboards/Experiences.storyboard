@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List Curriculum Vitae View Controller-->
+        <!--List Experiences View Controller-->
         <scene sceneID="J1P-WN-AdR">
             <objects>
-                <viewController id="WUl-Yo-VTg" userLabel="List Curriculum Vitae View Controller" sceneMemberID="viewController">
+                <viewController id="WUl-Yo-VTg" userLabel="List Experiences View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BUi-gp-w8x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,19 +34,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="21t-pF-atV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Etudes" id="st6-lt-8KD">
-                        <barButtonItem key="backBarButtonItem" title="Langages" id="CMd-ze-vIs"/>
+                    <navigationItem key="navigationItem" title="Experiences" id="st6-lt-8KD" userLabel="Experiences">
+                        <barButtonItem key="backBarButtonItem" title="Experiences" id="CMd-ze-vIs" userLabel="Experiences"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4I-6S-htu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2261" y="30"/>
         </scene>
-        <!--Curriculum Vitae-->
+        <!--Experiences-->
         <scene sceneID="img-o6-wFq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fdu-Ix-L3e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Curriculum Vitae" image="businesswoman" id="faA-T6-Xby">
+                    <tabBarItem key="tabBarItem" title="Experiences" image="businesswoman" id="faA-T6-Xby">
                         <color key="badgeColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <toolbarItems/>

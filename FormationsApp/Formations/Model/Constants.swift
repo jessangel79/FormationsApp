@@ -23,14 +23,14 @@ struct Constants {
     static let columnIDates = ColumnReference("I")
     static let ToDo = "A faire"
     
-    static let Swift = LangagesString.swift.rawValue
-    static let SwiftUi = LangagesString.swiftUi.rawValue
-    static let Kotlin = LangagesString.kotlin.rawValue
-    static let HtmlCss = LangagesString.htmlCss.rawValue
-    static let Git = LangagesString.git.rawValue
-    static let Entrepreneuriat = LangagesString.entrepreneuriat.rawValue
-    static let CrossPlateform = LangagesString.crossPlateform.rawValue
-    static let Others = LangagesString.others.rawValue
+    static let Swift = ThemesString.swift.rawValue
+    static let SwiftUi = ThemesString.swiftUi.rawValue
+    static let Kotlin = ThemesString.kotlin.rawValue
+    static let HtmlCss = ThemesString.htmlCss.rawValue
+    static let Git = ThemesString.git.rawValue
+    static let Entrepreneuriat = ThemesString.entrepreneuriat.rawValue
+    static let CrossPlateform = ThemesString.crossPlateform.rawValue
+    static let Others = ThemesString.others.rawValue
     
     static let Udemy = Organizations.udemy.rawValue.lowercased()
     static let Hws = Organizations.hws.rawValue.lowercased()
@@ -45,17 +45,9 @@ struct Constants {
     static let OpenClassrooms = Organizations.openClassrooms.rawValue.lowercased()
     static let Divers = Organizations.divers.rawValue.lowercased()
     
-    static let ListLangagesCell = "ListLangagesCell"
-    static let ListLangagesTableViewCell = "ListLangagesTableViewCell"
+    static let ListFormationsCell = "ListFormationsCell" // "ListLangagesCell"
+    static let ListFormationsTableViewCell = "ListFormationsTableViewCell" // "ListLangagesTableViewCell"
     static let SegueToListFormations = "segueToListFormations"
     static let SegueToDetailsFormation = "segueToDetailsFormation"
     static let SegueToWebsite = "segueToWebsite"
-    
-//    static let ListSkillsCell = "ListSkillsCell"
-//    static let ListSkillsTableViewCell = "ListSkillsTableViewCell"
-//    static let SegueToDetailsSkill = "segueToDetailsSkill"
-//    static let SegueToWebsiteSkill = "segueToWebsiteSkill"
-
-//    static let ListStudiesCell = "ListStudiesCell"
-//    static let ListStudiesTableViewCell = "ListStudiesTableViewCell"
 }

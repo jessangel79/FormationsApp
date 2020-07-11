@@ -14,7 +14,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S4O-HN-fab">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
@@ -64,11 +64,11 @@
             </objects>
             <point key="canvasLocation" x="709" y="119"/>
         </scene>
-        <!--CurriculumVitae-->
+        <!--Experiences-->
         <scene sceneID="59N-4e-Uzw">
             <objects>
-                <viewControllerPlaceholder storyboardName="CurriculumVitae" id="lgP-be-0Ji" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="CurriculumVitae" image="businesswoman" id="mu0-jN-WAL">
+                <viewControllerPlaceholder storyboardName="Experiences" id="lgP-be-0Ji" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Experiences" image="businesswoman" id="mu0-jN-WAL">
                         <color key="badgeColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>

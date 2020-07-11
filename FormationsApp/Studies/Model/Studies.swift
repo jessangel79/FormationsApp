@@ -11,9 +11,8 @@ import Foundation
 // MARK: - Studies
 
 struct Studies {
-//    let formation: String
-//    let knowledge: String
-//    let degree: String
-//    let knowledgeTitle: String?
-//    let link: String?
+    let certification: String
+    let organization: String
+    let link: String
+    let date: String?
 }

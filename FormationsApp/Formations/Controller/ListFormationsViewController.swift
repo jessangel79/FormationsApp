@@ -19,16 +19,16 @@ final class ListFormationsViewController: UIViewController {
     // MARK: - Properties
       
     var cellule: String?
-    var allFileDict = [String: [Langages]]()
-    private var cellSelected: Langages?
+    var allFileDict = [String: [Themes]]()
+    private var cellSelected: Themes?
     private let segueToDetailsFormation = Constants.SegueToDetailsFormation
 
     // MARK: - View Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: Constants.ListLangagesTableViewCell, bundle: nil)
-        listFormationsTableView.register(nib, forCellReuseIdentifier: Constants.ListLangagesCell)
+        let nib = UINib(nibName: Constants.ListFormationsTableViewCell, bundle: nil)
+        listFormationsTableView.register(nib, forCellReuseIdentifier: Constants.ListFormationsCell)
         listFormationsTableView.reloadData()
     }
     
@@ -70,11 +70,11 @@ extension ListFormationsViewController: UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let listFormationsCell = tableView.dequeueReusableCell(withIdentifier: Constants.ListLangagesCell,
-                                                                 for: indexPath) as? ListLangagesTableViewCell else {
+        guard let listFormationsCell = tableView.dequeueReusableCell(withIdentifier: Constants.ListFormationsCell,
+                                                                 for: indexPath) as? ListFormationsTableViewCell else {
             return UITableViewCell()
         }
-        var formation: Langages?
+        var formation: Themes?
         switch cellule {
         case Constants.Swift:
             formation = allFileDict[Constants.Swift]?[indexPath.row]
