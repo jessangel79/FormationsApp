@@ -17,10 +17,10 @@ final class ListStudiesViewController: UIViewController {
     
     // MARK: - Properties
     
-    private let fileSkillsService = FileSkillsService()
-    private var cellSelected: Skills?
+    private let fileStudiesService = FileStudiesService()
+    private var cellSelected: Studies?
     private let segueToDetailsStudy = Constants.SegueToDetailsStudy
-    private var allSkillsList = [Skills]()
+    private var allStudiesList = [Studies]()
 
     // MARK: - View Life Cycle
 
@@ -29,20 +29,22 @@ final class ListStudiesViewController: UIViewController {
         let nib = UINib(nibName: Constants.ListStudiesTableViewCell, bundle: nil)
         listStudiesTableView.register(nib, forCellReuseIdentifier: Constants.ListStudiesCell)
         
-        guard let path = Bundle.main.path(forResource: "skills", ofType: "xlsx"), let file = XLSXFile(filepath: path) else { return }
+        guard let path = Bundle.main.path(forResource: "studies", ofType: "xlsx"), let file = XLSXFile(filepath: path) else { return }
 
         do {
-            try fileSkillsService.parseFile(file)
-            allSkillsList = fileSkillsService.allSkillsList
+            try fileStudiesService.parseFile(file)
+            allStudiesList = fileStudiesService.allStudiesList
 
         } catch {
             title = error.localizedDescription
         }
+        navigationController?.isToolbarHidden = true
         listStudiesTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.isToolbarHidden = true
         listStudiesTableView.reloadData()
     }
 }
@@ -55,7 +57,7 @@ extension ListStudiesViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allSkillsList.count
+        return allStudiesList.count
 
     }
 
@@ -64,26 +66,24 @@ extension ListStudiesViewController: UITableViewDataSource, UITableViewDelegate 
                                                                  for: indexPath) as? ListStudiesTableViewCell else {
             return UITableViewCell()
         }
-        let studies = allSkillsList[indexPath.row]
+        let studies = allStudiesList[indexPath.row]
         listStudiesCell.studies = studies
         return listStudiesCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.cellSelected = allSkillsList[indexPath.row]
-        print("cellSelected in ListLangagesVC : \(String(describing: cellSelected))")
-//        performSegue(withIdentifier: self.segueToDetailsStudy, sender: self)
+        self.cellSelected = allStudiesList[indexPath.row]
+        performSegue(withIdentifier: self.segueToDetailsStudy, sender: self)
     }
 }
 
 // MARK: - Navigation
 
-//extension ListStudiesViewController {
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == segueToDetailsSkill {
-//            guard let detailsSkillVC = segue.destination as? DetailsSkillViewController else { return }
-//            detailsSkillVC.cellule = self.cellSelected
-//            detailsSkillVC.allSkillsList = self.allSkillsList
-//        }
-//    }
-//}
+extension ListStudiesViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueToDetailsStudy {
+            guard let detailsStudyVC = segue.destination as? DetailsStudyViewController else { return }
+            detailsStudyVC.cellule = self.cellSelected
+        }
+    }
+}

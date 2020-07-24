@@ -13,6 +13,7 @@ import Foundation
 struct Studies {
     let certification: String
     let organization: String
+    let theme: String
     let link: String
     let date: String?
 }

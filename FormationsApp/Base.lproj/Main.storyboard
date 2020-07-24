@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MiU-wI-t6z">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="weH-ov-k7W">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MiU-wI-t6z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S4O-HN-fab">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Jeg-co-81w" kind="relationship" relationship="viewControllers" id="AJ7-RS-8Fc"/>
+                        <segue destination="Z34-30-mzE" kind="relationship" relationship="viewControllers" id="9Hs-a6-s5q"/>
+                        <segue destination="yT1-e1-ffY" kind="relationship" relationship="viewControllers" id="4Zh-fG-AbG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kvd-hI-9gb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13.125" y="29.577464788732396"/>
+        </scene>
+        <!--Studies-->
+        <scene sceneID="921-tP-LTi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Studies" id="Jeg-co-81w" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Studies" image="study" id="mL3-Zk-4Ub">
+                        <color key="badgeColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VgY-Be-Y8h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="-245"/>
+        </scene>
+        <!--Experiences-->
+        <scene sceneID="UfW-oq-Z9q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Experiences" id="Z34-30-mzE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Experiences" image="businesswoman" id="JHs-wf-YPX">
+                        <color key="badgeColor" red="0.31668460370000001" green="0.084017805759999994" blue="0.18824046850000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Zr-NQ-TZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="30"/>
+        </scene>
+        <!--Skills-->
+        <scene sceneID="Sy2-Of-QfN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Skills" id="yT1-e1-ffY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Skills" image="skill" id="wBm-Xe-vd3">
+                        <color key="badgeColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Kv-gg-yHW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742" y="280"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <resources>
+        <image name="businesswoman" width="25" height="25"/>
+        <image name="skill" width="25" height="25"/>
+        <image name="study" width="25" height="25"/>
+    </resources>
+</document>

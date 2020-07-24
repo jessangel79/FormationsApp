@@ -14,13 +14,23 @@ final class FileStudiesService {
     // MARK: - Vars
 
     private var columns = Columns()
-    var allSkillsList = [Skills]()
-    var rowsCount = Int()
-    var formationsList = [String]()
-    var knowledgesList = [String]()
-    var degreesList = [String]()
-    var knowledgeTitlesList = [String]()
-    var linksList = [String]()
+    var allStudiesList = [Studies]()
+    private var rowsCount = Int()
+    var certificationsList = [String]()
+    private var organizationsList = [String]()
+    private var linksList = [String]()
+    private var themesList = [String]()
+    private var datesList = [String]()
+    
+    // MARK: - Struct to Columns of xlsx file
+    
+    private struct Columns {
+        var columnAStudiesStr = [String]()
+        var columnBStudiesStr = [String]()
+        var columnCStudiesStr = [String]()
+        var columnDStudiesStr = [String]()
+        var columnEStudiesDates = [Date]()
+    }
 
     // MARK: - Methods
     
@@ -31,11 +41,9 @@ final class FileStudiesService {
                     print("This worksheet has a name: \(worksheetName)")
                 }
                 let worksheet = try file.parseWorksheet(at: path)
-                let sharedStrings = try file.parseSharedStrings()
                 rowsCount = worksheet.data?.rows.count ?? 0
                 setColumnsFile(file: file, worksheet: worksheet)
-                createLists(worksheet, sharedStrings)
-                createAllSkillsList()
+                createAllStudiesList()
                 debugLists()
             }
         }
@@ -48,20 +56,26 @@ final class FileStudiesService {
             guard let columnB = Constants.columnB else { return }
             guard let columnC = Constants.columnC else { return }
             guard let columnD = Constants.columnD else { return }
-            guard let columnE = Constants.columnE else { return }
 
-            columns.columnASkillsStr = worksheet.cells(atColumns: [columnA])
+            columns.columnAStudiesStr = worksheet.cells(atColumns: [columnA])
                 .compactMap { $0.stringValue(sharedStrings) }
-            columns.columnBSkillsStr = worksheet.cells(atColumns: [columnB])
+            columns.columnBStudiesStr = worksheet.cells(atColumns: [columnB])
                 .compactMap { $0.stringValue(sharedStrings) }
-            columns.columnCSkillsStr = worksheet.cells(atColumns: [columnC])
+            columns.columnCStudiesStr = worksheet.cells(atColumns: [columnC])
                 .compactMap { $0.stringValue(sharedStrings) }
-            columns.columnDSkillsStr = worksheet.cells(atColumns: [columnD])
+            columns.columnDStudiesStr = worksheet.cells(atColumns: [columnD])
                 .compactMap { $0.stringValue(sharedStrings) }
-            columns.columnESkillsStr = worksheet.cells(atColumns: [columnE])
-                .compactMap { $0.stringValue(sharedStrings) }
+            setDatesList(worksheet)
+            createLists()
         } catch {
             print("error : \(error.localizedDescription)")
+        }
+    }
+    
+    private func setDatesList(_ worksheet: Worksheet) {
+        for row in worksheet.data?.rows ?? [] {
+            let date = row.cells[4].dateValue?.toString() ?? ""
+            datesList.append(date)
         }
     }
 }
@@ -69,35 +83,28 @@ final class FileStudiesService {
 // MARK: - Extension to create lists and dictionnaries
 
 extension FileStudiesService {
-
+    
     /// create lists of items
-    fileprivate func createLists(_ worksheet: Worksheet, _ sharedStrings: SharedStrings) {
-        for row in worksheet.data?.rows ?? [] {
-            formationsList.append(row.cells[0].stringValue(sharedStrings) ?? "")
-            knowledgesList.append(row.cells[1].stringValue(sharedStrings) ?? "")
-            degreesList.append(row.cells[2].stringValue(sharedStrings) ?? "")
-            knowledgeTitlesList.append(row.cells[3].stringValue(sharedStrings) ?? "")
-            linksList.append(row.cells[4].stringValue(sharedStrings) ?? "")
-        }
+    private func createLists() {
+        certificationsList = columns.columnAStudiesStr
+        organizationsList = columns.columnBStudiesStr
+        themesList = columns.columnCStudiesStr
+        linksList = columns.columnDStudiesStr
     }
     
-    fileprivate func removeTitleColums() {
-        formationsList.removeFirst()
-        knowledgesList.removeFirst()
-        degreesList.removeFirst()
-        knowledgeTitlesList.removeFirst()
+    private func removeTitleColums() {
+        certificationsList.removeFirst()
+        organizationsList.removeFirst()
+        themesList.removeFirst()
         linksList.removeFirst()
+        datesList.removeFirst()
     }
     
     /// create a list with struct langages and all lists of items
-    fileprivate func createAllSkillsList() {
+    private func createAllStudiesList() {
         removeTitleColums()
         for index in 0...rowsCount - 2 {
-            allSkillsList.append(Skills(formation: formationsList[index],
-                                        knowledge: knowledgesList[index],
-                                        degree: degreesList[index],
-                                        knowledgeTitle: knowledgeTitlesList[index],
-                                        link: linksList[index]))
+            allStudiesList.append(Studies(certification: certificationsList[index], organization: organizationsList[index], theme: themesList[index], link: linksList[index], date: datesList[index]))
         }
     }
 }
@@ -107,15 +114,15 @@ extension FileStudiesService {
 extension FileStudiesService {
     
     /// function to debug list
-    fileprivate func debugLists() {
+    private func debugLists() {
         print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
-        print("allSkillsList : \(allSkillsList)")
-        print("allSkillsList count : \(allSkillsList.count)")
-        print("formationsList : \(formationsList)")
-        print("formationsList COUNT : \(formationsList.count)")
-        print("knowledgesList : \(knowledgesList)")
-        print("degreesList : \(degreesList)")
-        print("knowledgeTitlesList : \(knowledgeTitlesList)")
+        print("allStudiesList : \(allStudiesList)")
+        print("allStudiesList count : \(allStudiesList.count)")
+        print("certificationsList : \(certificationsList)")
+        print("certificationsList COUNT : \(certificationsList.count)")
+        print("organizationsList : \(organizationsList)")
+        print("themesList : \(themesList)")
         print("linksList : \(linksList)")
+        print("datesList : \(datesList)")
     }
 }

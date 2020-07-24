@@ -15,12 +15,22 @@ final class FileSkillsService {
 
     private var columns = Columns()
     var allSkillsList = [Skills]()
-    var rowsCount = Int()
-    var formationsList = [String]()
-    var knowledgesList = [String]()
-    var degreesList = [String]()
-    var knowledgeTitlesList = [String]()
-    var linksList = [String]()
+    private var rowsCount = Int()
+    private var formationsList = [String]()
+    private var knowledgesList = [String]()
+    private var degreesList = [String]()
+    private var knowledgeTitlesList = [String]()
+    private var linksList = [String]()
+    
+    // MARK: - Struct to Columns of xlsx file
+    
+    private struct Columns {
+        var columnASkillsStr = [String]()
+        var columnBSkillsStr = [String]()
+        var columnCSkillsStr = [String]()
+        var columnDSkillsStr = [String]()
+        var columnESkillsStr = [String]()
+    }
 
     // MARK: - Methods
     
@@ -31,12 +41,11 @@ final class FileSkillsService {
                     print("This worksheet has a name: \(worksheetName)")
                 }
                 let worksheet = try file.parseWorksheet(at: path)
-                let sharedStrings = try file.parseSharedStrings()
                 rowsCount = worksheet.data?.rows.count ?? 0
                 setColumnsFile(file: file, worksheet: worksheet)
-                createLists(worksheet, sharedStrings)
+                createLists()
                 createAllSkillsList()
-                debugLists()
+//                debugLists()
             }
         }
     }
@@ -71,17 +80,15 @@ final class FileSkillsService {
 extension FileSkillsService {
 
     /// create lists of items
-    fileprivate func createLists(_ worksheet: Worksheet, _ sharedStrings: SharedStrings) {
-        for row in worksheet.data?.rows ?? [] {
-            formationsList.append(row.cells[0].stringValue(sharedStrings) ?? "")
-            knowledgesList.append(row.cells[1].stringValue(sharedStrings) ?? "")
-            degreesList.append(row.cells[2].stringValue(sharedStrings) ?? "")
-            knowledgeTitlesList.append(row.cells[3].stringValue(sharedStrings) ?? "")
-            linksList.append(row.cells[4].stringValue(sharedStrings) ?? "")
-        }
+    private func createLists() {
+        formationsList = columns.columnASkillsStr
+        knowledgesList = columns.columnBSkillsStr
+        degreesList = columns.columnCSkillsStr
+        knowledgeTitlesList = columns.columnDSkillsStr
+        linksList = columns.columnESkillsStr
     }
     
-    fileprivate func removeTitleColums() {
+    private func removeTitleColums() {
         formationsList.removeFirst()
         knowledgesList.removeFirst()
         degreesList.removeFirst()
@@ -90,7 +97,7 @@ extension FileSkillsService {
     }
     
     /// create a list with struct langages and all lists of items
-    fileprivate func createAllSkillsList() {
+    private func createAllSkillsList() {
         removeTitleColums()
         for index in 0...rowsCount - 2 {
             allSkillsList.append(Skills(formation: formationsList[index],
@@ -107,7 +114,7 @@ extension FileSkillsService {
 extension FileSkillsService {
     
     /// function to debug list
-    fileprivate func debugLists() {
+    private func debugLists() {
         print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
         print("allSkillsList : \(allSkillsList)")
         print("allSkillsList count : \(allSkillsList.count)")

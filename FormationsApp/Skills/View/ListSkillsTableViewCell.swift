@@ -21,7 +21,6 @@ final class ListSkillsTableViewCell: UITableViewCell {
         didSet {
             titleLabel.text = knowledge?.knowledge
             subtitleLabel.text = knowledge?.formation
-            print("knowledge in cell : \(String(describing: knowledge?.knowledge))")
         }
     }
 

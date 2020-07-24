@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "kisspng-web-development-web-developer-web-design-software-5ae187d4f2c515.1032139415247298129944.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

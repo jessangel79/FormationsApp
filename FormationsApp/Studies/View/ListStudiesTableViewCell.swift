@@ -14,14 +14,23 @@ final class ListStudiesTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     // MARK: - Properties
     
-    var studies: Skills? {
+    var studies: Studies? {
         didSet {
-            titleLabel.text = studies?.knowledge
-            subtitleLabel.text = studies?.formation
-            print("langage in cell : \(String(describing: studies?.knowledge))")
+            titleLabel.text = studies?.certification
+            subtitleLabel.text = studies?.organization
+            loadImage(OrgStudies(rawValue: studies?.organization ?? "") ?? OrgStudies.company)
+        }
+    }
+    
+    var experiences: Experiences? {
+        didSet {
+            titleLabel.text = experiences?.experience
+            subtitleLabel.text = experiences?.company
+            loadImageCompany(Companies(rawValue: experiences?.company ?? "") ?? Companies.company)
         }
     }
 
@@ -31,4 +40,44 @@ final class ListStudiesTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    // MARK: - Methods
+
+    private func loadImage(_ orgStudies: OrgStudies) {
+        let lyceeLouisJouvet = OrgStudies.lyceeLouisJouvet.rawValue.cutEndString(stringElementOf: "-").removeAccent(stringOf: "é").deleteWhitespaces
+        let lyceeDiderot = OrgStudies.lyceeDiderot.rawValue.cutEndString(stringElementOf: "-").removeAccent(stringOf: "é").deleteWhitespaces
+
+//        let lyceeLouisJouvet = OrgStudies.lyceeLouisJouvet.rawValue.cutEndString(stringElementOf: "-").removeAccent.deleteWhitespaces
+//        let lyceeDiderot = OrgStudies.lyceeDiderot.rawValue.cutEndString(stringElementOf: "-").removeAccent.deleteWhitespaces
+        switch orgStudies {
+        case .openClassrooms:
+            logoImageView.image = UIImage(named: OrgStudies.openClassrooms.rawValue.lowercased() + ".png")
+        case .orsys:
+            logoImageView.image = UIImage(named: OrgStudies.orsys.rawValue + ".png")
+        case .soloLearn:
+            logoImageView.image = UIImage(named: OrgStudies.soloLearn.rawValue + ".png")
+        case .plusNouvellesTechnologies:
+            logoImageView.image = UIImage(named: OrgStudies.plusNouvellesTechnologies.rawValue.deleteWhitespaces + ".png")
+        case .lyceeLouisJouvet:
+            logoImageView.image = UIImage(named: lyceeLouisJouvet + ".jpg")
+        case .lyceeDiderot:
+            logoImageView.image = UIImage(named: lyceeDiderot + ".png")
+        default:
+            logoImageView.image = UIImage(named: OrgStudies.company.rawValue + ".png")
+        }
+    }
+    
+    private func loadImageCompany(_ companies: Companies) {
+        switch companies {
+        case .angelAppDev:
+            logoImageView.image = UIImage(named: Companies.angelAppDev.rawValue.deleteWhitespaces + ".png")
+        case .gva:
+            logoImageView.image = UIImage(named: Companies.gva.rawValue + ".png")
+        case .cafVo:
+            logoImageView.image = UIImage(named: Companies.cafVo.rawValue.deleteWhitespaces + ".png")
+        case .stime:
+            logoImageView.image = UIImage(named: Companies.stime.rawValue.deleteWhitespaces + ".png")
+        default:
+            logoImageView.image = UIImage(named: Companies.company.rawValue + ".png")
+        }
+    }
 }

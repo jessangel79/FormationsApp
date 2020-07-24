@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreXLSX
 
 extension Constants {    
     static let ListSkillsCell = "ListSkillsCell"

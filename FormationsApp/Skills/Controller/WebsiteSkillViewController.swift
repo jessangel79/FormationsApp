@@ -11,6 +11,11 @@ import WebKit
 
 final class WebsiteSkillViewController: UIViewController, WKUIDelegate {
     
+    // MARK: - Outlets
+    
+    @IBOutlet private weak var safariBarButtonItem: UIBarButtonItem!
+    @IBOutlet private weak var shareBarButtonItem: UIBarButtonItem!
+    
     // MARK: - Properties
     
     var cellule: Skills?
@@ -29,37 +34,37 @@ final class WebsiteSkillViewController: UIViewController, WKUIDelegate {
                                       action: #selector(backAction))
     private let refreshBarItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
     
+    // MARK: - Actions
+    
+    @IBAction private func safariBarButtonItemTapped(_ sender: UIBarButtonItem) {
+        guard let urlCellule = cellule?.link else { return }
+        openSafari(urlCellule)
+    }
+    
+    @IBAction private func shareBarButtonItemTapped(_ sender: UIBarButtonItem) {
+        guard let website = cellule?.link else { return }
+        shareContent(website: website, shareBarButtonItem: shareBarButtonItem, view: self)
+    }
+    
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupNavItem()
-        loadWebsite()
+        let barItemsCollection: [UIBarButtonItem] = [forwardBarItem, refreshBarItem, backBarItem]
+        setupWebView(webView: webView, barItemsCollection: barItemsCollection)
+        guard let link = cellule?.link else { return }
+        loadLink(link, webView: webView)
+//        loadWebsite(cellule?.link ?? "", webView: webView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard let link = cellule?.link else { return }
+        loadLink(link, webView: webView)
     }
     
     // MARK: - Methods
 
-    private func setupUI() {
-        self.view.backgroundColor = .white
-        self.view.addSubview(webView)
-        
-        NSLayoutConstraint.activate([
-            webView.topAnchor
-                .constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            webView.leftAnchor
-                .constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor),
-            webView.bottomAnchor
-                .constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            webView.rightAnchor
-                .constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor)
-        ])
-    }
-    
     @objc private func forwardAction() {
         if webView.canGoForward {
             webView.goForward()
@@ -74,16 +79,5 @@ final class WebsiteSkillViewController: UIViewController, WKUIDelegate {
     
     @objc private func refresh() {
         webView.reload()
-    }
-
-    private func setupNavItem() {
-        self.navigationItem.rightBarButtonItems = [forwardBarItem, refreshBarItem, backBarItem]
-    }
-
-    private func loadWebsite() {
-        guard let url = URL(string: cellule?.link ?? "") else { return }
-        print(url)
-        webView.load(URLRequest(url: url))
-        webView.allowsBackForwardNavigationGestures = true
     }
 }

@@ -38,11 +38,13 @@ final class ListSkillsViewController: UIViewController {
         } catch {
             title = error.localizedDescription
         }
+        navigationController?.isToolbarHidden = true
         listSkillsTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.isToolbarHidden = true
         listSkillsTableView.reloadData()
     }
 }
@@ -71,7 +73,6 @@ extension ListSkillsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.cellSelected = allSkillsList[indexPath.row]
-        print("cellSelected in ListLangagesVC : \(String(describing: cellSelected))")
         performSegue(withIdentifier: self.segueToDetailsSkill, sender: self)
     }
 }

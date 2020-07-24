@@ -11,7 +11,7 @@ import Foundation
 extension Date {
     
     /// format type date in type string
-    func toString(format: String = "dd-MM-yyyy") -> String { // "yyyy-MM-dd"
+    func toString(format: String = "dd-MM-yyyy") -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.dateFormat = format

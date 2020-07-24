@@ -23,15 +23,8 @@ final class DetailsSkillViewController: UIViewController {
     // MARK: - Properties
 
     var cellule: Skills?
-    var fileService = FileFormationsService()
     var allSkillsList = [Skills]()
     private let segueToWebsiteSkill = Constants.SegueToWebsiteSkill
-        
-    // MARK: - Actions
-    
-    @IBAction private func websiteButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: self.segueToWebsiteSkill, sender: self)
-    }
  
     // MARK: - View Life Cycle
 
@@ -42,6 +35,12 @@ final class DetailsSkillViewController: UIViewController {
         customButton(button: websiteButton, radius: 15, width: 2.0, colorBackground: #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1), colorBorder: #colorLiteral(red: 0.3465234637, green: 0.05713232607, blue: 0.1905708015, alpha: 1))
         configureSkill()
         setWebsiteButton()
+        navigationController?.isToolbarHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isToolbarHidden = true
     }
     
     // MARK: - Methods
@@ -59,7 +58,7 @@ final class DetailsSkillViewController: UIViewController {
         } else if cellule?.formation ?? "" == allSkillsList[0].formation {
             websiteButton.setTitle("Soutenance", for: .normal)
         } else {
-            websiteButton.setTitle("AngelAppDev.io", for: .normal)
+            websiteButton.setTitle("LinkedIn", for: .normal)
         }
         websiteButton.showsTouchWhenHighlighted = true
     }
