@@ -16,6 +16,7 @@ extension String {
         return whitespacesDeleted
     }
     
+    /// remplace whitespaces by "-"
     var removeWhitespaces: String {
         let whitespacesDeleted = self.replacingOccurrences(of: " ", with: "-")
         return whitespacesDeleted
@@ -27,13 +28,7 @@ extension String {
         return String(stringDropped)
     }
     
-    /// remove accent
-//    var removeAccent: String {
-//        let word = self.replacingOccurrences(of: "é", with: "e")
-////        word = self.replacingOccurrences(of: "è", with: "e")
-//        return word
-//    }
-    
+    /// remplace a string by "e"
     func removeAccent(stringOf: String) -> String {
         let word = self.replacingOccurrences(of: stringOf, with: "e")
         return word

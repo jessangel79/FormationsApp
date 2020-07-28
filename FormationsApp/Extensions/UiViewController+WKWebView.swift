@@ -49,7 +49,6 @@ extension UIViewController {
     
     /// open url or pdf  in webview
     func loadLink(_ urlSttring: String, webView: WKWebView) {
-//        guard let suffixPdf = cellule?.link.hasSuffix(".pdf") else { return }
         let suffixPdf = urlSttring.hasSuffix(".pdf")
         if suffixPdf {
             let ressource = urlSttring.dropString
@@ -93,7 +92,6 @@ extension UIViewController {
             let linkToShare = URL(string: website)
             return linkToShare
         }
-        
         var sharePdf: URL? {
             var pdfToShare: URL?
             let ressource = website.dropString

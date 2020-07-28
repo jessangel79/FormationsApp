@@ -46,8 +46,6 @@
 		3A32242224B63D4D00949999 /* ListSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32242124B63D4D00949999 /* ListSkillsViewController.swift */; };
 		3A32242424B63E0500949999 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32242324B63E0500949999 /* Skills.swift */; };
 		3A32242A24B6433300949999 /* FileSkillsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32242924B6433300949999 /* FileSkillsService.swift */; };
-		3A418DCF24CA07B8002B251C /* Pods_FormationsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */; };
-		3A418DD024CA07B8002B251C /* Pods_FormationsApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A41ACCB24B879E8007DBE8C /* UIViewController+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACCA24B879E8007DBE8C /* UIViewController+CustomUI.swift */; };
 		3A41ACCF24B8C7D7007DBE8C /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A41ACCE24B8C7D7007DBE8C /* Informations.storyboard */; };
 		3A41ACD224B8CADE007DBE8C /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41ACD124B8CADE007DBE8C /* InformationsViewController.swift */; };
@@ -71,6 +69,7 @@
 		3A79971924A239C1007FD4A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A79971724A239C1007FD4A2 /* LaunchScreen.storyboard */; };
 		3A79972424A239C2007FD4A2 /* FormationsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79972324A239C2007FD4A2 /* FormationsAppTests.swift */; };
 		3A79974424A24EB1007FD4A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79974324A24EB1007FD4A2 /* Constants.swift */; };
+		3A83E7D424CF27460003491F /* Pods_FormationsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */; };
 		3A884E6E24C499970080B9CD /* UiViewController+WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A884E6D24C499970080B9CD /* UiViewController+WKWebView.swift */; };
 		3AC28F4524B760F4000FB429 /* ListSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC28F4324B760F4000FB429 /* ListSkillsTableViewCell.swift */; };
 		3AC28F4624B760F4000FB429 /* ListSkillsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC28F4424B760F4000FB429 /* ListSkillsTableViewCell.xib */; };
@@ -116,20 +115,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3A418DD124CA07B8002B251C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3A418DD024CA07B8002B251C /* Pods_FormationsApp.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		03BE9464DAC97ED68344ACC0 /* Pods-FormationsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsApp.debug.xcconfig"; path = "Target Support Files/Pods-FormationsApp/Pods-FormationsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		1CB0DD64C06FA6277A47B91A /* Pods_FormationsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FormationsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,7 +141,7 @@
 		3A32241524B632CE00949999 /* Skills.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Skills.storyboard; sourceTree = "<group>"; };
 		3A32241724B6337000949999 /* Studies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Studies.storyboard; sourceTree = "<group>"; };
 		3A32241924B6365700949999 /* Experiences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Experiences.storyboard; sourceTree = "<group>"; };
-		3A32242124B63D4D00949999 /* ListSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSkillsViewController.swift; path = FormationsApp/Skills/ListSkillsViewController.swift; sourceTree = SOURCE_ROOT; };
+		3A32242124B63D4D00949999 /* ListSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSkillsViewController.swift; path = FormationsApp/Skills/Controller/ListSkillsViewController.swift; sourceTree = SOURCE_ROOT; };
 		3A32242324B63E0500949999 /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
 		3A32242924B6433300949999 /* FileSkillsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSkillsService.swift; sourceTree = "<group>"; };
 		3A41ACCA24B879E8007DBE8C /* UIViewController+CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomUI.swift"; sourceTree = "<group>"; };
@@ -216,7 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A418DCF24CA07B8002B251C /* Pods_FormationsApp.framework in Frameworks */,
+				3A83E7D424CF27460003491F /* Pods_FormationsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,13 +225,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		3A1B7A8E24C204540021FFBC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		3A1B7A8F24C204580021FFBC /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,13 +233,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		3A1B7A9224C2070B0021FFBC /* Ressources */ = {
+		3A1B7A9224C2070B0021FFBC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				3A1B7A9524C207350021FFBC /* xls */,
 				3A1B7A9424C207300021FFBC /* pdf */,
 			);
-			path = Ressources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		3A1B7A9424C207300021FFBC /* pdf */ = {
@@ -388,7 +366,6 @@
 		3A41ACD024B8CAAC007DBE8C /* Informations */ = {
 			isa = PBXGroup;
 			children = (
-				3A1B7A8E24C204540021FFBC /* Model */,
 				3A1B7A8D24C2044D0021FFBC /* Controller */,
 				3A1B7A8F24C204580021FFBC /* View */,
 			);
@@ -456,7 +433,7 @@
 				3A32241B24B63A0B00949999 /* Skills */,
 				3A41ACD024B8CAAC007DBE8C /* Informations */,
 				3A2E2DF324A37DF0008B3F9B /* Extensions */,
-				3A1B7A9224C2070B0021FFBC /* Ressources */,
+				3A1B7A9224C2070B0021FFBC /* Resources */,
 				3A79973224A23DA9007FD4A2 /* Supporting Files */,
 			);
 			path = FormationsApp;
@@ -552,7 +529,6 @@
 				3A79970724A239BF007FD4A2 /* Resources */,
 				8BDFFEBBB6027B58E47E96A4 /* [CP] Embed Pods Frameworks */,
 				3A79972E24A23D8C007FD4A2 /* ShellScript */,
-				3A418DD124CA07B8002B251C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -44,7 +44,7 @@ final class FileStudiesService {
                 rowsCount = worksheet.data?.rows.count ?? 0
                 setColumnsFile(file: file, worksheet: worksheet)
                 createAllStudiesList()
-                debugLists()
+//                debugLists()
             }
         }
     }
@@ -111,18 +111,18 @@ extension FileStudiesService {
 
 // MARK: - Extension to debug lists and dictionnaries
 
-extension FileStudiesService {
-    
-    /// function to debug list
-    private func debugLists() {
-        print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
-        print("allStudiesList : \(allStudiesList)")
-        print("allStudiesList count : \(allStudiesList.count)")
-        print("certificationsList : \(certificationsList)")
-        print("certificationsList COUNT : \(certificationsList.count)")
-        print("organizationsList : \(organizationsList)")
-        print("themesList : \(themesList)")
-        print("linksList : \(linksList)")
-        print("datesList : \(datesList)")
-    }
-}
+//extension FileStudiesService {
+//
+//    /// function to debug list
+//    private func debugLists() {
+//        print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
+//        print("allStudiesList : \(allStudiesList)")
+//        print("allStudiesList count : \(allStudiesList.count)")
+//        print("certificationsList : \(certificationsList)")
+//        print("certificationsList COUNT : \(certificationsList.count)")
+//        print("organizationsList : \(organizationsList)")
+//        print("themesList : \(themesList)")
+//        print("linksList : \(linksList)")
+//        print("datesList : \(datesList)")
+//    }
+//}

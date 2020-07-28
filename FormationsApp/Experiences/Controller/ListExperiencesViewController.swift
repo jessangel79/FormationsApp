@@ -75,7 +75,6 @@ extension ListExperiencesViewController: UITableViewDataSource, UITableViewDeleg
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.cellSelected = allExperiencesList[indexPath.row]
-        print("cellSelected in ListStudiesVC : \(String(describing: cellSelected))")
         performSegue(withIdentifier: self.segueToDetailsExperience, sender: self)
     }
 }

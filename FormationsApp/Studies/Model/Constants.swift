@@ -21,7 +21,6 @@ struct Constants {
     static let columnG = ColumnReference("G")
     static let columnH = ColumnReference("H")
     static let columnI = ColumnReference("I")
-    static let ToDo = "A faire"
     
     static let ListStudiesCell = "ListStudiesCell"
     static let ListStudiesTableViewCell = "ListStudiesTableViewCell"

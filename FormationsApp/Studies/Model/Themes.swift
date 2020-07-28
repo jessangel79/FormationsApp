@@ -20,7 +20,8 @@ enum Themes: String {
     case git = "Git"
     case crossPlateform = "Cross-Plateform"
     case entrepreneuriat = "Entrepreneuriat"
-    case gestionDeProjet = "Gestion de projet"
-    case administrationSysteme = "Administration système"
-    case divers = "Divers"
+    case projectManagement = "Gestion de projet"
+    case systemAdministration = "Administration système"
+    case development = "Développement"
+    case various = "Divers"
 }

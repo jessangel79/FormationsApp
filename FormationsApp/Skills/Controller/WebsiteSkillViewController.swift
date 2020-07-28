@@ -54,7 +54,6 @@ final class WebsiteSkillViewController: UIViewController, WKUIDelegate {
         setupWebView(webView: webView, barItemsCollection: barItemsCollection)
         guard let link = cellule?.link else { return }
         loadLink(link, webView: webView)
-//        loadWebsite(cellule?.link ?? "", webView: webView)
     }
     
     override func viewWillAppear(_ animated: Bool) {

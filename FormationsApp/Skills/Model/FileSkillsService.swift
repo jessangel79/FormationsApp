@@ -111,18 +111,18 @@ extension FileSkillsService {
 
 // MARK: - Extension to debug lists and dictionnaries
 
-extension FileSkillsService {
-    
-    /// function to debug list
-    private func debugLists() {
-        print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
-        print("allSkillsList : \(allSkillsList)")
-        print("allSkillsList count : \(allSkillsList.count)")
-        print("formationsList : \(formationsList)")
-        print("formationsList COUNT : \(formationsList.count)")
-        print("knowledgesList : \(knowledgesList)")
-        print("degreesList : \(degreesList)")
-        print("knowledgeTitlesList : \(knowledgeTitlesList)")
-        print("linksList : \(linksList)")
-    }
-}
+//extension FileSkillsService {
+//    
+//    /// function to debug list
+//    private func debugLists() {
+//        print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
+//        print("allSkillsList : \(allSkillsList)")
+//        print("allSkillsList count : \(allSkillsList.count)")
+//        print("formationsList : \(formationsList)")
+//        print("formationsList COUNT : \(formationsList.count)")
+//        print("knowledgesList : \(knowledgesList)")
+//        print("degreesList : \(degreesList)")
+//        print("knowledgeTitlesList : \(knowledgeTitlesList)")
+//        print("linksList : \(linksList)")
+//    }
+//}

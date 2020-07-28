@@ -53,7 +53,6 @@ final class DetailsExperienceViewController: UIViewController {
 
     private func configureExperience() {
         experienceLabel.text = cellule?.experience
-//        loadImageJob(cellule?.experience ?? "")
         loadImageJob(Jobs(rawValue: cellule?.experience ?? "") ?? Jobs.businesswoman)
         companyLabel.text = cellule?.company
         loadImageCompany(Companies(rawValue: cellule?.company ?? "") ?? Companies.company)

@@ -61,14 +61,12 @@ final class WebsiteStudyViewController: UIViewController, WKUIDelegate {
         setupWebView(webView: webView, barItemsCollection: barItemsCollection)
         guard let link = cellule?.link else { return }
         loadLink(link, webView: webView)
-//        loadLink()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let link = cellule?.link else { return }
         loadLink(link, webView: webView)
-//        loadLink()
     }
     
     // MARK: - Methods
@@ -88,22 +86,4 @@ final class WebsiteStudyViewController: UIViewController, WKUIDelegate {
     @objc private func refresh() {
         webView.reload()
     }
-    
-//    private func loadLink() {
-//        guard let suffixPdf = cellule?.link.hasSuffix(".pdf") else { return }
-//        if suffixPdf {
-//            guard let ressource = cellule?.link.dropString else { return }
-//            loadPdf(ressource)
-//        } else {
-//            loadWebsite(cellule?.link ?? "", webView: webView)
-//        }
-//    }
-//
-//    /// display pdf in webview
-//    private func loadPdf(_ resource: String) {
-//        guard let urlPdf = Bundle.main.url(forResource: resource, withExtension: "pdf") else { return }
-//        print(urlPdf)
-//        webView.load(URLRequest(url: urlPdf))
-//        webView.allowsBackForwardNavigationGestures = true
-//    }
 }

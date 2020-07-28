@@ -16,11 +16,4 @@ enum Jobs: String {
     case agent = "Agent GED"
     case helpdesk = "Technicienne Help Desk"
     case businesswoman
-//    case developer
-//    case technician
-//    case agent
-//    case helpdesk
-//    case businesswoman
 }
-
-//DéveloppeuseMobile-iOS

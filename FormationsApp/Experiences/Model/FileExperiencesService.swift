@@ -113,18 +113,18 @@ extension FileExperiencesService {
 
 // MARK: - Extension to debug lists and dictionnaries
 
-extension FileExperiencesService {
-
-    /// function to debug list
-    private func debugLists() {
-        print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
-        print("allExperiencesList : \(allExperiencesList)")
-        print("allExperiencesList count : \(allExperiencesList.count)")
-        print("experiencesList : \(experiencesList)")
-        print("experiencesList COUNT : \(experiencesList.count)")
-        print("companiesList : \(companiesList)")
-        print("linksList : \(linksList)")
-        print("startDatesList : \(startDatesList)")
-        print("endDatesList : \(endDatesList)")
-    }
-}
+//extension FileExperiencesService {
+//
+//    /// function to debug list
+//    private func debugLists() {
+//        print("worksheet.data?.rows.count - rowsCount : \(rowsCount)")
+//        print("allExperiencesList : \(allExperiencesList)")
+//        print("allExperiencesList count : \(allExperiencesList.count)")
+//        print("experiencesList : \(experiencesList)")
+//        print("experiencesList COUNT : \(experiencesList.count)")
+//        print("companiesList : \(companiesList)")
+//        print("linksList : \(linksList)")
+//        print("startDatesList : \(startDatesList)")
+//        print("endDatesList : \(endDatesList)")
+//    }
+//}

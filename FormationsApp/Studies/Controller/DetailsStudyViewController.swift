@@ -59,7 +59,7 @@ final class DetailsStudyViewController: UIViewController {
         organizationLabel.text = cellule?.organization
         themeLabel.text = cellule?.theme
         loadImage(OrgStudies(rawValue: cellule?.organization ?? "") ?? OrgStudies.company)
-        loadImageTheme(Themes(rawValue: cellule?.theme ?? "") ?? Themes.divers)
+        loadImageTheme(Themes(rawValue: cellule?.theme ?? "") ?? Themes.various)
         setDate()
     }
     
@@ -75,12 +75,9 @@ final class DetailsStudyViewController: UIViewController {
     private func loadImage(_ orgStudies: OrgStudies) {
         let lyceeLouisJouvet = OrgStudies.lyceeLouisJouvet.rawValue.cutEndString(stringElementOf: "-").removeAccent(stringOf: "é").deleteWhitespaces
         let lyceeDiderot = OrgStudies.lyceeDiderot.rawValue.cutEndString(stringElementOf: "-").removeAccent(stringOf: "é").deleteWhitespaces
-
-//        let lyceeLouisJouvet = OrgStudies.lyceeLouisJouvet.rawValue.cutEndString(stringElementOf: "-").removeAccent.deleteWhitespaces
-//        let lyceeDiderot = OrgStudies.lyceeDiderot.rawValue.cutEndString(stringElementOf: "-").removeAccent.deleteWhitespaces
         switch orgStudies {
         case .openClassrooms:
-            logoImageView.image = UIImage(named: OrgStudies.openClassrooms.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: OrgStudies.openClassrooms.rawValue + ".png")
         case .orsys:
             logoImageView.image = UIImage(named: OrgStudies.orsys.rawValue + ".png")
         case .soloLearn:
@@ -116,12 +113,14 @@ final class DetailsStudyViewController: UIViewController {
             logoThemeImageView.image = UIImage(named: Themes.crossPlateform.rawValue + ".png")
         case .entrepreneuriat:
             logoThemeImageView.image = UIImage(named: Themes.entrepreneuriat.rawValue + ".png")
-        case .gestionDeProjet:
-            logoThemeImageView.image = UIImage(named: Themes.gestionDeProjet.rawValue.removeWhitespaces + ".jpg")
-        case .administrationSysteme:
-            logoThemeImageView.image = UIImage(named: Themes.administrationSysteme.rawValue.removeWhitespaces.removeAccent(stringOf: "è") + ".png")
+        case .projectManagement:
+            logoThemeImageView.image = UIImage(named: Themes.projectManagement.rawValue.removeWhitespaces + ".jpg")
+        case .systemAdministration:
+            logoThemeImageView.image = UIImage(named: Themes.systemAdministration.rawValue.removeWhitespaces.removeAccent(stringOf: "è") + ".png")
+        case .development:
+            logoThemeImageView.image = UIImage(named: Themes.development.rawValue.removeWhitespaces.removeAccent(stringOf: "é") + ".png")
         default:
-            logoThemeImageView.image = UIImage(named: Themes.divers.rawValue.lowercased() + ".png")
+            logoThemeImageView.image = UIImage(named: Themes.various.rawValue.lowercased() + ".png")
         }
     }
 }

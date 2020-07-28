@@ -45,12 +45,9 @@ final class ListStudiesTableViewCell: UITableViewCell {
     private func loadImage(_ orgStudies: OrgStudies) {
         let lyceeLouisJouvet = OrgStudies.lyceeLouisJouvet.rawValue.cutEndString(stringElementOf: "-").removeAccent(stringOf: "é").deleteWhitespaces
         let lyceeDiderot = OrgStudies.lyceeDiderot.rawValue.cutEndString(stringElementOf: "-").removeAccent(stringOf: "é").deleteWhitespaces
-
-//        let lyceeLouisJouvet = OrgStudies.lyceeLouisJouvet.rawValue.cutEndString(stringElementOf: "-").removeAccent.deleteWhitespaces
-//        let lyceeDiderot = OrgStudies.lyceeDiderot.rawValue.cutEndString(stringElementOf: "-").removeAccent.deleteWhitespaces
         switch orgStudies {
         case .openClassrooms:
-            logoImageView.image = UIImage(named: OrgStudies.openClassrooms.rawValue.lowercased() + ".png")
+            logoImageView.image = UIImage(named: OrgStudies.openClassrooms.rawValue + ".png")
         case .orsys:
             logoImageView.image = UIImage(named: OrgStudies.orsys.rawValue + ".png")
         case .soloLearn:

@@ -14,31 +14,41 @@ final class InformationsViewController: UIViewController {
     
     private let segueToWebsiteInfo = "segueToWebsiteInfo"
     private let badgeLinkedIn = "https://www.linkedin.com/mwlite/in/ang%C3%A9lique-babin-158aa874"
-    // "https://fr.linkedin.com/in/ang%C3%A9lique-babin-158aa874"
-    // "https://www.linkedin.com/mwlite/in/ang%C3%A9lique-babin-158aa874"
     private let badgeDevTo = "https://dev.to/angelappdev"
     private var badge = String()
     
     // MARK: - Actions
     
     @IBAction private func freepikButtonTapped(_ sender: UIButton) {
-        let freepikUrl = "https://www.flaticon.com/authors/freepik"
-        openSafari(freepikUrl)
+        openSafari("https://www.flaticon.com/authors/freepik")
     }
     
     @IBAction private func eucalypButtonTapped(_ sender: UIButton) {
-        let eucalypUrl = "https://www.flaticon.com/authors/eucalyp"
-        openSafari(eucalypUrl)
+        openSafari("https://www.flaticon.com/authors/eucalyp")
     }
     
     @IBAction private func flatIconButtonTapped(_ sender: UIButton) {
-        let flatIconUrl = "https://www.flaticon.com/authors/flat-icons"
-        openSafari(flatIconUrl)
+        openSafari("https://www.flaticon.com/authors/flat-icons")
     }
     
-    @IBAction private func flaticonButtonTapped(_ sender: UIButton) {
-        let flaticonUrl = "https://www.flaticon.com/"
-        openSafari(flaticonUrl)
+    @IBAction private func smashiconsButtonTapped(_ sender: UIButton) {
+        openSafari("https://www.flaticon.com/authors/smashicons")
+    }
+    
+    @IBAction private func becrisButtonTapped(_ sender: UIButton) {
+        openSafari("https://www.flaticon.com/authors/becris")
+    }
+
+    @IBAction private func phatplusButtonTapped(_ sender: UIButton) {
+        openSafari("https://www.flaticon.com/authors/phatplus")
+    }
+    
+    @IBAction private func nhorPhaiButtonTapped(_ sender: UIButton) {
+        openSafari("https://www.flaticon.com/authors/nhor-phai")
+    }
+    
+    @IBAction private func flatIconComButtonTapped(_ sender: UIButton) {
+        openSafari("https://www.flaticon.com/")
     }
     
     @IBAction private func badgeLinkedInButtonTapped(_ sender: UIButton) {
