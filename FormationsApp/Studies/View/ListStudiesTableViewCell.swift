@@ -58,6 +58,8 @@ final class ListStudiesTableViewCell: UITableViewCell {
             logoImageView.image = UIImage(named: lyceeLouisJouvet + ".jpg")
         case .lyceeDiderot:
             logoImageView.image = UIImage(named: lyceeDiderot + ".png")
+        case .purpleGiraffe:
+            logoImageView.image = UIImage(named: OrgStudies.purpleGiraffe.rawValue.lowercased() + ".png")
         default:
             logoImageView.image = UIImage(named: OrgStudies.company.rawValue + ".png")
         }

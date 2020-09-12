@@ -17,5 +17,6 @@ enum OrgStudies: String {
     case plusNouvellesTechnologies = "Plus Nouvelles Technologies"
     case lyceeDiderot = "Lycée Diderot - Paris 19ème"
     case lyceeLouisJouvet = "Lycée Louis Jouvet - Taverny"
+    case purpleGiraffe = "Purple Giraffe"
     case company
 }

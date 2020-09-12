@@ -200,6 +200,7 @@
                             <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="R2G-tk-eIb" kind="show" identifier="segueToWebsiteInfo" id="sIh-73-PhZ"/>
                     </connections>

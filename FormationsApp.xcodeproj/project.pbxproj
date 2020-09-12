@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0C1EFA250D2FCF0095C482 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1EF9250D2FCF0095C482 /* Array.swift */; };
+		3A0C1EFB250D2FCF0095C482 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1EF9250D2FCF0095C482 /* Array.swift */; };
+		3A0C1EFD250D35050095C482 /* ThemesString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1EFC250D35050095C482 /* ThemesString.swift */; };
+		3A0C1EFF250D35190095C482 /* Orgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1EFE250D35190095C482 /* Orgs.swift */; };
+		3A0C1F01250D354D0095C482 /* FileFormationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1F00250D354D0095C482 /* FileFormationsService.swift */; };
+		3A0C1F03250D356B0095C482 /* Formations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1F02250D356B0095C482 /* Formations.swift */; };
+		3A0C1F05250D35840095C482 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1F04250D35840095C482 /* States.swift */; };
+		3A0C1F07250D359A0095C482 /* ConstantsFormations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1F06250D359A0095C482 /* ConstantsFormations.swift */; };
+		3A0C1F09250D35F20095C482 /* ListThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1F08250D35F20095C482 /* ListThemesViewController.swift */; };
+		3A0C1F0B250D36170095C482 /* ListFormationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1F0A250D36170095C482 /* ListFormationsViewController.swift */; };
+		3A0C1F0D250D36380095C482 /* DetailsFormationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1F0C250D36380095C482 /* DetailsFormationViewController.swift */; };
+		3A0C1F0F250D36530095C482 /* WebsiteFormationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C1F0E250D36530095C482 /* WebsiteFormationViewController.swift */; };
+		3A0C1F11250D368B0095C482 /* Formations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0C1F10250D368B0095C482 /* Formations.storyboard */; };
 		3A1B7A8C24C202B80021FFBC /* WebViewInformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B7A8B24C202B80021FFBC /* WebViewInformationsViewController.swift */; };
 		3A1B7A9B24C207530021FFBC /* experiences.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7A9624C207520021FFBC /* experiences.xlsx */; };
 		3A1B7A9C24C207530021FFBC /* experiences.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7A9624C207520021FFBC /* experiences.xlsx */; };
-		3A1B7A9D24C207530021FFBC /* studies.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7A9724C207520021FFBC /* studies.xlsx */; };
-		3A1B7A9E24C207530021FFBC /* studies.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7A9724C207520021FFBC /* studies.xlsx */; };
 		3A1B7A9F24C207530021FFBC /* skills.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7A9824C207520021FFBC /* skills.xlsx */; };
 		3A1B7AA024C207530021FFBC /* skills.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7A9824C207520021FFBC /* skills.xlsx */; };
 		3A1B7AAF24C2077A0021FFBC /* HDA.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7AA524C207780021FFBC /* HDA.pdf */; };
@@ -34,6 +45,16 @@
 		3A1B7AC024C2077A0021FFBC /* ITIL.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7AAD24C2077A0021FFBC /* ITIL.pdf */; };
 		3A1B7AC124C2077A0021FFBC /* PHP5.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7AAE24C2077A0021FFBC /* PHP5.pdf */; };
 		3A1B7AC224C2077A0021FFBC /* PHP5.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B7AAE24C2077A0021FFBC /* PHP5.pdf */; };
+		3A1FBE9C250D3872001111A1 /* ListFormationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FBE9A250D3872001111A1 /* ListFormationsTableViewCell.swift */; };
+		3A1FBE9D250D3872001111A1 /* ListFormationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FBE9B250D3872001111A1 /* ListFormationsTableViewCell.xib */; };
+		3A1FBEA2250D3AC8001111A1 /* Diplome-OC-DA-iOS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FBEA1250D3AC8001111A1 /* Diplome-OC-DA-iOS.pdf */; };
+		3A1FBEA3250D3AC8001111A1 /* Diplome-OC-DA-iOS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FBEA1250D3AC8001111A1 /* Diplome-OC-DA-iOS.pdf */; };
+		3A1FBEAB250D3CA8001111A1 /* studies.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FBEAA250D3CA8001111A1 /* studies.xlsx */; };
+		3A1FBEAC250D3CA8001111A1 /* studies.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FBEAA250D3CA8001111A1 /* studies.xlsx */; };
+		3A1FBEAE250D40C0001111A1 /* formations.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FBEAD250D40C0001111A1 /* formations.xlsx */; };
+		3A1FBEAF250D40C0001111A1 /* formations.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FBEAD250D40C0001111A1 /* formations.xlsx */; };
+		3A1FBEB1250D4515001111A1 /* Certificat-de-fin-de-formation-creer-des-apps-android-avec-kotlin-le-cours-complet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FBEB0250D4515001111A1 /* Certificat-de-fin-de-formation-creer-des-apps-android-avec-kotlin-le-cours-complet.pdf */; };
+		3A1FBEB2250D4515001111A1 /* Certificat-de-fin-de-formation-creer-des-apps-android-avec-kotlin-le-cours-complet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1FBEB0250D4515001111A1 /* Certificat-de-fin-de-formation-creer-des-apps-android-avec-kotlin-le-cours-complet.pdf */; };
 		3A28579424C7374E0020D33E /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A28579324C7374E0020D33E /* Jobs.swift */; };
 		3A2982A824BA2C67005DEDFC /* Experiences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2982A724BA2C67005DEDFC /* Experiences.swift */; };
 		3A2982BC24BA31BE005DEDFC /* WebsiteStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2982BB24BA31BE005DEDFC /* WebsiteStudyViewController.swift */; };
@@ -118,9 +139,20 @@
 /* Begin PBXFileReference section */
 		03BE9464DAC97ED68344ACC0 /* Pods-FormationsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsApp.debug.xcconfig"; path = "Target Support Files/Pods-FormationsApp/Pods-FormationsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		1CB0DD64C06FA6277A47B91A /* Pods_FormationsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FormationsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A0C1EF9250D2FCF0095C482 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		3A0C1EFC250D35050095C482 /* ThemesString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesString.swift; sourceTree = "<group>"; };
+		3A0C1EFE250D35190095C482 /* Orgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orgs.swift; sourceTree = "<group>"; };
+		3A0C1F00250D354D0095C482 /* FileFormationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFormationsService.swift; sourceTree = "<group>"; };
+		3A0C1F02250D356B0095C482 /* Formations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formations.swift; sourceTree = "<group>"; };
+		3A0C1F04250D35840095C482 /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
+		3A0C1F06250D359A0095C482 /* ConstantsFormations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsFormations.swift; sourceTree = "<group>"; };
+		3A0C1F08250D35F20095C482 /* ListThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListThemesViewController.swift; sourceTree = "<group>"; };
+		3A0C1F0A250D36170095C482 /* ListFormationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormationsViewController.swift; sourceTree = "<group>"; };
+		3A0C1F0C250D36380095C482 /* DetailsFormationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFormationViewController.swift; sourceTree = "<group>"; };
+		3A0C1F0E250D36530095C482 /* WebsiteFormationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteFormationViewController.swift; sourceTree = "<group>"; };
+		3A0C1F10250D368B0095C482 /* Formations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Formations.storyboard; sourceTree = "<group>"; };
 		3A1B7A8B24C202B80021FFBC /* WebViewInformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInformationsViewController.swift; sourceTree = "<group>"; };
 		3A1B7A9624C207520021FFBC /* experiences.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = experiences.xlsx; sourceTree = "<group>"; };
-		3A1B7A9724C207520021FFBC /* studies.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = studies.xlsx; sourceTree = "<group>"; };
 		3A1B7A9824C207520021FFBC /* skills.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = skills.xlsx; sourceTree = "<group>"; };
 		3A1B7AA524C207780021FFBC /* HDA.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HDA.pdf; sourceTree = "<group>"; };
 		3A1B7AA624C207780021FFBC /* Lotus8.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Lotus8.pdf; sourceTree = "<group>"; };
@@ -132,6 +164,12 @@
 		3A1B7AAC24C207790021FFBC /* Windows7.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Windows7.pdf; sourceTree = "<group>"; };
 		3A1B7AAD24C2077A0021FFBC /* ITIL.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ITIL.pdf; sourceTree = "<group>"; };
 		3A1B7AAE24C2077A0021FFBC /* PHP5.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PHP5.pdf; sourceTree = "<group>"; };
+		3A1FBE9A250D3872001111A1 /* ListFormationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormationsTableViewCell.swift; sourceTree = "<group>"; };
+		3A1FBE9B250D3872001111A1 /* ListFormationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFormationsTableViewCell.xib; sourceTree = "<group>"; };
+		3A1FBEA1250D3AC8001111A1 /* Diplome-OC-DA-iOS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Diplome-OC-DA-iOS.pdf"; sourceTree = "<group>"; };
+		3A1FBEAA250D3CA8001111A1 /* studies.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = studies.xlsx; sourceTree = "<group>"; };
+		3A1FBEAD250D40C0001111A1 /* formations.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = formations.xlsx; sourceTree = "<group>"; };
+		3A1FBEB0250D4515001111A1 /* Certificat-de-fin-de-formation-creer-des-apps-android-avec-kotlin-le-cours-complet.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Certificat-de-fin-de-formation-creer-des-apps-android-avec-kotlin-le-cours-complet.pdf"; sourceTree = "<group>"; };
 		3A28579324C7374E0020D33E /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
 		3A2982A724BA2C67005DEDFC /* Experiences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiences.swift; sourceTree = "<group>"; };
 		3A2982BB24BA31BE005DEDFC /* WebsiteStudyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebsiteStudyViewController.swift; path = FormationsApp/Studies/Controller/WebsiteStudyViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -216,6 +254,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0C1ED1250D2B700095C482 /* Formations */ = {
+			isa = PBXGroup;
+			children = (
+				3A0C1ED4250D2B840095C482 /* Model */,
+				3A0C1ED3250D2B7E0095C482 /* Controller */,
+				3A0C1ED2250D2B760095C482 /* View */,
+			);
+			path = Formations;
+			sourceTree = "<group>";
+		};
+		3A0C1ED2250D2B760095C482 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A0C1F10250D368B0095C482 /* Formations.storyboard */,
+				3A1FBE9A250D3872001111A1 /* ListFormationsTableViewCell.swift */,
+				3A1FBE9B250D3872001111A1 /* ListFormationsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A0C1ED3250D2B7E0095C482 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A0C1F08250D35F20095C482 /* ListThemesViewController.swift */,
+				3A0C1F0A250D36170095C482 /* ListFormationsViewController.swift */,
+				3A0C1F0C250D36380095C482 /* DetailsFormationViewController.swift */,
+				3A0C1F0E250D36530095C482 /* WebsiteFormationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A0C1ED4250D2B840095C482 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A0C1EFC250D35050095C482 /* ThemesString.swift */,
+				3A0C1EFE250D35190095C482 /* Orgs.swift */,
+				3A0C1F00250D354D0095C482 /* FileFormationsService.swift */,
+				3A0C1F02250D356B0095C482 /* Formations.swift */,
+				3A0C1F04250D35840095C482 /* States.swift */,
+				3A0C1F06250D359A0095C482 /* ConstantsFormations.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A0C1EF8250D2E790095C482 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E2DF324A37DF0008B3F9B /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3A1B7A8D24C2044D0021FFBC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +344,8 @@
 		3A1B7A9524C207350021FFBC /* xls */ = {
 			isa = PBXGroup;
 			children = (
-				3A1B7A9724C207520021FFBC /* studies.xlsx */,
+				3A1FBEAD250D40C0001111A1 /* formations.xlsx */,
+				3A1FBEAA250D3CA8001111A1 /* studies.xlsx */,
 				3A1B7A9624C207520021FFBC /* experiences.xlsx */,
 				3A1B7A9824C207520021FFBC /* skills.xlsx */,
 			);
@@ -299,6 +390,7 @@
 				3A41ACCA24B879E8007DBE8C /* UIViewController+CustomUI.swift */,
 				3A2A531924C083EC007DA097 /* UIViewController+Alert.swift */,
 				3A884E6D24C499970080B9CD /* UiViewController+WKWebView.swift */,
+				3A0C1EF9250D2FCF0095C482 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,8 +470,8 @@
 				3A41ACD624B8E134007DBE8C /* Studies.swift */,
 				3A41ACE624B8E583007DBE8C /* FileStudiesService.swift */,
 				3A2A531B24C09EC3007DA097 /* OrgStudies.swift */,
-				3A79974324A24EB1007FD4A2 /* Constants.swift */,
 				3AE7A38E24CB3BC100E06CAB /* Themes.swift */,
+				3A79974324A24EB1007FD4A2 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -431,8 +523,9 @@
 				3A32241C24B63A1000949999 /* Studies */,
 				3A32241D24B63A2400949999 /* Experiences */,
 				3A32241B24B63A0B00949999 /* Skills */,
+				3A0C1ED1250D2B700095C482 /* Formations */,
 				3A41ACD024B8CAAC007DBE8C /* Informations */,
-				3A2E2DF324A37DF0008B3F9B /* Extensions */,
+				3A0C1EF8250D2E790095C482 /* Helpers */,
 				3A1B7A9224C2070B0021FFBC /* Resources */,
 				3A79973224A23DA9007FD4A2 /* Supporting Files */,
 			);
@@ -463,6 +556,8 @@
 		3AC2E50B24C8B6870048E731 /* studies */ = {
 			isa = PBXGroup;
 			children = (
+				3A1FBEB0250D4515001111A1 /* Certificat-de-fin-de-formation-creer-des-apps-android-avec-kotlin-le-cours-complet.pdf */,
+				3A1FBEA1250D3AC8001111A1 /* Diplome-OC-DA-iOS.pdf */,
 				3A1B7AAB24C207790021FFBC /* Bac.pdf */,
 				3A1B7AA524C207780021FFBC /* HDA.pdf */,
 				3A1B7AAD24C2077A0021FFBC /* ITIL.pdf */,
@@ -605,7 +700,9 @@
 				3AC2E52824C8B6CC0048E731 /* Projet4.pdf in Resources */,
 				3A1B7AB324C2077A0021FFBC /* W2K8-AD-Depannage.pdf in Resources */,
 				3AC2E52A24C8B6CC0048E731 /* Projet2.pdf in Resources */,
+				3A1FBEB1250D4515001111A1 /* Certificat-de-fin-de-formation-creer-des-apps-android-avec-kotlin-le-cours-complet.pdf in Resources */,
 				3AC2E52224C8B6CC0048E731 /* Projet11.pdf in Resources */,
+				3A0C1F11250D368B0095C482 /* Formations.storyboard in Resources */,
 				3A1B7A9B24C207530021FFBC /* experiences.xlsx in Resources */,
 				3AC2E51E24C8B6CC0048E731 /* Projet8.pdf in Resources */,
 				3AC2E52024C8B6CC0048E731 /* Projet9.pdf in Resources */,
@@ -620,15 +717,18 @@
 				3A1B7AC124C2077A0021FFBC /* PHP5.pdf in Resources */,
 				3A1B7ABD24C2077A0021FFBC /* Windows7.pdf in Resources */,
 				3A79971924A239C1007FD4A2 /* LaunchScreen.storyboard in Resources */,
-				3A1B7A9D24C207530021FFBC /* studies.xlsx in Resources */,
+				3A1FBEA2250D3AC8001111A1 /* Diplome-OC-DA-iOS.pdf in Resources */,
+				3A1FBEAB250D3CA8001111A1 /* studies.xlsx in Resources */,
 				3A32241A24B6365700949999 /* Experiences.storyboard in Resources */,
 				3A1B7A9F24C207530021FFBC /* skills.xlsx in Resources */,
+				3A1FBE9D250D3872001111A1 /* ListFormationsTableViewCell.xib in Resources */,
 				3AC2E52E24C8B6CC0048E731 /* Projet6.pdf in Resources */,
 				3A32241624B632CE00949999 /* Skills.storyboard in Resources */,
 				3A79971624A239C1007FD4A2 /* Assets.xcassets in Resources */,
 				3A1B7AB524C2077A0021FFBC /* WMware.pdf in Resources */,
 				3AC28F4624B760F4000FB429 /* ListSkillsTableViewCell.xib in Resources */,
 				3A79971424A239BF007FD4A2 /* Main.storyboard in Resources */,
+				3A1FBEAE250D40C0001111A1 /* formations.xlsx in Resources */,
 				3AC2E52424C8B6CC0048E731 /* Projet7.pdf in Resources */,
 				3A1B7ABB24C2077A0021FFBC /* Bac.pdf in Resources */,
 				3A1B7AB924C2077A0021FFBC /* W2K8-GPO.pdf in Resources */,
@@ -643,7 +743,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1FBEAF250D40C0001111A1 /* formations.xlsx in Resources */,
 				3AC2E52524C8B6CC0048E731 /* Projet7.pdf in Resources */,
+				3A1FBEB2250D4515001111A1 /* Certificat-de-fin-de-formation-creer-des-apps-android-avec-kotlin-le-cours-complet.pdf in Resources */,
 				3A1B7AC024C2077A0021FFBC /* ITIL.pdf in Resources */,
 				3A1B7AB424C2077A0021FFBC /* W2K8-AD-Depannage.pdf in Resources */,
 				3AC2E52324C8B6CC0048E731 /* Projet11.pdf in Resources */,
@@ -660,13 +762,14 @@
 				3AC2E52924C8B6CC0048E731 /* Projet4.pdf in Resources */,
 				3AC2E52D24C8B6CC0048E731 /* Projet1.pdf in Resources */,
 				3A1B7AA024C207530021FFBC /* skills.xlsx in Resources */,
+				3A1FBEA3250D3AC8001111A1 /* Diplome-OC-DA-iOS.pdf in Resources */,
 				3AC2E52124C8B6CC0048E731 /* Projet9.pdf in Resources */,
 				3AC2E53124C8B6CC0048E731 /* Projet12.pdf in Resources */,
 				3A1B7ABE24C2077A0021FFBC /* Windows7.pdf in Resources */,
 				3A1B7AB824C2077A0021FFBC /* W2K8-AD-Admin.pdf in Resources */,
+				3A1FBEAC250D3CA8001111A1 /* studies.xlsx in Resources */,
 				3AC2E51F24C8B6CC0048E731 /* Projet8.pdf in Resources */,
 				3A1B7AC224C2077A0021FFBC /* PHP5.pdf in Resources */,
-				3A1B7A9E24C207530021FFBC /* studies.xlsx in Resources */,
 				3AC2E52724C8B6CC0048E731 /* Projet10.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -779,12 +882,17 @@
 				3AD128B924B4E6B400990392 /* String.swift in Sources */,
 				3A1B7A8C24C202B80021FFBC /* WebViewInformationsViewController.swift in Sources */,
 				3A65FAC224C5FB090003BFDB /* FileExperiencesService.swift in Sources */,
+				3A0C1F0D250D36380095C482 /* DetailsFormationViewController.swift in Sources */,
 				3A65FACC24C605260003BFDB /* WebsiteExperienceViewController.swift in Sources */,
 				3A79974424A24EB1007FD4A2 /* Constants.swift in Sources */,
 				3A2A531824C04EB0007DA097 /* DetailsStudyViewController.swift in Sources */,
 				3A65FAC824C6043A0003BFDB /* ListExperiencesViewController.swift in Sources */,
 				3A28579424C7374E0020D33E /* Jobs.swift in Sources */,
+				3A0C1F0B250D36170095C482 /* ListFormationsViewController.swift in Sources */,
+				3A0C1F07250D359A0095C482 /* ConstantsFormations.swift in Sources */,
+				3A0C1EFF250D35190095C482 /* Orgs.swift in Sources */,
 				3A65FABF24C5DACA0003BFDB /* ConstantsExperiences.swift in Sources */,
+				3A0C1F01250D354D0095C482 /* FileFormationsService.swift in Sources */,
 				3A2982BC24BA31BE005DEDFC /* WebsiteStudyViewController.swift in Sources */,
 				3A32242424B63E0500949999 /* Skills.swift in Sources */,
 				3AC28F4824B76D52000FB429 /* DetailsSkillViewController.swift in Sources */,
@@ -793,14 +901,19 @@
 				3A32242224B63D4D00949999 /* ListSkillsViewController.swift in Sources */,
 				3A2982A824BA2C67005DEDFC /* Experiences.swift in Sources */,
 				3A41ACE724B8E583007DBE8C /* FileStudiesService.swift in Sources */,
+				3A0C1EFD250D35050095C482 /* ThemesString.swift in Sources */,
 				3AE7A38F24CB3BC100E06CAB /* Themes.swift in Sources */,
 				3AC28F4524B760F4000FB429 /* ListSkillsTableViewCell.swift in Sources */,
+				3A0C1F0F250D36530095C482 /* WebsiteFormationViewController.swift in Sources */,
 				3A41ACD924B8E166007DBE8C /* ListStudiesViewController.swift in Sources */,
 				3A32242A24B6433300949999 /* FileSkillsService.swift in Sources */,
 				3A65FAC524C5FB6E0003BFDB /* Companies.swift in Sources */,
+				3A0C1EFA250D2FCF0095C482 /* Array.swift in Sources */,
 				3A2A531A24C083EC007DA097 /* UIViewController+Alert.swift in Sources */,
 				3A41ACDC24B8E1CF007DBE8C /* ListStudiesTableViewCell.swift in Sources */,
 				3A41ACD224B8CADE007DBE8C /* InformationsViewController.swift in Sources */,
+				3A1FBE9C250D3872001111A1 /* ListFormationsTableViewCell.swift in Sources */,
+				3A0C1F05250D35840095C482 /* States.swift in Sources */,
 				3AD128B524B4BB9300990392 /* Date.swift in Sources */,
 				3A884E6E24C499970080B9CD /* UiViewController+WKWebView.swift in Sources */,
 				3A79970D24A239BF007FD4A2 /* AppDelegate.swift in Sources */,
@@ -808,6 +921,8 @@
 				3A41ACD724B8E134007DBE8C /* Studies.swift in Sources */,
 				3A79970F24A239BF007FD4A2 /* SceneDelegate.swift in Sources */,
 				3A41ACCB24B879E8007DBE8C /* UIViewController+CustomUI.swift in Sources */,
+				3A0C1F09250D35F20095C482 /* ListThemesViewController.swift in Sources */,
+				3A0C1F03250D356B0095C482 /* Formations.swift in Sources */,
 				3A2A531C24C09EC3007DA097 /* OrgStudies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -816,6 +931,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0C1EFB250D2FCF0095C482 /* Array.swift in Sources */,
 				3A65FAC624C5FB6E0003BFDB /* Companies.swift in Sources */,
 				3A79972424A239C2007FD4A2 /* FormationsAppTests.swift in Sources */,
 			);
