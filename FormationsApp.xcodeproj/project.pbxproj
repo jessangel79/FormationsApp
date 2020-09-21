@@ -90,7 +90,6 @@
 		3A79971924A239C1007FD4A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A79971724A239C1007FD4A2 /* LaunchScreen.storyboard */; };
 		3A79972424A239C2007FD4A2 /* FormationsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79972324A239C2007FD4A2 /* FormationsAppTests.swift */; };
 		3A79974424A24EB1007FD4A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79974324A24EB1007FD4A2 /* Constants.swift */; };
-		3A83E7D424CF27460003491F /* Pods_FormationsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */; };
 		3A884E6E24C499970080B9CD /* UiViewController+WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A884E6D24C499970080B9CD /* UiViewController+WKWebView.swift */; };
 		3AC28F4524B760F4000FB429 /* ListSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC28F4324B760F4000FB429 /* ListSkillsTableViewCell.swift */; };
 		3AC28F4624B760F4000FB429 /* ListSkillsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC28F4424B760F4000FB429 /* ListSkillsTableViewCell.xib */; };
@@ -239,7 +238,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A83E7D424CF27460003491F /* Pods_FormationsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +659,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Angelique Babin";
 				TargetAttributes = {
 					3A79970824A239BF007FD4A2 = {
@@ -993,6 +991,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1053,6 +1052,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
