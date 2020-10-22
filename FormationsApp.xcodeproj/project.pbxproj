@@ -122,6 +122,7 @@
 		3AD128B524B4BB9300990392 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD128B424B4BB9300990392 /* Date.swift */; };
 		3AD128B924B4E6B400990392 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD128B824B4E6B400990392 /* String.swift */; };
 		3AE7A38F24CB3BC100E06CAB /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7A38E24CB3BC100E06CAB /* Themes.swift */; };
+		3AE99AC72539DDF300471F2B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3AE99AC62539DDF300471F2B /* README.md */; };
 		B44F7685F5FBBD7C6B573325 /* Pods_FormationsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB0DD64C06FA6277A47B91A /* Pods_FormationsAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -227,6 +228,7 @@
 		3AD128B424B4BB9300990392 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		3AD128B824B4E6B400990392 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3AE7A38E24CB3BC100E06CAB /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		3AE99AC62539DDF300471F2B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3AFB879E5DE34144BAF8C58C /* Pods-FormationsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54866DAF42163BBCB561E923 /* Pods-FormationsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.release.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FormationsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -518,6 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				3A79971224A239BF007FD4A2 /* Main.storyboard */,
+				3AE99AC62539DDF300471F2B /* README.md */,
 				3A32241C24B63A1000949999 /* Studies */,
 				3A32241D24B63A2400949999 /* Experiences */,
 				3A32241B24B63A0B00949999 /* Skills */,
@@ -717,6 +720,7 @@
 				3A79971924A239C1007FD4A2 /* LaunchScreen.storyboard in Resources */,
 				3A1FBEA2250D3AC8001111A1 /* Diplome-OC-DA-iOS.pdf in Resources */,
 				3A1FBEAB250D3CA8001111A1 /* studies.xlsx in Resources */,
+				3AE99AC72539DDF300471F2B /* README.md in Resources */,
 				3A32241A24B6365700949999 /* Experiences.storyboard in Resources */,
 				3A1B7A9F24C207530021FFBC /* skills.xlsx in Resources */,
 				3A1FBE9D250D3872001111A1 /* ListFormationsTableViewCell.xib in Resources */,
@@ -1087,12 +1091,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
 				INFOPLIST_FILE = "FormationsApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsApp";
 				PRODUCT_NAME = FormationsApp;
 				SWIFT_VERSION = 5.0;
@@ -1106,12 +1112,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
 				INFOPLIST_FILE = "FormationsApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsApp";
 				PRODUCT_NAME = FormationsApp;
 				SWIFT_VERSION = 5.0;
