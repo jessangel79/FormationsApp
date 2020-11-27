@@ -229,6 +229,7 @@
 		3AD128B824B4E6B400990392 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3AE7A38E24CB3BC100E06CAB /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		3AE99AC62539DDF300471F2B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		3AFA23A82571272F00BB7938 /* FormationsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FormationsApp.entitlements; sourceTree = "<group>"; };
 		3AFB879E5DE34144BAF8C58C /* Pods-FormationsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54866DAF42163BBCB561E923 /* Pods-FormationsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.release.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FormationsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -519,6 +520,7 @@
 		3A79970B24A239BF007FD4A2 /* FormationsApp */ = {
 			isa = PBXGroup;
 			children = (
+				3AFA23A82571272F00BB7938 /* FormationsApp.entitlements */,
 				3A79971224A239BF007FD4A2 /* Main.storyboard */,
 				3AE99AC62539DDF300471F2B /* README.md */,
 				3A32241C24B63A1000949999 /* Studies */,
@@ -1090,6 +1092,7 @@
 			baseConfigurationReference = 03BE9464DAC97ED68344ACC0 /* Pods-FormationsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FormationsApp/FormationsApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
@@ -1101,6 +1104,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsApp";
 				PRODUCT_NAME = FormationsApp;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1111,6 +1115,7 @@
 			baseConfigurationReference = ACCC76691F028799E24FE397 /* Pods-FormationsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FormationsApp/FormationsApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
@@ -1122,6 +1127,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsApp";
 				PRODUCT_NAME = FormationsApp;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
