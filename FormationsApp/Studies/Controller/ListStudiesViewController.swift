@@ -38,13 +38,13 @@ final class ListStudiesViewController: UIViewController {
         } catch {
             title = error.localizedDescription
         }
-        navigationController?.isToolbarHidden = true
+//        navigationController?.isToolbarHidden = true
         listStudiesTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isToolbarHidden = true
+//        navigationController?.isToolbarHidden = true
         listStudiesTableView.reloadData()
     }
 }

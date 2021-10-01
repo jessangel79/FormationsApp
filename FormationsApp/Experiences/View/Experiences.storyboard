@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fdu-Ix-L3e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fdu-Ix-L3e">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +11,7 @@
         <!--List Experiences View Controller-->
         <scene sceneID="J1P-WN-AdR">
             <objects>
-                <viewController id="WUl-Yo-VTg" userLabel="List Experiences View Controller" customClass="ListExperiencesViewController" customModule="Formations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WUl-Yo-VTg" userLabel="List Experiences View Controller" customClass="ListExperiencesViewController" customModule="FormationsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BUi-gp-w8x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,7 +19,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwj-gp-5Jq">
                                 <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="WUl-Yo-VTg" id="Hyf-fd-2TM"/>
@@ -26,6 +26,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="21t-pF-atV"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hwj-gp-5Jq" firstAttribute="top" secondItem="21t-pF-atV" secondAttribute="top" id="JJu-ro-IZC"/>
@@ -33,12 +34,9 @@
                             <constraint firstItem="hwj-gp-5Jq" firstAttribute="trailing" secondItem="21t-pF-atV" secondAttribute="trailing" id="dKc-Uw-f0L"/>
                             <constraint firstItem="hwj-gp-5Jq" firstAttribute="leading" secondItem="21t-pF-atV" secondAttribute="leading" id="dgm-wI-4f2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="21t-pF-atV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Experiences" id="st6-lt-8KD" userLabel="Experiences">
-                        <barButtonItem key="backBarButtonItem" title="Experiences" id="CMd-ze-vIs" userLabel="Experiences">
-                            <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title="Experiences" id="CMd-ze-vIs" userLabel="Experiences"/>
                     </navigationItem>
                     <connections>
                         <outlet property="listExperiencesTableView" destination="hwj-gp-5Jq" id="TPN-Eh-f3N"/>
@@ -53,15 +51,13 @@
         <scene sceneID="img-o6-wFq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fdu-Ix-L3e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Experiences" image="businesswoman" id="faA-T6-Xby">
-                        <color key="badgeColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Experiences" image="businesswoman" id="faA-T6-Xby"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vpf-1v-8dp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,7 +75,7 @@
         <!--Détail-->
         <scene sceneID="l6U-Cw-bpx">
             <objects>
-                <viewController id="Obd-ti-5Lt" customClass="DetailsExperienceViewController" customModule="Formations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Obd-ti-5Lt" customClass="DetailsExperienceViewController" customModule="FormationsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xcb-WO-TxV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PuJ-rg-HIs">
-                                <rect key="frame" x="10" y="99" width="300" height="359"/>
+                                <rect key="frame" x="10" y="79" width="300" height="359"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="oNe-OP-tw2">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="97"/>
@@ -234,10 +230,11 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Osw-jl-bf4"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="PuJ-rg-HIs" firstAttribute="top" secondItem="E4Y-Vq-wWd" secondAttribute="bottom" constant="25" id="4jV-LH-Ezm"/>
+                            <constraint firstItem="PuJ-rg-HIs" firstAttribute="top" secondItem="E4Y-Vq-wWd" secondAttribute="bottom" constant="5" id="4jV-LH-Ezm"/>
                             <constraint firstItem="E4Y-Vq-wWd" firstAttribute="leading" secondItem="Osw-jl-bf4" secondAttribute="leading" id="9vF-8Y-5SR"/>
                             <constraint firstItem="E4Y-Vq-wWd" firstAttribute="top" secondItem="Osw-jl-bf4" secondAttribute="top" id="DFn-3I-RG7"/>
                             <constraint firstItem="PuJ-rg-HIs" firstAttribute="leading" secondItem="Osw-jl-bf4" secondAttribute="leading" constant="10" id="Ql1-Pe-tVW"/>
@@ -247,7 +244,6 @@
                             <constraint firstItem="Osw-jl-bf4" firstAttribute="trailing" secondItem="E4Y-Vq-wWd" secondAttribute="trailing" id="lXg-OQ-rhi"/>
                             <constraint firstItem="S60-Xo-w5o" firstAttribute="leading" secondItem="Osw-jl-bf4" secondAttribute="leading" constant="60" id="x7T-6p-wnz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Osw-jl-bf4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Détail" id="lIv-Ab-8Ib">
                         <barButtonItem key="backBarButtonItem" title="Détail" id="T38-UI-Lxa">
@@ -276,14 +272,14 @@
         <!--Website-->
         <scene sceneID="9bA-5g-xE8">
             <objects>
-                <viewController id="aKG-18-QBl" customClass="WebsiteExperienceViewController" customModule="Formations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aKG-18-QBl" customClass="WebsiteExperienceViewController" customModule="FormationsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fzZ-f7-3tn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zuR-By-JJl"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
-                        <viewLayoutGuide key="safeArea" id="zuR-By-JJl"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem image="square.and.arrow.up" catalog="system" id="hWx-g0-xho">

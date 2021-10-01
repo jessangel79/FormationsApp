@@ -44,12 +44,12 @@ final class DetailsStudyViewController: UIViewController {
         customButton(button: websiteButton, radius: 15, width: 2.0, colorBackground: #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1), colorBorder: #colorLiteral(red: 0.397138536, green: 0.09071742743, blue: 0.3226287365, alpha: 1))
         configureStudy()
         websiteButton.showsTouchWhenHighlighted = true
-        navigationController?.isToolbarHidden = true
+//        navigationController?.isToolbarHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isToolbarHidden = true
+//        navigationController?.isToolbarHidden = true
     }
     
     // MARK: - Methods

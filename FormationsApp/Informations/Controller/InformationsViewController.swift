@@ -61,6 +61,10 @@ final class InformationsViewController: UIViewController {
         performSegue(withIdentifier: segueToWebsiteInfo, sender: self)
     }
     
+    @IBAction func closeModalButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+        
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MiU-wI-t6z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MiU-wI-t6z">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +15,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S4O-HN-fab">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.92150276900000005" green="0.92163532969999995" blue="0.92147386070000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="selectedImageTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
@@ -32,7 +35,7 @@
         <scene sceneID="921-tP-LTi">
             <objects>
                 <viewControllerPlaceholder storyboardName="Studies" id="Jeg-co-81w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Studies" image="study" id="mL3-Zk-4Ub">
+                    <tabBarItem key="tabBarItem" title="Etudes" image="study" id="mL3-Zk-4Ub">
                         <color key="badgeColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -68,7 +71,9 @@
         <scene sceneID="YtQ-GG-j0d">
             <objects>
                 <viewControllerPlaceholder storyboardName="Formations" id="rsK-pA-LDG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gcf-01-dbP"/>
+                    <tabBarItem key="tabBarItem" title="Formations" image="small_business" id="gcf-01-dbP">
+                        <color key="badgeColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAN-LF-uxo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,6 +84,7 @@
     <resources>
         <image name="businesswoman" width="25" height="25"/>
         <image name="skill" width="25" height="25"/>
+        <image name="small_business" width="25" height="25"/>
         <image name="study" width="25" height="25"/>
     </resources>
 </document>

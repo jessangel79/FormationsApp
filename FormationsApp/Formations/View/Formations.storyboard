@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ocr-EA-EVq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ocr-EA-EVq">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,9 +12,7 @@
         <scene sceneID="P4J-0f-wcd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ocr-EA-EVq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Formations" image="Octocat" id="Znx-wq-AZs">
-                        <color key="badgeColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Formations" image="Octocat" id="Znx-wq-AZs"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u7Y-ts-XZU">
@@ -53,6 +52,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="aMM-DW-4wp"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -61,7 +61,6 @@
                             <constraint firstAttribute="bottom" secondItem="oaH-zG-usL" secondAttribute="bottom" constant="49" id="N6s-4H-W0Y"/>
                             <constraint firstItem="oaH-zG-usL" firstAttribute="leading" secondItem="aMM-DW-4wp" secondAttribute="leading" id="jSE-tV-xDY"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="aMM-DW-4wp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Thèmes" id="jnH-tg-JIV">
                         <barButtonItem key="backBarButtonItem" title="Thèmes" id="ztZ-P3-l3q">
@@ -95,6 +94,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="FSV-QC-yUE"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -103,7 +103,6 @@
                             <constraint firstItem="wHM-8h-0Up" firstAttribute="top" secondItem="FSV-QC-yUE" secondAttribute="top" id="MRu-VP-oRX"/>
                             <constraint firstItem="wHM-8h-0Up" firstAttribute="trailing" secondItem="FSV-QC-yUE" secondAttribute="trailing" id="bE1-KE-x7g"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="FSV-QC-yUE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Formations" id="hpQ-Ij-F5d">
                         <barButtonItem key="backBarButtonItem" title="Formations" id="RXv-4B-EX5">
@@ -149,7 +148,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TIT-x6-dvW">
-                                        <rect key="frame" x="115" y="153" width="90.5" height="25"/>
+                                        <rect key="frame" x="115" y="153" width="90" height="25"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swift" translatesAutoresizingMaskIntoConstraints="NO" id="Jcx-rx-9bg">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -159,7 +158,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE9-HQ-L9h">
-                                                <rect key="frame" x="35" y="0.0" width="55.5" height="25"/>
+                                                <rect key="frame" x="35" y="0.0" width="55" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -336,6 +335,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="0M1-Zt-LYi"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -344,7 +344,6 @@
                             <constraint firstItem="0M1-Zt-LYi" firstAttribute="bottom" secondItem="kA8-Om-vx2" secondAttribute="bottom" id="Igo-o2-K9h"/>
                             <constraint firstItem="kA8-Om-vx2" firstAttribute="top" secondItem="0M1-Zt-LYi" secondAttribute="top" id="WJ2-tF-swa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0M1-Zt-LYi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Détails" id="w5L-vx-aDM">
                         <barButtonItem key="backBarButtonItem" title="Détails" id="16k-os-tSr">
@@ -378,9 +377,9 @@
                     <view key="view" contentMode="scaleToFill" id="4lS-KN-CPb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Rl3-cp-9Je"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="Rl3-cp-9Je"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem image="square.and.arrow.up" catalog="system" id="1dI-Sa-ByS">

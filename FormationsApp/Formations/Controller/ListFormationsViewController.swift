@@ -17,27 +17,58 @@ final class ListFormationsViewController: UIViewController {
     }
 
     // MARK: - Properties
-
+    
     var cellule: String?
     var allFileDict = [String: [Formations]]()
-    private var cellSelected: Formations?
+    private var cellSelected: Formations? // { didSet { loadFormations() } } // test à faire => ??s
     private let segueToDetailsFormation = Constants.SegueToDetailsFormation
-
+    
+    // test à faire => ???
+//    var arrayFormations = [Formations]()
+    
     // MARK: - View Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: Constants.ListFormationsTableViewCell, bundle: nil)
         listFormationsTableView.register(nib, forCellReuseIdentifier: Constants.ListFormationsCell)
         navigationController?.isToolbarHidden = true
+//        loadFormations()
         listFormationsTableView.reloadData()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isToolbarHidden = true
+//        loadFormations()
         listFormationsTableView.reloadData()
     }
+    
+    // test à faire => ???
+//    private func loadFormations() {
+//        guard let theme = cellSelected else { return }
+//        let dict = NSDictionary(dictionary: allFileDict).allKeys(for: theme.theme)
+        
+//        let array = NSArray(array: dict)
+//        arrayFormations = dict as? [Formations] ?? [Formations]()
+//        let overdueItems = array.filtered(using: NSPredicate(format: "cellule MATCHES %@", theme.theme))
+//        arrayFormations = overdueItems as? [Formations] ?? [Formations]()
+        
+//        arrayFormations = dict as? [Formations] ?? [Formations]()
+        
+//        listFormationsTableView.reloadData()
+        
+        // ???? voir projet Todoey
+//        let predicate: NSPredicate? = nil
+//        let request: NSFetchRequest<Formations> = Formations.fetchRequest()
+//        let categoryPredicate = NSPredicate(format: "cellule MATCHES %@", theme.theme)
+//        if let additionnalPredicate = predicate {
+//            request.predicate =  NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionnalPredicate])
+//        } else {
+//            request.predicate = categoryPredicate
+//        }
+//        guard let items = try? managedObjectContext.fetch(request) else { return [] }
+//    }
 }
 
 // MARK: - UITableViewDataSource - UITableViewDelegate
@@ -69,6 +100,7 @@ extension ListFormationsViewController: UITableViewDataSource, UITableViewDelega
             count = allFileDict[Constants.Others]?.count ?? 0
         }
         return count
+//        return arrayFormations.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,6 +128,8 @@ extension ListFormationsViewController: UITableViewDataSource, UITableViewDelega
             formations = allFileDict[Constants.Others]?[indexPath.row]
         }
         listFormationsCell.formations = formations
+
+//        listFormationsCell.formations = arrayFormations[indexPath.row]
         return listFormationsCell
     }
 
@@ -118,6 +152,8 @@ extension ListFormationsViewController: UITableViewDataSource, UITableViewDelega
         default:
             self.cellSelected = allFileDict[Constants.Others]?[indexPath.row]
         }
+        
+//        self.cellSelected = arrayFormations[indexPath.row]
         performSegue(withIdentifier: self.segueToDetailsFormation, sender: self)
     }
 }

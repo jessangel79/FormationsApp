@@ -191,6 +191,7 @@
 		3A41ACDB24B8E1CF007DBE8C /* ListStudiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStudiesTableViewCell.xib; sourceTree = "<group>"; };
 		3A41ACDE24B8E258007DBE8C /* ConstantsSkills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsSkills.swift; sourceTree = "<group>"; };
 		3A41ACE624B8E583007DBE8C /* FileStudiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStudiesService.swift; sourceTree = "<group>"; };
+		3A4994F72707545400A5C30E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/iOSSupport/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		3A65FABE24C5DACA0003BFDB /* ConstantsExperiences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConstantsExperiences.swift; path = FormationsApp/Experiences/Model/ConstantsExperiences.swift; sourceTree = SOURCE_ROOT; };
 		3A65FAC124C5FB090003BFDB /* FileExperiencesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileExperiencesService.swift; path = FormationsApp/Experiences/Model/FileExperiencesService.swift; sourceTree = SOURCE_ROOT; };
 		3A65FAC424C5FB6E0003BFDB /* Companies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Companies.swift; sourceTree = "<group>"; };
@@ -229,7 +230,6 @@
 		3AD128B824B4E6B400990392 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3AE7A38E24CB3BC100E06CAB /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		3AE99AC62539DDF300471F2B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		3AFA23A82571272F00BB7938 /* FormationsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FormationsApp.entitlements; sourceTree = "<group>"; };
 		3AFB879E5DE34144BAF8C58C /* Pods-FormationsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54866DAF42163BBCB561E923 /* Pods-FormationsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormationsAppTests.release.xcconfig"; path = "Target Support Files/Pods-FormationsAppTests/Pods-FormationsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FormationsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -520,7 +520,6 @@
 		3A79970B24A239BF007FD4A2 /* FormationsApp */ = {
 			isa = PBXGroup;
 			children = (
-				3AFA23A82571272F00BB7938 /* FormationsApp.entitlements */,
 				3A79971224A239BF007FD4A2 /* Main.storyboard */,
 				3AE99AC62539DDF300471F2B /* README.md */,
 				3A32241C24B63A1000949999 /* Studies */,
@@ -608,6 +607,7 @@
 		C07AF7ACFCE0607DDBED3044 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A4994F72707545400A5C30E /* WebKit.framework */,
 				A698CD81CF211AA1AF093195 /* Pods_FormationsApp.framework */,
 				1CB0DD64C06FA6277A47B91A /* Pods_FormationsAppTests.framework */,
 			);
@@ -1093,18 +1093,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FormationsApp/FormationsApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = "FormationsApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsApp";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsCv";
 				PRODUCT_NAME = FormationsApp;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1116,18 +1118,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FormationsApp/FormationsApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = "FormationsApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsApp";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.ddns.jessangel-web.FormationsCv";
 				PRODUCT_NAME = FormationsApp;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

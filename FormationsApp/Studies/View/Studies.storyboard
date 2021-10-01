@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AVq-Vk-XEw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AVq-Vk-XEw">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,6 +28,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="hZj-Ir-POJ"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -35,7 +37,6 @@
                             <constraint firstAttribute="bottom" secondItem="rkX-tn-Tqe" secondAttribute="bottom" constant="49" id="kCv-Q7-RlP"/>
                             <constraint firstItem="rkX-tn-Tqe" firstAttribute="trailing" secondItem="hZj-Ir-POJ" secondAttribute="trailing" id="neU-jo-ckf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="hZj-Ir-POJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Etudes" id="Un9-fy-scl">
                         <barButtonItem key="backBarButtonItem" title="Etudes" id="a34-yH-tg8" userLabel="Etudes">
@@ -61,15 +62,13 @@
         <scene sceneID="oKK-kf-aQu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AVq-Vk-XEw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Etudes" image="study" id="1AL-a6-N3S">
-                        <color key="badgeColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Etudes" image="study" id="1AL-a6-N3S"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JF9-6E-RsR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,10 +90,10 @@
                     <view key="view" contentMode="scaleToFill" id="jdX-h9-ykp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jy0-W0-QUZ"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
-                        <viewLayoutGuide key="safeArea" id="jy0-W0-QUZ"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="6rW-fX-oeV" appends="YES" id="U8X-ca-CMw"/>
                         </connections>
@@ -154,7 +153,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Up4-2v-D9y">
-                                <rect key="frame" x="84" y="44" width="152.5" height="40"/>
+                                <rect key="frame" x="84" y="44" width="152" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="patent" translatesAutoresizingMaskIntoConstraints="NO" id="1jx-X9-7JJ">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -165,7 +164,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap7-ov-w9G">
-                                        <rect key="frame" x="50" y="0.0" width="102.5" height="40"/>
+                                        <rect key="frame" x="50" y="0.0" width="102" height="40"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ljO-2o-bkV"/>
@@ -187,7 +186,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FEj-Aa-dxN">
-                                <rect key="frame" x="103.5" y="154" width="113.5" height="45"/>
+                                <rect key="frame" x="103.5" y="154" width="113" height="45"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swift" translatesAutoresizingMaskIntoConstraints="NO" id="HTT-n0-Shy">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
@@ -197,7 +196,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuU-hI-sRF">
-                                        <rect key="frame" x="60" y="0.0" width="53.5" height="45"/>
+                                        <rect key="frame" x="60" y="0.0" width="53" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -264,6 +263,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cmh-Z4-chf"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.36425268649999998" green="0.1160309836" blue="0.31373983620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -284,7 +284,6 @@
                             <constraint firstItem="cmh-Z4-chf" firstAttribute="trailing" secondItem="RUC-0t-Pqp" secondAttribute="trailing" constant="10" id="xy0-Vt-VB4"/>
                             <constraint firstItem="Ole-tQ-AWR" firstAttribute="leading" secondItem="cmh-Z4-chf" secondAttribute="leading" constant="10" id="zVe-U7-xSE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cmh-Z4-chf"/>
                     </view>
                     <navigationItem key="navigationItem" title="Détail" id="mwe-2v-7cI">
                         <barButtonItem key="backBarButtonItem" title="Détail" id="EXZ-vr-gXJ">
