@@ -53,8 +53,10 @@ extension UIViewController {
         if suffixPdf {
             let ressource = urlSttring.dropString
             loadPdf(ressource, webView: webView)
+            navigationItem.title = "PDF"
         } else {
             loadWebsite(urlSttring, webView: webView)
+            navigationItem.title = "Website"
         }
     }
 
